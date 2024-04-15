@@ -12,3 +12,5 @@ Currently, two official plugins are available:
 initial landing page V1
 ![screencapture-localhost-5173-2024-04-15-17_25_58](https://github.com/AashutoshDL/VROOM/assets/119434270/9ff2dd8c-a2d5-4c30-b8d8-f0d36de9c4ff)
 landing page updated
+Booking popup updated:
+http://localhost:5173/
