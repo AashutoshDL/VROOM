@@ -60,7 +60,8 @@
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 100px;
+    margin-top: 120px;
 }
 
 .icon-box {
@@ -80,4 +81,27 @@
     margin: 10px 0; /* Added margin */
     font-size: 18px; /* Increased font size */
     color: #555; /* Adjusted color */
+}
+
+.icon-box1{
+    position: relative;
+    right: 260px;
+}
+
+.icon-box2{
+    position: relative;
+    right: 100px;
+    top: 3px;
+}
+
+.icon-box3{
+    position: relative;
+    left: 40px;
+    top: 5px;
+}
+
+.icon-box4{
+    position: relative;
+    left: 230px;
+    top: 3px;
 }

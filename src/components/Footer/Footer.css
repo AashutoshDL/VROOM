@@ -88,8 +88,9 @@ ul {
 }
 
 .fol {
-    padding-top: -25px;
-    margin-top: -15px;
+    padding-top: 140px;
+    margin-top: 15px;
+    
 }
 
 .footer-col ul li a:hover {
@@ -151,12 +152,16 @@ ul {
 .quick-links {
     position: absolute;
     top: 22px;
-    right: 0;
-    transform: translateX(50%);
+    left: 600px;
 }
 
 .social-links {
     position: absolute;
     left: 0;
     bottom: 160px;
+}
+
+.follow-us{
+    position: relative;
+    left: 650px;
 }

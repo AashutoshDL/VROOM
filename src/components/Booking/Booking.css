@@ -19,12 +19,14 @@
 }
 
 .home-container {
-    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
     padding: 30px; /* Increased padding for more space */
     border-radius: 10px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Increased drop shadow */
     width: 70%; /* Set a fixed width */
     margin: 100px auto; /* Center the container horizontally and add space on top */
+    margin-top: 50px;
+    padding-bottom: 50px;
     display: flex; /* Use flexbox */
     flex-direction: column; /* Stack children vertically */
     justify-content: center; /* Center vertically */
@@ -32,7 +34,9 @@
 }
 
 .Title {
-    font-size: 36px;
+    font-size: 33px;
+    font-style: 'lora','serif';
+    font-weight: 500;
     text-align: center;
     color: #333;
     margin-bottom: 30px; /* Increased margin for more space */
@@ -51,10 +55,59 @@
 
 label {
     font-size: 18px; /* Increased font size for better readability */
+    font-weight: 600;
     color: #333;
     margin-bottom: 10px; /* Adjusted margin for better spacing */
 }
-
+#label1{
+    position: relative;
+    top: -10px;
+    left: 70px;
+}
+#label2 {
+    position: relative;
+    left: 70px;
+}
+#label3 {
+    position: relative;
+    top: -35px;
+    left: 70px;
+}
+#label4 {
+    position: relative;
+    top: -35px;
+    left: 70px;
+}
+#pickUpDate{
+    position: relative;
+    top: 2px;
+    right: 35px;
+    width: 290px;
+    font-weight: 500;
+    color: #7F7F7F;
+}
+#dropOffDate{
+    position: relative;
+    top: 3px;
+    right: 46px;
+    width: 290px;
+    font-weight: 500;
+    color: #7F7F7F;
+}
+#textInput1{
+    position: relative;
+    top: 30px;
+    right:65px;
+    padding-left: 10px;
+    width: 290px;
+}
+#textInput2 {
+    position: relative;
+    top: -7px;
+    left: 70px;
+    padding-left: 10px;
+    width: 290px;
+}
 .input-container {
     width: 100%;
     margin-bottom: 20px;
@@ -69,13 +122,14 @@ input[type='datetime-local'] {
     font-size: 16px;
 }
 
-button {
+#rentbtn {
     width: fit-content; /* Adjust width to fit content */
-    padding: 15px 30px; /* Adjusted padding */
+    margin-left: 77px;
+    padding: 7px 25px; /* Adjusted padding */
     border: none; /* Removed border */
-    border-radius: 40px;
+    border-radius: 15px;
     font-size: 24px; /* Reduced font size */
-    background-color: #007bff;
+    background-color: #28404B;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -83,7 +137,10 @@ button {
     justify-content: center; /* Center horizontally */
     align-items: center; /* Center vertically */
 }
-
-button:hover {
-    background-color: #0056b3;
+#btntext{
+    position: relative;
+    top: 4px;
+}
+#rentbtn:hover {
+    background-color: #427989;
 }

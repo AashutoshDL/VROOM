@@ -1,84 +1,107 @@
-/* Reset default margin, padding, and box-sizing */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Container for logo */
 .logoDiv {
     position: relative;
     left: -55px;
 }
-
-/* Navigation bar */
 .navBar {
+    position: sticky;
     margin-top: -2px;
-    background: rgba(#1A283E, 0.4); /* Beige background with 70% opacity */
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4); /* Increased shadow */
+    background: linear-gradient(270deg, rgba(255, 255, 255, 0.9), rgba(37, 78, 107, 0.9));
+    /* Adjust opacity and colors here */
+    background-color: transparent;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.4);
+    /* Increased shadow */
+}
+.navbar-links {
+    padding: 10px 15px; /* Add padding to create space between links */
+    cursor: default;
+    margin-right: 25px;
+    transition: color 0.3s ease;
+    color:azure;
 }
 
-/* Logo image */
+.navbar-links:hover {
+    color: #28404B!important;
+}
+.nav-content{
+    font-size: 20px;
+    font-weight: 550;
+    font-family: 'Lora', serif;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    height: 45px;
+    width: 100%;
+}
+
 .logo {
-    height: 150px; /* Decrease height */
-    width: 150px; /* Decrease width */
-    color: #000000;
+    height: 100px;
+    width: 130px;
+    margin-left: 70px;
 }
 
-/* Navigation links */
+.register {
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    margin-top: 4px;
+}
+.login{
+    font-size: 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #ffffff;
+    margin-top: 4px;
+}
+
+#btn {
+    width: 90px;
+    height: 40px;
+    padding: 8px;
+    margin-right: 25px;
+    border-radius: 8px;
+    background-color: #28404B;
+    text-align: center;
+    border: none;
+}
+
+#btn:hover {
+    background-color: #427989 !important;
+}
+#login-button{
+    width: 90px;
+    height: 40px;
+    padding: 8px;
+    border-radius: 8px;
+    background-color: #28404B;
+    text-align: center;
+    border: none;
+}
+#login-button:hover {
+    background-color: #427989 !important;
+}
+
+.nav-items {
+    justify-content: space-around;
+    padding-left: 50px;
+}
+
 .navigation {
     display: flex;
     list-style-type: none;
     text-align: center;
     justify-content: space-around;
-    padding-top: 15px;
-    padding-left: 38px;
+    padding-top: 3px;
+    padding-left: 15px;
     margin-right: 38px;
     position: relative;
-    left: -35px;
-}
-
-.navbar-links {
-    margin-right: 10px;
-    font-weight: 700;
-    color: #020202; /* Set the color for normal state */
-    transition: color 0.3s ease; /* Add transition for smooth color change */
-}
-
-.navbar-links:hover {
-    color: #010101; /* Set the color for hover state */
-}
-
-/* Button styles */
-#btn,
-#login-button {
-    width: 100px; /* Decrease width */
-    padding: 8px; /* Decrease padding */
-    border: none; /* Remove border */
-    border-radius: 5px; /* Add border radius */
-    background-color: #007bff; /* Blue color */
-    color: #ffffff; /* White text color */
-    cursor: pointer; /* Add pointer cursor */
-    transition: background-color 0.3s ease; /* Add transition for smooth color change */
-}
-
-#btn:hover,
-#login-button:hover {
-    background-color: #0056b3; /* Darker blue color on hover */
-}
-
-/* Center text vertically and horizontally */
-.signup,
-.login {
-    margin: 0;
-    padding: 0;
-    text-align: center;
-    line-height: 24px; /* Adjust line height for vertical centering */
-    font-size: 14px; /* Decrease font size */
-}
-
-/* Adjust margin for sign up and login buttons */
-.Sign,
-.Log {
-    margin-left: 10px;
+    left: -25px;
 }

@@ -47,6 +47,7 @@
             text-align: center;
             color: rgb(255, 0, 0);
             animation: colorChange 1s infinite alternate;
+            margin-bottom: 50px;
         }
         
         @keyframes colorChange {
@@ -65,4 +66,41 @@
             height: 700px;
         }
        
+        #caro {
+            max-width: 2000px; 
+            margin: auto; 
+            margin-bottom: 300px;
+            margin-top: 40px;
+        }
+        
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            width: 100%; 
+            max-height: 750px; 
+        }
+        
+        .carousel img {
+            width: 100%; 
+            height: auto; 
+        }
+        
+        .prev,
+        .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .prev {
+            left: 10px;
+        }
+        
+        .next {
+            right: 10px;
+        }
+        
         
