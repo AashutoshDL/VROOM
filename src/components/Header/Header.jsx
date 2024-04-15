@@ -3,7 +3,7 @@
 // import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
-import logo from "../ImagesFol/2.png"; 
+import logo from "../ImagesFol/logo.png"; 
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 
@@ -27,27 +27,30 @@ const Header = () => {
               <Nav className="me-auto">
                 <ul className="navigation">
                   <li className="navbar-links" onClick={() => handleNavigation('/')}>
-                    <span>Home</span>
+                    <span className="nav-content">Home</span>
                   </li>
+                  {/* <li className="navbar-links" onClick={() => handleNavigation('/about')}>
+                    <span>About</span>
+                  </li> */}
                   <li className="navbar-links" onClick={() => handleNavigation('/vehicles')}>
-                    <span>Vehicles</span>
+                    <span className="nav-content">Vehicles</span>
                   </li>
                   <li className="navbar-links" onClick={() => handleNavigation('/hire')}>
-                    <span>Hire</span>
+                    <span className="nav-content">Hire</span>
                   </li>
                   <li className="navbar-links">
-                    <span>Contact Us</span>
+                    <span className="nav-content">Contact Us</span>
                   </li>
                 </ul>
               </Nav>
               <Nav className="Sign">
-                <button id="btn">
-                  <h2 className="signup">Register</h2>
+                <button id="btn" onClick={() => handleNavigation('/register')}>
+                  <h2 className="register">Register</h2>
                 </button>
               </Nav>
               <Nav className="Log">
-                <button id="login-button">
-                  <h2 className="login">Login</h2>
+                <button id="login-button" onClick={() => handleNavigation('/login')}>
+                  <h4 className="login">Login</h4>
                 </button>
               </Nav>
             </Navbar.Collapse>
