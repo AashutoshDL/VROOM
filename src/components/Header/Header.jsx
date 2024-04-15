@@ -1,6 +1,4 @@
-// Header.js
-
-// import React from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Header.css";
 import logo from "../ImagesFol/2.png"; 
