@@ -1,0 +1,89 @@
+/* Home.css */
+
+.mainbody {
+    position: relative; /* Set position to relative */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Set height to full viewport height */
+}
+
+.background-video {
+    position: absolute; /* Position the video absolutely */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensure the video covers the entire element */
+    z-index: -1; /* Place the video behind other content */
+}
+
+.home-container {
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    padding: 30px; /* Increased padding for more space */
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2); /* Increased drop shadow */
+    width: 70%; /* Set a fixed width */
+    margin: 100px auto; /* Center the container horizontally and add space on top */
+    display: flex; /* Use flexbox */
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center; /* Center vertically */
+    align-items: center; /* Center horizontally */
+}
+
+.Title {
+    font-size: 36px;
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px; /* Increased margin for more space */
+}
+
+.sub-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center the items horizontally */
+}
+
+.col-lg-6 {
+    width: calc(50% - 10px); /* Adjusted width with a bit of spacing */
+    margin-bottom: 30px; /* Increased margin for more space */
+}
+
+label {
+    font-size: 18px; /* Increased font size for better readability */
+    color: #333;
+    margin-bottom: 10px; /* Adjusted margin for better spacing */
+}
+
+.input-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+input[type='text'],
+input[type='datetime-local'] {
+    width: calc(100% - 10px);
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+button {
+    width: fit-content; /* Adjust width to fit content */
+    padding: 15px 30px; /* Adjusted padding */
+    border: none; /* Removed border */
+    border-radius: 40px;
+    font-size: 24px; /* Reduced font size */
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+button:hover {
+    background-color: #0056b3;
+}
