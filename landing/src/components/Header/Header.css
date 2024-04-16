@@ -22,6 +22,8 @@
 .logo {
     height: 150px; /* Decrease height */
     width: 150px; /* Decrease width */
+    height: 100px; /* Decrease height */
+    width: 100px; /* Decrease width */
     color: #000000;
 }
 

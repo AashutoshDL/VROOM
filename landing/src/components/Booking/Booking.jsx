@@ -1,5 +1,5 @@
-// Booking.js
 
+import { useNavigate } from 'react-router-dom';
 import { useState , useEffect } from 'react';
 import ScrollReveal from 'scrollreveal';
 import DatePicker from 'react-datepicker';
@@ -14,6 +14,12 @@ const Booking = () => {
   const [input2, setInput2] = useState('');
   const [pickUpDate, setPickUpDate] = useState(null);
   const [dropOffDate, setDropOffDate] = useState(null);
+  const navigate = useNavigate();
+
+  // const handleNavigation = (route) => {
+  //   navigate(route);
+  // };
+
 
   const handleInput1Change = (event) => {
     setInput1(event.target.value);
@@ -37,6 +43,8 @@ const Booking = () => {
     console.log('Input 2:', input2);
     console.log('Pick-Up Date:', pickUpDate);
     console.log('Drop-Off Date:', dropOffDate);
+    navigate('/vehicles');
+
   };
 
   useEffect(() => {

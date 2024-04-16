@@ -10,14 +10,23 @@ import UpdateUser from './components/Admin/User/UpdateUser';
 import CreateCars from './components/Admin/Cars/CreateCars';
 import UpdateCars from './components/Admin/Cars/UpdateCars';
 import AdminHome from './components/Admin/AdminHome';
+import Vehicles from './components/Vehicles/Vehicles';
+
 function App() {
   return (
     <Router>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/admin" element={<AdminHome />} />
+    //routes for different paths
+    //home
+        <Route path="/" element={<Home />} />
+    //register
+        <Route path="/register" element={<Register />} />
+    //login
+        <Route path="/login" element={<Login />} />
+    //vehicles page
+        <Route path="/vehicles" element={<Vehicles />} />
+    //admin panels
+        <Route path="/admin" element={<AdminHome />} />
         <Route path="/user" element={<User />} />
         <Route path="/createUser" element={<CreateUser />} />
         <Route path="/updateUser/:id" element={<UpdateUser />} />
