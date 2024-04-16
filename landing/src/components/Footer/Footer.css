@@ -1,0 +1,162 @@
+/* Footer.css */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 0;
+    overflow-x: hidden;
+}
+
+.foot-container {
+    max-width: calc(1170px + 250px);
+    margin: auto;
+    position: relative;
+    top: -35px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.follow-us {
+    position: relative;
+    left: 60px;
+    top: -35px;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    top: 25px;
+    width: 100%;
+    background: linear-gradient(285deg, #1e3353, #121313); /* Updated color */
+    height: 435px;
+}
+
+.textvroom {
+    color: white;
+    font-weight: lighter;
+    position: relative;
+    bottom: 0;
+}
+
+.footer-col {
+    width: 25%;
+    padding-top: 30px;
+    padding-left: 30px;
+    margin-left: 50px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col ul li a {
+    padding-bottom: 3px; 
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    transition: all 0.3s ease;
+}
+
+#text {
+    padding-top: 100px;
+    padding-bottom: 0;
+}
+
+#links {
+    padding-top: -25px;
+    margin-top: -15px;
+}
+
+.fol {
+    padding-top: -25px;
+    margin-top: -15px;
+}
+
+.footer-col ul li a:hover {
+    color: #ffffff;
+    padding-left: 8px;
+}
+
+.footer-col .social-links {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer-col .social-links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: rgba(255, 255, 255, 0.2);
+    margin-right: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #ffffff;
+    transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+    color: #24262b;
+    background-color: #ffffff;
+}
+
+/* Logo */
+.footerlogo {
+    width: 150px;
+    height: auto;
+    position: relative;
+    padding-top: 60px;
+    bottom: 0;
+}
+
+.footerlogo:hover {
+    transform: scale(1.1);
+}
+
+/* Responsive */
+@media (max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}
+
+.quick-links {
+    position: absolute;
+    top: 22px;
+    right: 0;
+    transform: translateX(50%);
+}
+
+.social-links {
+    position: absolute;
+    left: 0;
+    bottom: 160px;
+}

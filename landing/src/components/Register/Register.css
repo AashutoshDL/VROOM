@@ -1,0 +1,73 @@
+.register-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url('../ImagesFol/background2.jpg'); /* Set background image */
+    background-size: cover; /* Cover the entire container */
+  }
+  
+  .register-form {
+    background-color: rgba(244, 244, 244, 0.8); /* Semi-transparent background color */
+    border-radius: 10px;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+    width: 600px; /* Adjusted width for horizontal layout */
+    padding: 20px; /* Add padding back */
+    display: flex; /* Use flexbox for horizontal layout */
+    flex-direction: column; /* Stack children vertically by default */
+  }
+  
+  .register-heading {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .form-group {
+    display: flex; /* Use flexbox for horizontal layout */
+    /* align-items: center; Align items vertically in each row */
+    margin-bottom: 20px;
+  }
+  
+  .form-group label {
+    font-weight: bold;
+    flex: 0.4; /* Distribute available space evenly among labels */
+    margin-right: 20px; /* Add some spacing between label and input */
+  }
+  
+  .form-control {
+    flex: 2; /* Take up more space than labels */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+  }
+  
+  .input-group {
+    position: relative;
+  }
+  
+  .input-group button {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .btn-primary {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0056b3;
+  }
+  
