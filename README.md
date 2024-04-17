@@ -12,3 +12,6 @@ Currently, two official plugins are available:
 initial landing page V1
 ![screencapture-localhost-5173-2024-04-15-17_25_58](https://github.com/AashutoshDL/VROOM/assets/119434270/9ff2dd8c-a2d5-4c30-b8d8-f0d36de9c4ff)
 landing page updated
+![screencapture-localhost-5173-2024-04-15-22_19_04](https://github.com/AashutoshDL/VROOM/assets/108614572/b800b615-f9d6-4701-8c2b-5600d32ac5e7) 
+vehicle listing updated
+
