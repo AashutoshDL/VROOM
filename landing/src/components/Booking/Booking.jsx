@@ -93,19 +93,25 @@ const Booking = () => {
   }, []);
 
   return (
-    <div>
+   <div>
+      {/* Main body container */}
       <div className="mainbody">{/*< style={{ backgroundImage: `url(${background2})` }}> */}
+      {/* Background video */}
       <video autoPlay loop muted className="background-video">
         <source src={backgroundVideo} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
+        {/* Home container */}
         <div className="home-container">
+          {/* Title */}
           <div className="Name">
             <h1 className="Title">
               VROOM CAR RENTALS
             </h1>
           </div>
+          {/* Sub-container for input fields */}
           <div className="sub-container">
+            {/* Input field for Pick Up Location */}
             <div className="col-lg-6" id="Input1">
               <label htmlFor="Pickup-Location" id="label1">
                 Pick Up Location
@@ -118,6 +124,7 @@ const Booking = () => {
                 onChange={handleInput1Change}
               />
             </div>
+            {/* Input field for Drop Off Location */}
             <div className="col-lg-6" id="Input2">
               <label htmlFor="Dropoff-Location" id="label2">
                 Drop Off Location
@@ -130,10 +137,12 @@ const Booking = () => {
                 onChange={handleInput2Change}
               />
             </div>
+            {/* Input field for Pick Up Date */}
             <div className="col-lg-6" id="Input3">
               <label htmlFor="dateInput1" id="label3">
                 Pick Up Date
               </label>
+              {/* Date picker for selecting pick up date and time */}
               <DatePicker
                 id="pickUpDate"
                 selected={pickUpDate}
@@ -144,10 +153,12 @@ const Booking = () => {
                 className="form-control"
               />
             </div>
+            {/* Input field for Drop Off Date */}
             <div className="col-lg-6" id="Input4">
               <label htmlFor="dateInput2" id="label4">
                 Drop Off Date
               </label>
+              {/* Date picker for selecting drop off date and time */}
               <DatePicker
                 id="dropOffDate"
                 selected={dropOffDate}
@@ -158,8 +169,10 @@ const Booking = () => {
                 className="form-control"
               />
             </div>
+            {/* Submit button */}
             <div className="col-lg-12" id="submitbtn">
               <button id="rentbtn" onClick={handleSubmit}>
+                {/* Button text */}
                 <h6 id="btntext">Find Car</h6>
               </button>
             </div>
@@ -167,6 +180,7 @@ const Booking = () => {
         </div>
       </div>
     </div>
+
   );
 };
 

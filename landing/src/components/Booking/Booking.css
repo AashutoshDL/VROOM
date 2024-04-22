@@ -35,7 +35,7 @@
     /* Set a fixed width */
     margin: 100px auto;
     /* Center the container horizontally and add space on top */
-    margin-top: 170px;
+    margin-top: 60px;
     padding-bottom: 50px;
     display: flex;
     /* Use flexbox */

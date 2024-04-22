@@ -36,32 +36,43 @@ const Header = () => {
 
   return (
     <div>
+      {/* Navigation bar */}
       <div className='navBar'>
+        {/* Bootstrap Navbar */}
         <Navbar expand='lg' id='mainnav'>
           <div className='container'>
             <div className='logoDiv'>
+              {/* Logo */}
               <img src={logo} alt='Logo Image' className='logo' />
             </div>
+            {/* Navbar toggle button */}
             <Navbar.Toggle aria-controls='basic-navbar-nav' />
             <Navbar.Collapse id='basic-navbar-nav'>
               <Nav className='me-auto'>
+                {/* Navigation links */}
                 <ul className='navigation'>
+                  {/* Home link */}
                   <li className='navbar-links' onClick={() => handleNavigation('/')}>
                     <span className='nav-content'>Home</span>
                   </li>
+                  {/* Vehicles link */}
                   <li className='navbar-links' onClick={() => handleNavigation('/vehicles')}>
                     <span className='nav-content'>Vehicles</span>
                   </li>
+                  {/* Hire link */}
                   <li className='navbar-links' onClick={() => handleNavigation('/hire')}>
                     <span className='nav-content'>Hire</span>
                   </li>
+                  {/* Contact Us link */}
                   <li className='navbar-links'>
                     <span className='nav-content'>Contact Us</span>
                   </li>
                 </ul>
               </Nav>
+              {/* Conditional rendering based on user authentication */}
               {isLoggedIn ? (
                 <Nav className='Log'>
+                  {/* Display username and logout button */}
                   <span className='username'>Welcome, {userName}</span>
                   <button id='logout-button' onClick={handleLogout}>
                     <h2 className='logout'>Logout</h2>
@@ -70,11 +81,13 @@ const Header = () => {
               ) : (
                 <>
                   <Nav className='Sign'>
+                    {/* Register button */}
                     <button id='btn' onClick={() => handleNavigation('/register')}>
                       <h2 className='signup'>Register</h2>
                     </button>
                   </Nav>
                   <Nav className='Log'>
+                    {/* Login button */}
                     <button id='login-button' onClick={() => handleNavigation('/login')}>
                       <h2 className='login'>Login</h2>
                     </button>
@@ -86,6 +99,7 @@ const Header = () => {
         </Navbar>
       </div>
     </div>
+
   );
 };
 
