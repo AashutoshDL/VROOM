@@ -1,0 +1,6 @@
+{    "scripts": {
+        "start": "npm run start:frontend & npm run start:backend",
+        "start:frontend": "cd landing && npm run dev",
+        "start:backend": "cd server && npm start"
+  }
+}
