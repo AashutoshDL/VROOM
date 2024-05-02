@@ -140,7 +140,7 @@ const Vehicles = () => {
   return (
     <div>
       {/* Navigation and sorting dropdown */}
-      <nav className="booking-navbar">
+      <div className="booking-navbar">
         <ul className="booking-nav-links">
           <li className="booking-navbar-links">
             <a href="/1" className="availability-link 1">1 - Search</a>
@@ -157,7 +157,7 @@ const Vehicles = () => {
             <a href="/4" className="availability-link 4">4 - Confirm</a>
           </li>
         </ul>
-      </nav>
+      </div>
       <div className="Vehicle-container">
         <div className="sort-container">
           <label htmlFor="sort-select" id="sort-name">

@@ -16,7 +16,7 @@
     /* Default text color for the button */
     --button-border-radius: 8px;
     /* Default border radius for the button */
-    --button-background-hover:#2b72be;
+    --button-background-hover: #00509D;
     --nav-background-color: linear-gradient(270deg, rgba(255, 255, 255, 0.9), rgba(37, 78, 107, 0.9));
     --nav-link-color: azure;
     --nav-link-hover: #28404B;

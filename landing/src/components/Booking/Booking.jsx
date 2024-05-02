@@ -57,8 +57,8 @@ const Booking = () => {
 
     const scrollRevealUp = ScrollReveal();
     scrollRevealUp.reveal('.aboutimage', {
-      delay: 200,
-      duration: 2000,
+      delay: 50,
+      duration: 1000,
       origin: 'bottom',
       distance: '20px',
       easing: 'ease-in-out',
@@ -79,7 +79,7 @@ const Booking = () => {
 
     sr.reveal('.icon-box, .icon-text, .how-to-header', {
       delay,
-      duration: 700,
+      duration: 200,
       origin: 'bottom',
       distance: '20px',
       easing: 'ease-in-out',
@@ -106,20 +106,21 @@ const Booking = () => {
           {/* Title */}
           <div className="Name">
             <h1 className="Title">
-              VROOM CAR RENTALS
+              Vroom Car Rental Services
             </h1>
+            <h5 id="sub-title">At your Door Steps</h5>
           </div>
           {/* Sub-container for input fields */}
           <div className="sub-container">
             {/* Input field for Pick Up Location */}
             <div className="col-lg-6" id="Input1">
               <label htmlFor="Pickup-Location" id="label1">
-                Pick Up Location
+                Pick Up :
               </label>
               <input
                 type="text"
                 id="textInput1"
-                placeholder="Enter your text here"
+                placeholder="Enter your Location"
                 value={input1}
                 onChange={handleInput1Change}
               />
@@ -127,12 +128,12 @@ const Booking = () => {
             {/* Input field for Drop Off Location */}
             <div className="col-lg-6" id="Input2">
               <label htmlFor="Dropoff-Location" id="label2">
-                Drop Off Location
+                Drop Off :
               </label>
               <input
                 type="text"
                 id="textInput2"
-                placeholder="Enter your text here"
+                placeholder="Enter your Location"
                 value={input2}
                 onChange={handleInput2Change}
               />
@@ -140,7 +141,7 @@ const Booking = () => {
             {/* Input field for Pick Up Date */}
             <div className="col-lg-6" id="Input3">
               <label htmlFor="dateInput1" id="label3">
-                Pick Up Date
+                Pick Up Date/Time :
               </label>
               {/* Date picker for selecting pick up date and time */}
               <DatePicker
@@ -156,7 +157,7 @@ const Booking = () => {
             {/* Input field for Drop Off Date */}
             <div className="col-lg-6" id="Input4">
               <label htmlFor="dateInput2" id="label4">
-                Drop Off Date
+                Drop Off Date/Time :
               </label>
               {/* Date picker for selecting drop off date and time */}
               <DatePicker
