@@ -11,11 +11,10 @@ body {
 }
   
   .booking-navbar {
-    background-color: #5557d4; 
+    background-color: #FFFFFF; 
     padding: 12px 20px; 
     width: 100%; 
-    position: fixed; 
-    top: 0; 
+    top: 60px; 
     z-index: 1000; 
     justify-content: space-around;
   }
@@ -39,12 +38,12 @@ body {
   }
   .availability-link{
     text-decoration: none;
-    color: white;
+    color: rgb(136, 134, 134);
     font-size: 18px;
   }
   .availability-link2 {
       text-decoration: none;
-      color: white;
+      color: rgb(136, 134, 134);
       font-size: 18px;
     }
   .availability-link2::after {

@@ -24,18 +24,19 @@
 }
 
 .home-container {
-    background-color: rgba(255, 255, 255, 0.6);
+    background-color: rgba(255, 255, 255, 0.877);
     /* Semi-transparent white background */
     padding: 30px;
     /* Increased padding for more space */
     border-radius: 10px;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
     /* Increased drop shadow */
-    width: 70%;
+    width: 50%;
+    height: 350px;
     /* Set a fixed width */
     margin: 100px auto;
     /* Center the container horizontally and add space on top */
-    margin-top: 60px;
+    margin-top: 20px;
     padding-bottom: 50px;
     display: flex;
     /* Use flexbox */
@@ -48,15 +49,24 @@
 }
 
 .Title {
-    font-size: 33px;
+    position: relative;
+    top: 35px;
+    font-size: 30px;
     font-style: 'lora', 'serif';
     font-weight: 500;
     text-align: center;
-    color: #333;
+    color: #000000;
     margin-bottom: 30px;
     /* Increased margin for more space */
 }
-
+#sub-title{
+    position: relative;
+    top: 5px;
+    font-size: 18px;
+    text-align: center;
+    font-weight: lighter;
+    color: #000000;
+}
 .sub-container {
     display: flex;
     flex-wrap: wrap;
@@ -75,66 +85,77 @@ label {
     font-size: 18px;
     /* Increased font size for better readability */
     font-weight: 600;
-    color: #333;
+    color: #000000;
     margin-bottom: 10px;
     /* Adjusted margin for better spacing */
 }
 
 #label1 {
     position: relative;
-    top: -10px;
-    left: 70px;
+    top: 10px;
+    left: 5px;
 }
 
 #label2 {
     position: relative;
-    left: 70px;
+    top: 90px;
+    right: 290px;
 }
 
 #label3 {
     position: relative;
-    top: -35px;
-    left: 70px;
+    top: -97px;
+    left: 320px;
 }
 
 #label4 {
     position: relative;
-    top: -35px;
-    left: 70px;
+    top: -19px;
+    left: 20px;
 }
 
 #pickUpDate {
     position: relative;
-    top: 2px;
-    right: 35px;
-    width: 290px;
+    top: -105px;
+    left: 320px;
     font-weight: 500;
+    padding-left: 15px;
+    height: 45px;
+    width: 260px;
+    border-radius: 0%;
     color: #7F7F7F;
 }
 
 #dropOffDate {
     position: relative;
-    top: 3px;
-    right: 46px;
-    width: 290px;
+    top: -25px;
+    left: 23px;
+    width: 260px;
+    height: 45px;
+    padding-left: 15px;
     font-weight: 500;
     color: #7F7F7F;
+    border-radius: 0%;
 }
 
 #textInput1 {
     position: relative;
-    top: 30px;
-    right: 65px;
-    padding-left: 10px;
-    width: 290px;
+    top: 5px;
+    left: 5px;
+    padding-left: 15px;
+    height: 45px;
+    width: 260px;
+    border-radius: 0%;
 }
 
 #textInput2 {
     position: relative;
-    top: -7px;
-    left: 70px;
-    padding-left: 10px;
-    width: 290px;
+    top: 85px;
+    right: 290px;
+    padding-left: 15px;
+    width: 260px;
+    height: 45px;
+    border-radius: 0%;
 }
 
 .input-container {
@@ -153,16 +174,20 @@ input[type='datetime-local'] {
 
 #rentbtn {
     width: fit-content;
+    position: relative;
+    top: -30px;
+    right: 60px;
     /* Adjust width to fit content */
     margin-left: 77px;
-    padding: 7px 25px;
+    width: 94%;
+    padding: 7px 45px;
     /* Adjusted padding */
     border: none;
     /* Removed border */
-    border-radius: 15px;
+    border-radius: 5px;
     font-size: 24px;
     /* Reduced font size */
-    background-color: #28404B;
+    background-color: #00509D;
     color: #fff;
     cursor: pointer;
     transition: background-color 0.3s ease;
@@ -180,5 +205,6 @@ input[type='datetime-local'] {
 }
 
 #rentbtn:hover {
-    background-color: #2b72be;
+    background-color: #0e4988;
+    color: #ffffff;
 }

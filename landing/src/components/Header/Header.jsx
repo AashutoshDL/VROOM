@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Header.css';
 import logo from '../ImagesFol/logo.png';
 import Nav from 'react-bootstrap/Nav';
@@ -80,16 +81,16 @@ const Header = () => {
                 </Nav>
               ) : (
                 <>
+                 <Nav className='Log'>
+                    {/* Login button */}
+                    <button id='login-button' onClick={() => handleNavigation('/login')}>
+                      <h2 className='login'>Login</h2>
+                    </button>
+                  </Nav>
                   <Nav className='Sign'>
                     {/* Register button */}
                     <button id='btn' onClick={() => handleNavigation('/register')}>
                       <h2 className='signup'>Register</h2>
-                    </button>
-                  </Nav>
-                  <Nav className='Log'>
-                    {/* Login button */}
-                    <button id='login-button' onClick={() => handleNavigation('/login')}>
-                      <h2 className='login'>Login</h2>
                     </button>
                   </Nav>
                 </>

@@ -16,20 +16,19 @@ const Footer = () => {
           <div className="row">
             {/* Footer column */}
             <div className="footer-col">
-              {/* Vroom logo */}
-              <img src={logo} alt="" className='footerlogo'/>
+              <h4 id="footer-about">About Us</h4>
               {/* Footer text */}
               <p className='textvroom'>
-                Vroom is a car rental website at your service. 
-                {/* Sub-paragraph */}
-                <p>
-                Choose us for the best cars and best vehicles.
-                </p>
-                {/* Contact information */}
-                <p>
-                  Want help? Contact us at: 9818808162
-                </p>
+                Vroom Car Rental Services stands out for its wide vehicle selection, ensuring there's an option for every need. With a user-friendly booking process via app or online, convenience is paramount. 
               </p>
+            </div>
+            {/* Footer column for contact info */}
+            <div className="Contactinfo">
+              <h5 className="contact-title">Contact Info</h5>
+              <ul className="contacts">
+                <li className="footer-info">Phone</li>
+                <li className="footer-info">Email</li>
+              </ul>
             </div>
             {/* Footer column for quick links */}
             <div className="footer-col quick-links">
@@ -37,23 +36,10 @@ const Footer = () => {
               <h4 id='text'>Quick Links</h4>
               {/* Quick links list */}
               <ul id='links'>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li className='q-links'><span className ="footer-links">Vehicles</span></li>
+                <li className='q-links'><span className ="footer-links">Contact Us</span></li>
+                <li className='q-links'><span className ="footer-links">Hire a Driver</span></li>
               </ul>
-            </div>
-            {/* Footer column for social media links */}
-            <div className="footer-col follow-us">
-              {/* Follow us header */}
-              <h4 className='fol'>Follow Us</h4>
-              {/* Social media links */}
-              <div className="social-links">
-                <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
-                <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
-                <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
-                <a href="#"><FontAwesomeIcon icon={faLinkedinIn} /></a>
-              </div>
             </div>
           </div>
         </div>

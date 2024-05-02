@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Header from './components/Header/Header';
 import Register from './components/Register/Register';
 import Login from './components/Login/Login';
 import Home from './Home';
@@ -14,6 +15,7 @@ import Vehicles from './components/Vehicles/Vehicles';
 function App() {
   return (
     <Router>
+      <Header />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/register" element={<Register />} />
