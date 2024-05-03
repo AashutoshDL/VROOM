@@ -68,10 +68,10 @@ const ReviewSlide = () => {
       </Carousel>
 
       <div className="Review_btn">
-        <button onClick={handlePrev} disabled={currentSlide === 0} className={currentSlide === 0 ? 'disabled' : ''}>
+        <button onClick={handlePrev} className={currentSlide === 0 ? 'disabled' : ''}>
           <FontAwesomeIcon icon={faChevronLeft} className="button-icon" />
         </button>
-        <button onClick={handleNext} disabled={currentSlide === feedbackItems.length - 1} className={currentSlide === feedbackItems.length - 1 ? 'disabled' : ''}>
+        <button onClick={handleNext} className={currentSlide === feedbackItems.length - 1 ? 'disabled' : ''}>
           <FontAwesomeIcon icon={faChevronRight} className="button-icon" />
         </button>
       </div>
