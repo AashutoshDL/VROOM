@@ -1,68 +1,137 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { useNavigate, useLocation } from 'react-router-dom';
-import PropTypes from 'prop-types';
-import '../Vehicles/Vehicles.css';
+import { useState, useEffect } from "react";
+import img1 from "../ImagesFol/byd.jpg";
+import img2 from "../ImagesFol/nexon.png";
+import img3 from "../ImagesFol/scorpio.png";
+import img4 from "../ImagesFol/verna.png";
+import "../Vehicles/Vehicles.css";
+// Sample car data
+const cars = [
+  {
+    id: 1,
+    imgSrc: img1,
+    title: "BYD - Car",
+    passenger: 5,
+    doors: 4,
+    type: "Compact SUV",
+    luggage: "3 bags",
+    features: [
+      "Blind Spot Detection",
+      "Moon Roof",
+      "Automatic Transmission",
+      "Air Conditioning",
+    ],
+    price: "NPR 50,000",
+  },
+  {
+    id: 2,
+    imgSrc: img2,
+    title: "TATA Nexon - Car",
+    passenger: 4,
+    doors: 4,
+    type: "Compact SUV",
+    luggage: "3 bags",
+    features: [
+      "Keyless Entry/Start",
+      "Air Conditioning",
+      "Sun Roof",
+      "Automatic Transmission",
+    ],
+    price: "NPR 45,000",
+  },
+  {
+    id: 3,
+    imgSrc: img3,
+    title: "Scorpio - Jeep",
+    passenger: 7,
+    doors: 4,
+    type: "SUV",
+    luggage: "5 bags",
+    features: [
+      "High ground clearance",
+      "Four-Wheel Drive (4WD)",
+      "Air Conditioning",
+      "Manual Transmission",
+    ],
+    price: "NPR 65,000",
+  },
+  {
+    id: 4,
+    imgSrc: img4,
+    title: "Verna - Sedan",
+    passenger: 4,
+    doors: 4,
+    type: "Sedan",
+    luggage: "4 bags",
+    features: [
+      "Comfortable Seat",
+      "Infotainment System",
+      "Air Conditioning",
+      "Automatic Transmission",
+    ],
+    price: "NPR 30,000",
+  },
+];
 
-const Vehicles = () => {
-  const [cars, setCars] = useState([]);
-  const [sortBy, setSortBy] = useState('1');
-  const navigate = useNavigate();
-  const location = useLocation();
-
-  useEffect(() => {
-    axios.get('http://localhost:3001/cars')
-      .then(response => {
-        setCars(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching car data:', error);
-      });
-  }, []);
-
-  const handleSubmit = (car) => {
-    const { bookingData } = location.state || {};
-    navigate('/bookedInfo', { state: { carData: car, bookingData: bookingData} });
-  };
-
-  const CarDetails = ({ car }) => (
-    <div className="car-details">
-      <div className="image-section">
-        <img src={`http://localhost:3001/uploads/${car.image}`} alt={car.model} />
-      </div>
-      <h2 className="title">{car.model}</h2>
-      <div className="listing-section">
-        <ul>
-          <li>Company: {car.company}</li>
-          <li>Year: {car.year}</li>
-          <li>Status: {car.status}</li>
-          <li>Available: {car.available}</li>
-        </ul>
-      </div>
-      <div className="features">
-        {/* Add other details as needed */}
-      </div>
-      <div className="price-section">
-        <p>Price: {car.price}</p>
-        <div className="btn">
-          <button className="book-now-button" onClick={() => handleSubmit(car)}>Book Now</button>
-        </div>
+// Reusable CarDetails component
+const CarDetails = ({ car }) => (
+  <div className="car-details">
+    <div className="image-section">
+      <img src={car.imgSrc} alt={car.title} />
+    </div>
+    <div className="title-container">
+      <h3 className="title">{car.title}</h3>
+    </div>
+    <div className="listing-section">
+      <ul>
+        <li className="lists">Passenger: {car.passenger}</li>
+        <li className="lists">Doors: {car.doors}</li>
+        <li className="lists">Type: {car.type}</li>
+        <li className="lists">Luggage: {car.luggage}</li>
+      </ul>
+    </div>
+    <div className="features">
+      <ul>
+        {car.features.map((feature, index) => (
+          <li key={index}>{feature}</li>
+        ))}
+      </ul>
+    </div>
+    <div className="price-section">
+      <p id="price-title">Estimated Price</p>
+      <p id="price">{car.price}</p>
+      <div className="btn">
+        <button className="book-now-button">Book Now</button>
       </div>
     </div>
-  );
+  </div>
+);
 
-  CarDetails.propTypes = {
-    car: PropTypes.shape({
-      _id: PropTypes.string.isRequired,
-      image: PropTypes.string.isRequired,
-      model: PropTypes.string.isRequired,
-      company: PropTypes.string.isRequired,
-      year: PropTypes.number.isRequired,
-      status: PropTypes.boolean.isRequired,
-      available: PropTypes.bool.isRequired,
-      price: PropTypes.number.isRequired,
-    }).isRequired,
-  };
+// Main CarList component
+const Vehicles = () => {
+  const [sortBy, setSortBy] = useState("1");
+  const [sortedCars, setSortedCars] = useState([]);
+
+  // Update sortedCars based on sortBy value
+  useEffect(() => {
+    let sorted = [];
+
+    switch (sortBy) {
+      case "2":
+        sorted = cars.slice().sort((a, b) => a.passenger - b.passenger);
+        break;
+      case "3":
+        sorted = cars.slice().sort((a, b) => a.price.localeCompare(b.price));
+        break;
+      case "4":
+        sorted = cars.slice().sort((a, b) => b.passenger - a.passenger);
+        break;
+      default:
+        sorted = cars.slice(); // Default sort by ID
+        break;
+    }
+
+    setSortedCars(sorted);
+  }, [sortBy]);
 
   const handleSortChange = (event) => {
     setSortBy(event.target.value);
@@ -70,29 +139,44 @@ const Vehicles = () => {
 
   return (
     <div>
-      <nav className="navbar">
-        <ul className="pagination">
-          <li className={location.pathname === "/vehicles" ? "active" : ""}>1 : Vehicles</li>
-          <li className={location.pathname === "/book" ? "active " : ""}>2 : Booking Process</li>
-          <li className={location.pathname === "/bookingConfirm" ? "active": ""}>3 : Confirm Booking</li>
+      {/* Navigation and sorting dropdown */}
+      <div className="booking-navbar">
+        <ul className="booking-nav-links">
+          <li className="booking-navbar-links">
+            <a href="/1" className="availability-link 1">1 - Search</a>
+          </li>
+          <li className="booking-navbar-links">
+            <a href="/2" className="availability-link2">
+              2 - Availability
+            </a>
+          </li>
+          <li className="booking-navbar-links">
+            <a href="/3" className="availability-link 3">3 - Book</a>
+          </li>
+          <li className="booking-navbar-links">
+            <a href="/4" className="availability-link 4">4 - Confirm</a>
+          </li>
         </ul>
-      </nav>
-
-      <div className="sort-container">
-        <label htmlFor="sort-select">Sort by:</label>
-        <select id="sort-select" value={sortBy} onChange={handleSortChange}>
-          <option value="1">Select</option>
-          <option value="2">Company</option>
-          <option value="3">Year</option>
-          <option value="4">Status</option>
-          {/* Add more sorting options as needed */}
-        </select>
       </div>
+      <div className="Vehicle-container">
+        <div className="sort-container">
+          <label htmlFor="sort-select" id="sort-name">
+            Sort by:
+          </label>
+          <select id="sort-select" value={sortBy} onChange={handleSortChange}>
+            <option value="1">Select</option>
+            <option value="2">Passenger Count</option>
+            <option value="3">Price (Low to High)</option>
+            <option value="4">Passenger Count (High to Low)</option>
+          </select>
+        </div>
 
-      <div className="car-list">
-        {cars.map((car) => (
-          <CarDetails key={car._id} car={car} />
-        ))}
+        {/* Render car details based on sortedCars */}
+        <div className="car-list">
+          {sortedCars.map((car) => (
+            <CarDetails key={car.id} car={car} />
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -1,0 +1,201 @@
+.headcontent {
+    position: relative;
+    left: 550px;
+    top: 80px;
+    font-weight: 700;
+}
+
+.hello {
+    position: relative;
+    top: 90px;
+    left: 450px;
+    font-weight: 600;
+    font-size: smaller;
+}
+
+.key {
+    position: relative;
+    top: 240px;
+    left: 200px;
+    font-weight: 700;
+}
+
+.damage {
+    font-size: large;
+}
+
+.damagecontent,
+.damagecontent2 {
+    font-size: small;
+}
+
+.caricon {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+}
+
+.border-box {
+    border: 1px solid #ccc;
+    width: 450px;
+    height: 100px;
+    padding: 10px;
+    position: relative;
+}
+
+.content {
+    position: relative;
+    left: 100px;
+}
+
+.cardiv {
+    position: relative;
+    top: 100px;
+    left: 750px;
+}
+
+
+/* */
+
+.theft {
+    font-size: large;
+}
+
+.theftcontent,
+.theftcontent2 {
+    font-size: small;
+}
+
+.thefticon {
+    position: absolute;
+    top: 10px;
+    left: 25px;
+}
+
+.border-box2 {
+    border: 1px solid #ccc;
+    width: 450px;
+    height: 100px;
+    padding: 10px;
+    position: relative;
+}
+
+.content2 {
+    position: relative;
+    left: 100px;
+}
+
+.theftdiv {
+    position: relative;
+    top: 130px;
+    left: 750px;
+}
+
+.allkey {
+    position: relative;
+    top: 50px;
+}
+
+.features {
+    position: relative;
+    top: 340px;
+    left: 200px;
+    font-weight: 700;
+}
+
+.collision {
+    font-size: smaller;
+    position: relative;
+    left: 800px;
+    bottom: 281px;
+}
+
+.thirdparty {
+    font-size: smaller;
+    position: relative;
+    left: 1055px;
+    bottom: 310px;
+}
+
+.keylock-image {
+    width: 75px;
+    position: relative;
+    left: 1080px;
+    bottom: 300px;
+}
+
+.lock-image {
+    width: 75px;
+    position: relative;
+    left: 770px;
+    bottom: 300px;
+}
+
+.downsection {
+    position: relative;
+    bottom: 30px;
+}
+
+.twenty {
+    font-weight: 400;
+    font-size: 25px;
+    position: relative;
+    right: 10px;
+}
+
+.twentytwo {
+    font-size: 25px;
+    font-weight: 400;
+    position: relative;
+    left: 30px;
+}
+
+.twentysection {
+    position: relative;
+    left: 800px;
+    bottom: 300px;
+}
+
+.fifty {
+    font-size: 25px;
+    font-weight: 400;
+    position: relative;
+}
+
+.fiftytwo {
+    font-size: 25px;
+    font-weight: 400;
+    position: relative;
+    left: 35px;
+}
+
+.fiftysection {
+    position: relative;
+    left: 1040px;
+    bottom: 380px;
+}
+
+.insidecontent {
+    position: relative;
+    top: 500px;
+}
+
+.copy {
+    position: relative;
+    top: 400px;
+    left: 400px;
+    font-weight: 400;
+}
+
+.copy2 {
+    position: relative;
+    top: 353px;
+    left: 750px;
+    font-weight: 400;
+}
+
+.copyof2 {
+    position: relative;
+    bottom: 30px;
+    right: 10px;
+}
