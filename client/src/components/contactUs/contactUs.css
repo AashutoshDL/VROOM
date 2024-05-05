@@ -1,0 +1,172 @@
+.contact-container{
+    background-color: #ffffff;
+    position: absolute;
+    min-height: 100vh;
+    width: 100%;
+}
+#head-title{
+    text-align: center;
+    position: relative;
+    margin-top: 30px;
+    top: 30px;
+    font-size: 28px;
+    font-family: var(--text-font-family);
+    font-weight: bold;
+}
+.questions{
+    width: 90%;
+    height: 200px;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    top: 50px;
+    left: 55px;
+    margin-bottom: 110px;
+}
+.faq-display{
+    height: 150px;
+    width: 22%;
+   position: relative;
+   top: 20px;
+}
+.question-icons{
+    position: relative;
+    left:120px;
+}
+.q-texts{
+    position: relative;
+    top: 20px;
+    text-align: center;
+    font-size: 18px;
+    font-family: var(--text-font-family);
+    font-weight: 600;
+}
+.answers{
+    width: 100%;
+    height: 450px;
+    display: flex;
+    flex-direction: row;
+    border: 2px solid rgba(128, 128, 128, 0.274);
+
+}
+.answer-part1{
+    width: 50%;
+    height: 430px;
+    background-color: white;
+}
+#ans-1{
+    position: relative;
+    top: 180px;
+    text-align: center;
+    font-weight: 700;
+}
+.answer-part2{
+    width: 50%;
+    height: 450px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.sub-answers{
+    max-width: 70%;
+    height: 100px;
+    position: relative;
+    top: 15px;
+    left: 95px;
+    border-radius: 10px;
+    bottom: 20px;
+    margin-bottom: 30px;
+    border: 2px solid rgba(128, 128, 128, 0.274);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    overflow: hidden;
+}
+.contact-form{
+    margin-top: 50px;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 80px;
+}
+#formtitle{
+    margin-top: 30px;
+    text-align: center;
+}
+#sub-formtitle{
+    margin-top: 20px;
+    text-align: center;
+    width: 40%;
+    margin-left: 390px;
+}
+.message-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 20px;
+    width: 50%;
+    position: relative;
+    left: 350px;
+}
+.form-btn{
+    position: relative;
+    top: 10px;
+    left: 220px;
+    width: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #00509D;
+    color: white;
+    border: none;
+    font-weight: 400;
+}
+#name{
+    height: 40px;
+}
+#email{
+    height: 40px;
+    width: 625px;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.459);
+}
+#message{
+    height: 100px;
+    width: 625px;
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.459);
+}
+.sub-image{
+    height: 80px;
+    width: 90px;
+    position: relative;
+    top: 7px;
+    left: 12px;
+}
+#q1{
+    position: relative;
+    top: -70px;
+    left: 120px;
+    font-size: 17px;
+}
+#q2 {
+    position: relative;
+    top: -70px;
+    left: 120px;
+    font-size: 17px;
+}
+#q3 {
+    position: relative;
+    top: -70px;
+    left: 115px;
+    font-size: 17px;
+}
+.ans-text{
+    position: relative;
+    top: -70px;
+    left: 120px;
+    font-size: 14px;
+    text-align: justify;
+}
