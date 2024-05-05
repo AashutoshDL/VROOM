@@ -9,6 +9,8 @@ const Home = () => {
   return (
     <div className='page-container'>
       <Header />
+      <br />
+      <br />
       <Booking />
       <AboutUs />
       <CarSlide />

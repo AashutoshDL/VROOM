@@ -38,12 +38,13 @@ const Booking = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Input 1:', input1);
-    console.log('Input 2:', input2);
-    console.log('Pick-Up Date:', pickUpDate);
-    console.log('Drop-Off Date:', dropOffDate);
-
-    navigate('/vehicles');
+    const bookingData = {
+      input1,
+      input2,
+      pickUpDate,
+      dropOffDate,
+    }
+    navigate('/vehicles',{state: {bookingData}});
   };
 
   useEffect(() => {
@@ -137,8 +138,9 @@ const Booking = () => {
               <DatePicker
                 id="pickUpDate"
                 selected={pickUpDate}
-                onChange={handlePickUpDateChange}
+                onChange={date => handlePickUpDateChange(date)}
                 showTimeSelect
+                minDate={new Date()}//restrits to past dates
                 dateFormat="yyyy-MM-dd HH:mm"
                 placeholderText="Select Pick Up Date and Time"
                 className="form-control"
@@ -151,8 +153,9 @@ const Booking = () => {
               <DatePicker
                 id="dropOffDate"
                 selected={dropOffDate}
-                onChange={handleDropOffDateChange}
+                onChange={date => handleDropOffDateChange(date)}
                 showTimeSelect
+                minDate={new Date()}
                 dateFormat="yyyy-MM-dd HH:mm"
                 placeholderText="Select Drop Off Date and Time"
                 className="form-control"

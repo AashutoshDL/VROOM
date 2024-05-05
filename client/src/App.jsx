@@ -11,6 +11,8 @@ import CreateCars from './components/Admin/Cars/CreateCars';
 import UpdateCars from './components/Admin/Cars/UpdateCars';
 import AdminHome from './components/Admin/AdminHome';
 import Vehicles from './components/Vehicles/Vehicles';
+import BookedInfo from './components/BookedInfo/BookedInfo';
+
 function App() {
   return (
     <Router>
@@ -20,6 +22,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<AdminHome />} />
           <Route path="/vehicles" element={<Vehicles />} />
+          <Route path="/bookedInfo" element={<BookedInfo />} />
         <Route path="/user" element={<User />} />
         <Route path="/createUser" element={<CreateUser />} />
         <Route path="/updateUser/:id" element={<UpdateUser />} />

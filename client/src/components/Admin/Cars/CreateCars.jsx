@@ -3,16 +3,29 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 
 const CreateCars = () => {
-  const [make, setMake] = useState('');
+  const [company, setCompany] = useState('');
   const [model, setModel] = useState('');
   const [year, setYear] = useState('');
+  const [price,setPrice]=useState('');
   const [available, setAvailable] = useState('');
   const [status, setStatus] = useState('');
+  const [file,setFile]=useState();
+
   const navigate = useNavigate();
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/createCars', { make, model, year, available, status})
+    const formData=new FormData();
+    formData.append('file',file);
+    formData.append('company', company);
+    formData.append('model', model);
+    formData.append('year', year);
+    formData.append('price',price);
+    formData.append('available', available);
+    formData.append('status', status);
+
+    axios.post('http://localhost:3001/createCars', formData)
       .then(result => {
         console.log(result);  
         navigate('/cars');
@@ -26,13 +39,13 @@ const CreateCars = () => {
         <form onSubmit={handleSubmit}>
           <h2 className="text-left mb-4">Add Car</h2>
           <div className="mb-3">
-            <label htmlFor='make' className="form-label">Make</label>
+            <label htmlFor='company' className="form-label">Company</label>
             <input
               type='text'
-              id='make'
-              placeholder='Enter make'
+              id='company'
+              placeholder='Enter name of the company'
               className='form-control'
-              onChange={(e) => setMake(e.target.value)}
+              onChange={(e) => setCompany(e.target.value)}
             />
           </div>
           <div className="mb-3">
@@ -56,13 +69,23 @@ const CreateCars = () => {
             />
           </div>
           <div className="mb-3">
+            <label htmlFor='price' className="form-label">Price</label>
+            <input
+              type='text'
+              id='price'
+              placeholder='Enter price'
+              className='form-control'
+              onChange={(e) => setPrice(e.target.value)}
+            />
+          </div>
+          <div className="mb-3">
             <label htmlFor='available' className="form-label">Available</label>
             <select
               id='available'
               className='form-select'
               onChange={(e) => setAvailable(e.target.value)}
             >
-              <option value=''>Select Account Type</option>
+              <option value=''>Select Availability</option>
               <option value='yes'>Avialable</option>
               <option value='booked'>Booked</option>
               <option value='no'>Not Available</option>
@@ -77,7 +100,14 @@ const CreateCars = () => {
               className='form-control'
               onChange={(e) => setStatus(e.target.value)}
             />       
-            </div>   
+            </div> 
+            <div className="mb-3">
+            <label htmlFor='status' className="form-label">Car Image</label><br />
+            <input
+              type='file'
+              onChange={(e) => setFile(e.target.files[0])}
+            />
+            </div>
           <div className="d-flex justify-content-end">
             <button className='btn btn-secondary me-2' onClick={() => navigate('/cars')}>Back</button>
             <button type="submit" className='btn btn-success'>Submit</button>

@@ -55,13 +55,13 @@ const Home = () => {
           <p>Manage users and cars here.</p>
           <div className="row mt-3">
             <div className="col-md-6">
-              <Link to="/user" className="btn btn-primary btn-block">Manage Users</Link>
+              <Link to="/user" className="btn btn-secondary btn-block">Manage Users</Link>
             </div>
             <div className="col-md-6">
               <Link to="/cars" className="btn btn-success btn-block">Manage Cars</Link>
             </div>
           </div>
-          <button className="btn btn-danger mt-3" onClick={handleLogout}>Logout</button>
+          <button className="btn btn-danger mt-5" onClick={handleLogout}>Logout</button>
         </div>
       )}
     </div>

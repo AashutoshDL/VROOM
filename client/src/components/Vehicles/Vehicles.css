@@ -102,10 +102,13 @@ body {
   }
   
   .image-section img {
-    width: 410px; 
-    height: 250px; 
+    max-width: 50%; /* Add this line */
+    max-height: 50%; /* Add this line */
+    width: auto; /* Add this line */
+    height: auto; /* Add this line */
     border-radius: 8px;
   }
+  
   
   .listing-section ul{
     position: absolute;
@@ -194,7 +197,4 @@ body {
     border-radius: 5px; 
     cursor: pointer; 
   }
-  
-  
-  
   
