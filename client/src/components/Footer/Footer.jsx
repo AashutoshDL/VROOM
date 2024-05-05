@@ -3,48 +3,69 @@ import './Footer.css';
 import logo from '../ImagesFol/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
+import { FaPhone } from "react-icons/fa6";
+import { MdOutlineMailOutline } from "react-icons/md";
 import './Footer.css'
 
 const Footer = () => {
   return (
     <div>
+      {/* Footer section */}
       <footer className="footer">
+        {/* Footer container */}
         <div className="foot-container">
+          {/* Footer row */}
           <div className="row">
+            {/* Footer column */}
             <div className="footer-col">
-            <img src={logo} alt="" className='footerlogo'/>
+              <h4 id="footer-about">About Us</h4>
+              {/* Footer text */}
               <p className='textvroom'>
-                Vroom is a car rental website at your service. 
-                <p>
-                Choose us for the best cars and best vehicles.
-                </p>
-                <p>
-                  Want help? Contact us at: 9818808162
-                </p>
+                Vroom Car Rental Services stands out for its wide vehicle selection, ensuring there's an option for every need. With a user-friendly booking process via app or online, convenience is paramount. 
               </p>
             </div>
-            <div className="footer-col quick-links">
-              <h4 id='text'>Quick Links</h4>
-              <ul id='links'>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Contact Us</a></li>
-              </ul>
-            </div>
-            <div className="footer-col follow-us">
-              <h4 className='fol'>Follow Us</h4>
-              <div className="social-links">
-                <a href="#"><FontAwesomeIcon icon={faFacebookF} /></a>
-                <a href="#"><FontAwesomeIcon icon={faTwitter} /></a>
-                <a href="#"><FontAwesomeIcon icon={faInstagram} /></a>
-                <a href="#"><FontAwesomeIcon icon={faLinkedinIn} /></a>
+            {/* Footer column for contact info */}
+            <div className="Contactinfo">
+              <h5 className="contact-title">Contact Info</h5>
+              <div className='phoneicon'>
+              <FaPhone size={35}/>
               </div>
+
+              <div className='mailicon'>
+              <MdOutlineMailOutline size={45}/>
+              </div>
+              <div className='bigcontentbox'>
+              <ul className="contacts">
+                <li className="footer-info1">Phone</li>
+                <li className="footer-info">Email</li>
+              </ul>
+              <ul className='contactinformation'>
+                <li className='foot-infonum'>9803430682</li>
+                <li className='foot-info2'>vroomhelp@gmail.com</li>
+              </ul>
+              </div>
+            </div>
+            {/* Footer column for quick links */}
+            <div className="footer-col quick-links">
+              {/* Quick links header */}
+              <h4 id='text'>Quick Links</h4>
+              {/* Quick links list */}
+              <ul id='links'>
+                <li className='q-links'><span className ="footer-links">Vehicles</span></li>
+                <li className='q-links'><span className ="footer-links">Contact Us</span></li>
+                <li className='q-links'><span className ="footer-links">Hire a Driver</span></li>
+              </ul>
             </div>
           </div>
         </div>
+         {/* Copyright notice */}
+         <div className="line"></div>
+         <div className="copyright">
+          <p className='copyrightcontent'>&copy; 2024 Vroom | All Rights Reserved | <span className='privacy'>Privacy Policy</span></p>
+        </div>
       </footer>
     </div>
+
   );
 }
 
