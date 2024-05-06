@@ -5,8 +5,9 @@ const multer=require('multer')
 const UserModel = require('./models/Users'); // Importing UserModel
 const CarsModel = require('./models/Cars'); // Importing CarsModel
 const LoginModel = require('./models/Login'); // Importing LoginModel
-const BookingsModel=require('./models/Booking')
+const Booking=require('./models/Booking')
 const app = express();
+
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'))
@@ -172,6 +173,41 @@ app.put('/updateCars/:id', upload.single('file'), (req, res) => {
         .catch(err => res.json(err))
 });
 
+
+app.post('/bookings', async (req, res) => {
+    try {
+      const { carData, bookingData, dos, donts } = req.body;
+  
+      // Create a new booking document
+      const newBooking = new Booking({
+        carData,
+        bookingData,
+        dos,
+        donts
+      });
+  
+      // Save the booking to the database
+      await newBooking.save();
+  
+      // Respond with success message
+      res.status(201).json({ message: 'Booking submitted successfully' });
+    } catch (error) {
+      // Handle errors
+      console.error('Error submitting booking:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+
+  app.get('/bookings', async (req, res) => {
+    try {
+      const bookings = await Booking.find();
+      res.json(bookings);
+    } catch (error) {
+      console.error('Error fetching bookings:', error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  });
+  
 // Listening on port 3001 for incoming requests
 app.listen(3001, () => {
     console.log("Server is Running");

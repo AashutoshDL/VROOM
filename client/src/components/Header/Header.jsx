@@ -59,12 +59,7 @@ const Header = () => {
                     <span className="nav-content">Home</span>
                   </li>
                   {/* Vehicles link */}
-                  <li
-                    className="navbar-links"
-                    onClick={() => handleNavigation("/vehicles")}
-                  >
-                    <span className="nav-content">Vehicles</span>
-                  </li>
+
                   {/* Hire link */}
                   <li
                     className="navbar-links"

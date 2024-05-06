@@ -1,4 +1,4 @@
- import { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 
@@ -24,13 +24,12 @@ const User = () => {
 
     return (
         <div className="container mt-5">
-            <Link to="/admin" className="btn btn-success">HOME</Link>
             <div className="row">
-                <div className="col-lg-8">
+                <div className="col-lg-6">
                     <h1 className="user-heading">User Information</h1>
                 </div>
-                <div className="col-lg-4 d-flex justify-content-end align-items-center">
-                    <Link to="/createUser" className="btn btn-success">Add</Link>
+                <div className="col-lg-6 d-flex justify-content-end">
+                    <Link to="/createUser" className="btn">Add User</Link>
                 </div>
             </div>
             <table className="table mt-3">
@@ -53,7 +52,7 @@ const User = () => {
                             <td>{user.address}</td>
                             <td>{user.accountType}</td>
                             <td>
-                                <Link to={`/updateUser/${user._id}`} className="btn btn-primary mr-2">Update</Link>
+                                <Link to={`/updateUser/${user._id}`} className="btn btn-dark mr-2">Update</Link>
                                 <button className="btn btn-danger" onClick={() => handleDelete(user._id)}>Delete</button>
                             </td>
                         </tr>

@@ -1,22 +1,14 @@
 const mongoose = require('mongoose');
 
-// Define the schema for the bookings collection
+// Define the schema for the booking
 const bookingSchema = new mongoose.Schema({
-    company: String,
-    model: String,
-    year: Number,
-    price: Number,
-    name:String,
-    image:String,
-    available: Boolean,
-    status: String,
-    input1: String,
-    input2: String,
-    pickUpDate: Date,
-    dropOffDate: Date,
-  });
+  carData: Object,
+  bookingData: Object,
+  dos: [String],
+  donts: [String]
+});
 
-// Create the BookingsModel using the bookingSchema
-const BookingsModel = mongoose.model('Booking', bookingSchema);
+// Create the Booking model
+const Booking = mongoose.model('Booking', bookingSchema);
 
-module.exports = BookingsModel;
+module.exports = Booking; // Export the Booking model
