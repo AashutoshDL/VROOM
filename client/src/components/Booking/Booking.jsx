@@ -7,15 +7,28 @@ import backgroundVideo from '../ImagesFol/backvid.mp4';
 import './Booking.css';
 
 const Booking = () => {
-  const [input1, setInput1] = useState(localStorage.getItem('input1') || '');
-  const [input2, setInput2] = useState(localStorage.getItem('input2') || '');
-  const [pickUpDate, setPickUpDate] = useState(
-    localStorage.getItem('pickUpDate') || null
-  );
-  const [dropOffDate, setDropOffDate] = useState(
-    localStorage.getItem('dropOffDate') || null
-  );
+  const [input1, setInput1] = useState('');
+  const [input2, setInput2] = useState('');
+  const [pickUpDate, setPickUpDate] = useState(null);
+  const [dropOffDate, setDropOffDate] = useState(null);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    // Retrieve stored data from local storage upon component mount if user is logged in
+    const isLoggedIn = localStorage.getItem('name');
+    if (isLoggedIn) {
+      const storedData = JSON.parse(localStorage.getItem('bookingData'));
+      if (storedData) {
+        setInput1(storedData.input1 || '');
+        setInput2(storedData.input2 || '');
+        setPickUpDate(storedData.pickUpDate || null);
+        setDropOffDate(storedData.dropOffDate || null);
+        
+        // Clear stored data from local storage once used
+        localStorage.removeItem('bookingData');
+      }
+    }
+  }, []);
 
   const handleInput1Change = (event) => {
     setInput1(event.target.value);
@@ -26,19 +39,11 @@ const Booking = () => {
   };
 
   const handlePickUpDateChange = (date) => {
-    try {
-      setPickUpDate(date instanceof Date ? date : null);
-    } catch (error) {
-      console.error('Error setting pick-up date:', error);
-    }
+    setPickUpDate(date);
   };
 
   const handleDropOffDateChange = (date) => {
-    try {
-      setDropOffDate(date instanceof Date ? date : null);
-    } catch (error) {
-      console.error('Error setting drop-off date:', error);
-    }
+    setDropOffDate(date);
   };
 
   const handleSubmit = (event) => {
@@ -47,30 +52,22 @@ const Booking = () => {
     const isLoggedIn = localStorage.getItem('name');
 
     if (!isLoggedIn) {
-      // Store form data in localStorage before redirecting to login
-      localStorage.setItem('input1', input1);
-      localStorage.setItem('input2', input2);
-      localStorage.setItem('pickUpDate', pickUpDate);
-      localStorage.setItem('dropOffDate', dropOffDate);
+      // Store the entered data in local storage before redirecting to login
+      const bookingData = {
+        input1,
+        input2,
+        pickUpDate,
+        dropOffDate,
+      };
+      localStorage.setItem('bookingData', JSON.stringify(bookingData));
 
       // Redirect to login page if not logged in
       navigate('/login');
       return;
     }
 
-    // Clear form data from localStorage if logged in
-    localStorage.removeItem('input1');
-    localStorage.removeItem('input2');
-    localStorage.removeItem('pickUpDate');
-    localStorage.removeItem('dropOffDate');
-
-    const bookingData = {
-      input1,
-      input2,
-      pickUpDate,
-      dropOffDate,
-    };
-    navigate('/vehicles', { state: { bookingData } });
+    // If already logged in, proceed to the vehicles page
+    navigate('/vehicles', { state: { bookingData: { input1, input2, pickUpDate, dropOffDate } } });
   };
 
   useEffect(() => {
