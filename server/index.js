@@ -13,7 +13,10 @@ app.use(express.json());
 app.use(express.static('public'))
 
 // Connection with the MongoDB database
-mongoose.connect("mongodb://127.0.0.1:27017/crud");
+const uri=("mongodb+srv://aashudahal11:eyMFcdqNUk5ebfPc@vroom.tgtbyuu.mongodb.net/?retryWrites=true&w=majority&appName=vroom");
+mongoose.connect(uri)
+  .then(() => console.log('Connected to MongoDB Atlas'))
+  .catch(err => console.error('Error connecting to MongoDB Atlas:', err));
 
 // Registration route
 app.post("/register", (req, res) => {
