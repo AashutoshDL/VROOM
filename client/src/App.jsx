@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Header from "./components/Header/Header";
+import Header from './components/Header/Header';
 import Register from "./components/Register/Register";
 import Login from "./components/Login/Login";
 import Home from "./Home";
@@ -14,6 +14,7 @@ import AdminHome from "./components/Admin/AdminHome";
 import Vehicles from "./components/Vehicles/Vehicles";
 import ContactUs from "./components/contactUs/contactUs";
 import Insurance from "./components/insurance/insurance";
+import Hire from "./components/Hire/Hire";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
         <Route path="/updateCars/:id" element={<UpdateCars />} />
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/insurance" element={<Insurance />} />
+        <Route path="/hire" element={<Hire />} />
       </Routes>
     </Router>
   );
