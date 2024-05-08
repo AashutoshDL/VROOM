@@ -14,6 +14,7 @@ import AdminHome from "./components/Admin/AdminHome";
 import Vehicles from "./components/Vehicles/Vehicles";
 import ContactUs from "./components/contactUs/contactUs";
 import Insurance from "./components/insurance/insurance";
+import Hire from './components/Hire/Hire'
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/hireDriver" element={<Hire />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<AdminHome />} />
         <Route path="/vehicles" element={<Vehicles />} />
