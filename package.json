@@ -1,1 +1,1 @@
-{"scripts":{"start":"npm run start:frontend & npm run start:backend","start:frontend":"cd landing && npm run dev","start:backend":"cd server && npm start"},"dependencies":{"cors":"^2.8.5","express":"^4.19.2","mongoose":"^8.3.4","nodemon":"^3.1.0"}}
+{"scripts":{"start":"npm run start:frontend & npm run start:backend","start:frontend":"cd client && npm run dev","start:backend":"cd server && npm start"},"dependencies":{"cors":"^2.8.5","express":"^4.19.2","mongoose":"^8.3.4","nodemon":"^3.1.0","react-helmet":"^6.1.0"}}

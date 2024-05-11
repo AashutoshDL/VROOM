@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
 const PaymentForm = () => {
     const [amount, setAmount] = useState('');
@@ -6,13 +7,14 @@ const PaymentForm = () => {
     const [productCode, setProductCode] = useState('');
     const [paymentResponse, setPaymentResponse] = useState(null);
     const [statusResponse, setStatusResponse] = useState(null);
-
+    const location=useLocation();
     const handlePaymentSubmit = async (e) => {
         e.preventDefault();
+        const { carData } = location.state || {};
         try {
             const response = await fetch('/api/esewa/payment', {
                 method: 'POST',
-                headers: { 'Content-Type':  'application/json' },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     total_amount: carData.price,
                     transaction_uuid: transactionUUID,
