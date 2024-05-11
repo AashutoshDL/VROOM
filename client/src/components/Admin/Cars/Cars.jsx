@@ -6,14 +6,14 @@ const User = () => {
     const [cars, setCars] = useState([]);
 
     useEffect(() => {
-        axios.get('http://localhost:3001/cars')
+        axios.get('http://localhost:3001/api/getAllCars')
             .then(result => setCars(result.data))
             .catch(err => console.log(err));
     }, []);
 
     const handleDelete = (id) => {
         if (window.confirm("Are you sure you want to delete this record?")) {
-            axios.delete(`http://localhost:3001/deleteCars/${id}`)
+            axios.delete(`http://localhost:3001/api/deleteCarById/${id}`)
                 .then(res => {
                     console.log(res);
                     window.location.reload(); // Refreshing the page after successful deletion

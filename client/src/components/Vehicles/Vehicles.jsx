@@ -11,7 +11,7 @@ const Vehicles = () => {
   const location = useLocation();
 
   useEffect(() => {
-    axios.get('http://localhost:3001/cars')
+    axios.get('http://localhost:3001/api/getAllCars')
       .then(response => {
         setCars(response.data);
       })

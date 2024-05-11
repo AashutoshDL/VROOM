@@ -5,6 +5,8 @@ import './bookedinfo.css';
 
 const BookedInfo = () => {
   const location = useLocation();
+
+
   const { carData, bookingData } = location.state || {};
   const [showConfirmation, setShowConfirmation] = useState(false);
   const [dos, setDos] = useState('');
@@ -13,15 +15,16 @@ const BookedInfo = () => {
   const navigate=useNavigate();
   const handleSubmit = () => {
     setShowConfirmation(true);
-    axios.post('http://localhost:3001/bookings', {
+    axios.post('http://localhost:3001/api/createBooking', {
       carData: carData,
       bookingData: bookingData,
       dos: dos,
       donts: donts
-    })
+    })  
     .then(response => {
       console.log(response.data);
-      navigate('/');
+      alert('Data sent to the database successfully!');
+      navigate('/payment', {state: {carData: carData}});
     })
     .catch(error => {
       console.error('Error submitting booking:', error);
@@ -76,15 +79,6 @@ const BookedInfo = () => {
           <input type="text" className="form-control" value={donts} onChange={handleDontsChange} />
         </div>
       </div>
-      {showConfirmation && (
-        <div>
-          <div className="blur-background"></div> {/* Blur background */}
-          <div className="confirmation-popup">
-            <p>Your order has been confirmed!!</p>
-            <button className="btn btn-secondary" onClick={() => setShowConfirmation(false)}>Exit</button>
-          </div>
-        </div>
-      )}
     </div>
   );
 };

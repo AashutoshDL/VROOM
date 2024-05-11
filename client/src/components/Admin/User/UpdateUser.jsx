@@ -13,7 +13,7 @@ const UpdateUser = () => {
   const navigate=useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:3001/getUser/' + id)
+    axios.get('http://localhost:3001/api/getAllUser/' + id)
       .then(result => {console.log(result)
         setName(result.data.name)
         setPhoneNumber(result.data.phoneNumber)
@@ -25,7 +25,7 @@ const UpdateUser = () => {
   
     const Update = (e) => {
       e.preventDefault();
-      axios.put("http://localhost:3001/updateUser/"+id,{name,phoneNumber,age,address,accountType})
+      axios.put("http://localhost:3001/api/updateUserById/"+id,{name,phoneNumber,age,address,accountType})
       .then(result => {console.log(result)
             navigate('/user')
           })
