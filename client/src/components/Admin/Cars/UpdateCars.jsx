@@ -4,29 +4,41 @@ import axios from 'axios';
 
 const UpdateCars = () => {
   const { id } = useParams();
-  const [make, setMake] = useState('');
+  const [company, setCompany] = useState('');
   const [model, setModel] = useState('');
   const [year, setYear] = useState('');
+  const [price,setPrice]=useState('');
   const [available, setAvailable] = useState('');
   const [status, setStatus] = useState('');
+  const [file, setFile] = useState('');
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get('http://localhost:3001/getCars/' + id)
+    axios.get(`http://localhost:3001/getCars/${id}`)
       .then(result => {
-        console.log(result);
-        setMake(result.data.make);
-        setModel(result.data.model);
-        setYear(result.data.year);
-        setAvailable(result.data.available);
-        setStatus(result.data.status);
+        const carData = result.data;
+        setCompany(carData.company);
+        setModel(carData.model);
+        setYear(carData.year);
+        setPrice(carData.price);
+        setAvailable(carData.available);
+        setStatus(carData.status);
       })
       .catch(err => console.log(err));
   }, [id]);
 
   const handleUpdate = (e) => {
     e.preventDefault();
-    axios.put("http://localhost:3001/updateCars/" + id, { make, model, year, available, status })
+    const formData = new FormData();
+    formData.append('file', file);
+    formData.append('company', company);
+    formData.append('model', model);
+    formData.append('year', year);
+    formData.append('price', price);
+    formData.append('available', available);
+    formData.append('status', status);
+  
+    axios.put(`http://localhost:3001/updateCars/${id}`, formData)
       .then(result => {
         console.log(result);
         navigate('/cars');
@@ -40,13 +52,13 @@ const UpdateCars = () => {
         <form onSubmit={handleUpdate}>
           <h2 className='text-left mb-4'>Update Car</h2>
           <div className="mb-3">
-            <label htmlFor='make'>Make</label>
+            <label htmlFor='company'>Company</label>
             <input
               type='text'
-              placeholder='Enter make'
+              placeholder='Enter company name'
               className='form-control'
-              value={make}
-              onChange={(e) => setMake(e.target.value)}
+              value={company}
+              onChange={(e) => setCompany(e.target.value)}
             />
           </div>
           <div className="mb-3">
@@ -67,6 +79,16 @@ const UpdateCars = () => {
               className='form-control'
               value={year}
               onChange={(e) => setYear(e.target.value)}
+            />
+          </div>
+          <div className="mb-3">
+            <label htmlFor='price'>Price</label>
+            <input
+              type='number'
+              placeholder='Enter price'
+              className='form-control'
+              value={price}
+              onChange={(e) => setPrice(e.target.value)}
             />
           </div>
           <div className="mb-3">
@@ -93,9 +115,17 @@ const UpdateCars = () => {
               onChange={(e) => setStatus(e.target.value)}
             />
           </div>
+          <div className="mb-3">
+            <label htmlFor='file' className="form-label">Car Image</label><br />
+            <input
+              type='file'
+              id='file'
+              onChange={(e) => setFile(e.target.files[0])}
+            />
+          </div>
           <div className='d-flex justify-content-end'>
             <button className='btn btn-secondary me-2' onClick={() => navigate('/cars')}>Back</button>
-            <button className='btn btn-success'>Update</button>
+            <button type='submit' className='btn btn-success'>Update</button>
           </div>
         </form>
       </div>

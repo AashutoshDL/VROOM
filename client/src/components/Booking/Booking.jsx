@@ -1,11 +1,8 @@
-// Booking.js
 import { useNavigate } from 'react-router-dom';
-import { useState , useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import ScrollReveal from 'scrollreveal';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
-// import background from '../ImagesFol/background.jpg'; // Import the background image
-// import background2 from '../ImagesFol/background2.jpg'; // Import the background image
 import backgroundVideo from '../ImagesFol/backvid.mp4';
 import './Booking.css';
 
@@ -16,9 +13,22 @@ const Booking = () => {
   const [dropOffDate, setDropOffDate] = useState(null);
   const navigate = useNavigate();
 
-  // const handleNavigation = (route) => {
-  //   navigate(route);
-  // };
+  useEffect(() => {
+    // Retrieve stored data from local storage upon component mount if user is logged in
+    const isLoggedIn = localStorage.getItem('name');
+    if (isLoggedIn) {
+      const storedData = JSON.parse(localStorage.getItem('bookingData'));
+      if (storedData) {
+        setInput1(storedData.input1 || '');
+        setInput2(storedData.input2 || '');
+        setPickUpDate(storedData.pickUpDate || null);
+        setDropOffDate(storedData.dropOffDate || null);
+        
+        // Clear stored data from local storage once used
+        localStorage.removeItem('bookingData');
+      }
+    }
+  }, []);
 
   const handleInput1Change = (event) => {
     setInput1(event.target.value);
@@ -38,12 +48,26 @@ const Booking = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Input 1:', input1);
-    console.log('Input 2:', input2);
-    console.log('Pick-Up Date:', pickUpDate);
-    console.log('Drop-Off Date:', dropOffDate);
 
-    navigate('/vehicles');
+    const isLoggedIn = localStorage.getItem('name');
+
+    if (!isLoggedIn) {
+      // Store the entered data in local storage before redirecting to login
+      const bookingData = {
+        input1,
+        input2,
+        pickUpDate,
+        dropOffDate,
+      };
+      localStorage.setItem('bookingData', JSON.stringify(bookingData));
+
+      // Redirect to login page if not logged in
+      navigate('/login');
+      return;
+    }
+
+    // If already logged in, proceed to the vehicles page
+    navigate('/vehicles', { state: { bookingData: { input1, input2, pickUpDate, dropOffDate } } });
   };
 
   useEffect(() => {
@@ -57,8 +81,8 @@ const Booking = () => {
 
     const scrollRevealUp = ScrollReveal();
     scrollRevealUp.reveal('.aboutimage', {
-      delay: 50,
-      duration: 1000,
+      delay: 200,
+      duration: 2000,
       origin: 'bottom',
       distance: '20px',
       easing: 'ease-in-out',
@@ -79,7 +103,7 @@ const Booking = () => {
 
     sr.reveal('.icon-box, .icon-text, .how-to-header', {
       delay,
-      duration: 200,
+      duration: 700,
       origin: 'bottom',
       distance: '20px',
       easing: 'ease-in-out',
@@ -93,87 +117,73 @@ const Booking = () => {
   }, []);
 
   return (
-   <div>
-      {/* Main body container */}
-      <div className="mainbody">{/*< style={{ backgroundImage: `url(${background2})` }}> */}
-      {/* Background video */}
-      <video autoPlay loop muted className="background-video">
-        <source src={backgroundVideo} type="video/mp4" />
-        Your browser does not support the video tag.
-      </video>
-        {/* Home container */}
+    <div>
+      <div className="mainbody">
+        <video autoPlay loop muted className="background-video">
+          <source src={backgroundVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="home-container">
-          {/* Title */}
           <div className="Name">
-            <h1 className="Title">
-              Vroom Car Rental Services
-            </h1>
-            <h5 id="sub-title">At your Door Steps</h5>
+            <h1 className="Title">VROOM CAR RENTALS</h1>
           </div>
-          {/* Sub-container for input fields */}
           <div className="sub-container">
-            {/* Input field for Pick Up Location */}
             <div className="col-lg-6" id="Input1">
               <label htmlFor="Pickup-Location" id="label1">
-                Pick Up :
+                Pick Up Location
               </label>
               <input
                 type="text"
                 id="textInput1"
-                placeholder="Enter your Location"
+                placeholder="Enter your text here"
                 value={input1}
                 onChange={handleInput1Change}
               />
             </div>
-            {/* Input field for Drop Off Location */}
             <div className="col-lg-6" id="Input2">
               <label htmlFor="Dropoff-Location" id="label2">
-                Drop Off :
+                Drop Off Location
               </label>
               <input
                 type="text"
                 id="textInput2"
-                placeholder="Enter your Location"
+                placeholder="Enter your text here"
                 value={input2}
                 onChange={handleInput2Change}
               />
             </div>
-            {/* Input field for Pick Up Date */}
             <div className="col-lg-6" id="Input3">
               <label htmlFor="dateInput1" id="label3">
-                Pick Up Date/Time :
+                Pick Up Date
               </label>
-              {/* Date picker for selecting pick up date and time */}
               <DatePicker
                 id="pickUpDate"
                 selected={pickUpDate}
-                onChange={handlePickUpDateChange}
+                onChange={(date) => handlePickUpDateChange(date)}
                 showTimeSelect
+                minDate={new Date()} // restricts to past dates
                 dateFormat="yyyy-MM-dd HH:mm"
                 placeholderText="Select Pick Up Date and Time"
                 className="form-control"
               />
             </div>
-            {/* Input field for Drop Off Date */}
             <div className="col-lg-6" id="Input4">
               <label htmlFor="dateInput2" id="label4">
-                Drop Off Date/Time :
+                Drop Off Date
               </label>
-              {/* Date picker for selecting drop off date and time */}
               <DatePicker
                 id="dropOffDate"
                 selected={dropOffDate}
-                onChange={handleDropOffDateChange}
+                onChange={(date) => handleDropOffDateChange(date)}
                 showTimeSelect
+                minDate={pickUpDate || new Date()}
                 dateFormat="yyyy-MM-dd HH:mm"
                 placeholderText="Select Drop Off Date and Time"
                 className="form-control"
               />
             </div>
-            {/* Submit button */}
             <div className="col-lg-12" id="submitbtn">
               <button id="rentbtn" onClick={handleSubmit}>
-                {/* Button text */}
                 <h6 id="btntext">Find Car</h6>
               </button>
             </div>
@@ -181,7 +191,6 @@ const Booking = () => {
         </div>
       </div>
     </div>
-
   );
 };
 

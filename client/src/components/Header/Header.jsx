@@ -58,13 +58,6 @@ const Header = () => {
                   >
                     <span className="nav-content">Home</span>
                   </li>
-                  {/* Vehicles link */}
-                  <li
-                    className="navbar-links"
-                    onClick={() => handleNavigation("/vehicles")}
-                  >
-                    <span className="nav-content">Vehicles</span>
-                  </li>
                   {/* Hire link */}
                   <li
                     className="navbar-links"
@@ -99,9 +92,10 @@ const Header = () => {
               {/* Conditional rendering based on user authentication */}
               {isLoggedIn ? (
                 <Nav className="Log">
-                  {/* Display username and logout button */}
-                  <span className="username">Welcome, {userName}</span>
-                  <button id="logout-button" onClick={handleLogout}>
+                  <Link to="/userProfile" className="username">
+                    Welcome, {userName}
+                  </Link>                  
+                  <button  className="login" onClick={handleLogout}>
                     <h2 className="logout">Logout</h2>
                   </button>
                 </Nav>
