@@ -12,7 +12,7 @@ const CreateUser = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/createUser', { name, phoneNumber, age, address, accountType})
+    axios.post('http://localhost:3001/api/createUser', { name, phoneNumber, age, address, accountType})
       .then(result => {
         console.log(result);  
         navigate('/user');

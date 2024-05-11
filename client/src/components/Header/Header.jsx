@@ -8,7 +8,7 @@ import Navbar from "react-bootstrap/Navbar";
 const Header = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
-  const [userName, setUserName] = useState("");
+  const [name, setUserName] = useState("");
 
   // Function to handle logout
   const handleLogout = () => {
@@ -22,11 +22,13 @@ const Header = () => {
   useEffect(() => {
     // Check if user is logged in (e.g., token exists in local storage)
     const name = localStorage.getItem("name");
+    
     if (name) {
       setIsLoggedIn(true);
       setUserName(name);
     } else {
       setIsLoggedIn(false);
+      setUserName("")
     }
   }, []);
 
@@ -93,7 +95,7 @@ const Header = () => {
               {isLoggedIn ? (
                 <Nav className="Log">
                   <Link to="/userProfile" className="username">
-                    Welcome, {userName}
+                    Welcome, {name}
                   </Link>                  
                   <button  className="login" onClick={handleLogout}>
                     <h2 className="logout">Logout</h2>

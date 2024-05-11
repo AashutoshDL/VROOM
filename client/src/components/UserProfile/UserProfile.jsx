@@ -5,7 +5,7 @@ function UserProfile() {
   const [bookings, setBookings] = useState([]);
   // fix the issue in which the booking history shows even tho the user is not booked
   useEffect(() => {
-    axios.get('http://localhost:3001/bookings')
+    axios.get('http://localhost:3001/api/getBookings')
       .then(response => {
         setBookings(response.data);
       })

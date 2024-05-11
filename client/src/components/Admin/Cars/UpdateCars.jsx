@@ -14,7 +14,7 @@ const UpdateCars = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/getCars/${id}`)
+    axios.get(`http://localhost:3001/api/cars/${id}`)
       .then(result => {
         const carData = result.data;
         setCompany(carData.company);
@@ -38,7 +38,7 @@ const UpdateCars = () => {
     formData.append('available', available);
     formData.append('status', status);
   
-    axios.put(`http://localhost:3001/updateCars/${id}`, formData)
+    axios.put(`http://localhost:3001/api/updateCarById/${id}`, formData)
       .then(result => {
         console.log(result);
         navigate('/cars');

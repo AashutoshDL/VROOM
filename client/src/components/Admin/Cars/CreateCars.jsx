@@ -25,7 +25,7 @@ const CreateCars = () => {
     formData.append('available', available);
     formData.append('status', status);
 
-    axios.post('http://localhost:3001/createCars', formData)
+    axios.post('http://localhost:3001/api/createCar', formData)
       .then(result => {
         console.log(result);  
         navigate('/cars');

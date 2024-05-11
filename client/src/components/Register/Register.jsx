@@ -11,6 +11,7 @@ const Register = () => {
   const [address, setAddress] = useState('');
   const [accountType, setAccountType] = useState('');
   const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword]=useState('');
   const [showPassword, setShowPassword] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
@@ -18,13 +19,17 @@ const Register = () => {
     e.preventDefault();
 
     // Check if any field is empty
-    if (!name || !phoneNumber || !age || !address || !accountType || !password) {
+    if (!name || !phoneNumber || !age || !address || !accountType || !password || !confirmPassword) {
       alert('Please fill in all fields');
       return;
     }
 
+    if(password != confirmPassword){
+      alert("Passwords does not match");
+    }
+
     // Make API call to register user
-    axios.post('http://localhost:3001/register', {
+    axios.post('http://localhost:3001/api/register', {
       name,
       phoneNumber,
       age,
@@ -123,6 +128,26 @@ const Register = () => {
             </div>
           </div>
           <div className="form-group">
+            <label htmlFor='comfirmPassword'>Confirm Password</label>
+            <div className="input-group">
+              <input
+                type={showPassword ? 'text' : 'password'}
+                id='comfirmPassword'
+                placeholder='Confirm your password'
+                className='form-control'
+                value={confirmPassword}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button
+                type="button"
+                className="btn btn-outline-secondary"
+                onClick={togglePasswordVisibility}
+              >
+                {showPassword ? 'Hide' : 'Show'}
+              </button>
+            </div>
+          </div>
+          <div className="form-group">
             <label htmlFor='accountType'>Account Type</label>
             <select
               id='accountType'
@@ -130,7 +155,7 @@ const Register = () => {
               value={accountType}
               onChange={(e) => setAccountType(e.target.value)}
             >
-              <option value=''>Select Account Type</option>
+              <option value='' disabled selected>Select Account Type</option>
               <option value='personal'>Personal Account</option>
               <option value='driver'>Driver Account</option>
             </select>
