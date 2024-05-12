@@ -32,6 +32,7 @@ const Login = () => {
         if (data.message === "Login Successful") { // Adjusted condition
           // Store the authentication token in local storage
           localStorage.setItem('name', data.name);
+          localStorage.setItem('phoneNumber', data.phoneNumber);
           // Redirect to the home page upon successful login
           navigate('/');
         } else {

@@ -5,6 +5,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import backgroundVideo from '../ImagesFol/backvid.mp4';
 import './Booking.css';
+import Header from '../Header/Header';
 
 const Booking = () => {
   const [input1, setInput1] = useState('');
@@ -119,6 +120,8 @@ const Booking = () => {
   return (
     <div>
       <div className="mainbody">
+    <Header />
+
         <video autoPlay loop muted className="background-video">
           <source src={backgroundVideo} type="video/mp4" />
           Your browser does not support the video tag.

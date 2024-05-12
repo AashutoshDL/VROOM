@@ -1,4 +1,3 @@
-// import React from 'react'
 import Booking from './components/Booking/Booking';
 import AboutUs from './components/AboutUs/AboutUs';
 import Footer from './components/Footer/Footer';

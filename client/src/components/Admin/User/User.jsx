@@ -40,6 +40,7 @@ const User = () => {
                         <th scope="col">Age</th>
                         <th scope="col">Address</th>
                         <th scope="col">Account Type</th>
+                        <th scope="col">Image</th>
                         <th scope="col">Action</th>
                     </tr>
                 </thead>
@@ -50,6 +51,7 @@ const User = () => {
                             <td>{user.phoneNumber}</td>
                             <td>{user.age}</td>
                             <td>{user.address}</td>
+                            <td><img src={`http://localhost:3001/uploads/${user.image}`} alt="User" style={{ maxWidth: '300px', maxHeight: '300px' }} /></td>
                             <td>{user.accountType}</td>
                             <td>
                                 <Link to={`/updateUser/${user._id}`} className="btn btn-dark mr-2">Update</Link>

@@ -5,24 +5,17 @@ import "./Header.css";
 import logo from "../ImagesFol/logo.png";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+
 const Header = () => {
   const navigate = useNavigate();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [name, setUserName] = useState("");
 
-  // Function to handle logout
-  const handleLogout = () => {
-    // Clear user authentication state and user's name from local storage
-    localStorage.removeItem("name");
-    // Update isLoggedIn state
-    setIsLoggedIn(false);
-  };
-
   // Check if user is logged in on component mount
   useEffect(() => {
     // Check if user is logged in (e.g., token exists in local storage)
     const name = localStorage.getItem("name");
-    
+
     if (name) {
       setIsLoggedIn(true);
       setUserName(name);
@@ -30,7 +23,7 @@ const Header = () => {
       setIsLoggedIn(false);
       setUserName("")
     }
-  }, []);
+  }, [isLoggedIn]);
 
   const handleNavigation = (route) => {
     navigate(route);
@@ -97,9 +90,6 @@ const Header = () => {
                   <Link to="/userProfile" className="username">
                     Welcome, {name}
                   </Link>                  
-                  <button  className="login" onClick={handleLogout}>
-                    <h2 className="logout">Logout</h2>
-                  </button>
                 </Nav>
               ) : (
                 <>
