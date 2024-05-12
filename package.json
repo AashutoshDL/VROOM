@@ -1,1 +1,1 @@
-{"scripts":{"start":"npm run start:frontend & npm run start:backend","start:frontend":"cd landing && npm run dev","start:backend":"cd server && npm start"},"dependencies":{"package.json":"^2.0.1"},"devDependencies":{"vite":"^5.2.10"}}
+{"scripts":{"start":"npm run start:frontend & npm run start:backend","start:frontend":"cd landing && npm run dev","start:backend":"cd server && npm start"},"dependencies":{"package.json":"^2.0.1","react-router-dom":"^6.23.1"},"devDependencies":{"vite":"^5.2.10"}}

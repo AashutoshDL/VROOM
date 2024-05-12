@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 import img1 from "../ImagesFol/byd.jpg";
 import img2 from "../ImagesFol/nexon.png";
 import img3 from "../ImagesFol/scorpio.png";
@@ -72,7 +74,6 @@ const cars = [
   },
 ];
 
-// Reusable CarDetails component
 const CarDetails = ({ car }) => (
   <div className="car-details">
     <div className="image-section">
@@ -100,12 +101,14 @@ const CarDetails = ({ car }) => (
       <p id="price-title">Estimated Price</p>
       <p id="price">{car.price}</p>
       <div className="btn">
-        <button className="book-now-button">Book Now</button>
+        {/* Using Link to navigate to the booking form */}
+        <Link to={`/CarBookingForm/${car.id}`} className="book-now-button">
+          Book Now
+        </Link>
       </div>
     </div>
   </div>
 );
-
 // Main CarList component
 const Vehicles = () => {
   const [sortBy, setSortBy] = useState("1");

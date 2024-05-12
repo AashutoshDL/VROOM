@@ -1,22 +1,22 @@
+/* Default styles for review slide and feedback item */
 .review-slide {
-    width: 100%; /* Set width to 100% for responsiveness */
-    max-width: 1800px;
-    margin: 16px auto; /* Center the .review-slide horizontally */
-    padding: 40px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    position: relative; /* Establishes a containing block for absolute positioning */
-  }
-  
-  .review-slide h2 {
-    text-align: center;
-    font-size: 28px;
-    color: #333;
-    margin-bottom: 20px;
-  }
-  
+  width: 100%;
+  max-width: 1800px;
+  margin: 16px auto;
+  padding: 40px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  background-color: #fff;
+  position: relative;
+}
+
+.review-slide h2 {
+  text-align: center;
+  font-size: 28px;
+  color: #333;
+  margin-bottom: 20px;
+}
 
 .feedback-item {
   padding: 20px;
@@ -47,9 +47,9 @@
 
 .rating .star,
 .rating .star-half {
-  color: #ffc107; /* Golden color */
+  color: #ffc107;
   font-size: 24px;
-  margin-right: 5px; /* Add right margin between stars */
+  margin-right: 5px;
 }
 
 .feedback-item p {
@@ -87,34 +87,55 @@
 }
 
 .Review_btn {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 80px);
 }
 
-.Review_btn {
-    position: absolute;
-    top: 200px; /* Adjust top position for placement at the top of the .review-slide container */
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: calc(100% - 80px); /* Ensure buttons are centered and have space on each side */
-  }
-  
 .Review_btn button:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
 .Review_btn button:hover {
-    background-color: #0056b3;
+  background-color: #0056b3;
 }
 
 .disabled {
-    background-color: #ccc;
-    color: #666;
-    cursor: not-allowed;
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+/* Media Queries for responsiveness */
+@media only screen and (max-width: 768px) {
+  .review-slide {
+    padding: 20px;
+  }
+  
+  .review-slide h2 {
+    font-size: 24px;
+  }
+  
+  .feedback-item {
+    height: auto;
+  }
+  
+  .feedback-item img.user-photo {
+    width: 120px;
+    height: 120px;
+  }
+  
+  .Review_btn {
+    top: auto;
+    bottom: 20px;
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
 }
