@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Importing required modules
 const express = require('express');
 const mongoose = require('mongoose');
@@ -122,4 +123,47 @@ app.delete('/deleteCars/:id', (req, res) => {
 // Listening on port 3001 for incoming requests
 app.listen(3001, () => {
     console.log("Server is Running");
+=======
+const express = require('express');
+const cors = require('cors');
+const app = express();
+// const userRoutes = require('./routes/userRoutes');
+// const carsRoutes = require('./routes/carRoutes');
+// const bookingRoutes = require('./routes/bookingRoutes');
+// const authRoutes = require('./routes/authRoutes');
+const userController=require('./controllers/userController')
+const carController=require('./controllers/carController')
+const authController=require('./controllers/authController')
+const bookingController=require('./controllers/bookingController')
+const connectDB= require('./config/dbConfig')
+
+app.use(cors());
+app.use(express.json());
+app.use(express.static('public'));
+
+connectDB();
+
+// Routes
+app.get('/api/getAllUser',userController.getAllUsers);
+app.post('/api/createUser', userController.createUser);
+app.get('/api/getUserById', userController.getUserById);
+app.put('/api/updateUserById', userController.updateUserById);
+app.delete('/api/deleteUserById', userController.deleteUserById);
+
+app.get('/api/getAllCars',carController.getAllCars);
+app.post('/api/createCar', carController.createCar);
+app.get('/api/getCarById', carController.getCarById);
+app.put('/api/updateCarById', carController.updateCarById);
+app.delete('/api/deleteCarById', carController.deleteCarById);
+
+app.post('/api/createBooking', bookingController.createBooking);
+app.get('/api/getBookings', bookingController.getBookings);
+
+app.post('/api/register', authController.register);
+app.post('/api/login', authController.login);
+
+const PORT = process.env.PORT || 3001;
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}`);
+>>>>>>> 861b31e74e50e796eec32973c6c1678e7fa1dc95
 });

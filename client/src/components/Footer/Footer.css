@@ -1,0 +1,235 @@
+/* Footer.css */
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    padding-bottom: 0;
+    overflow-x: hidden;
+}
+
+.foot-container {
+    max-width: calc(1170px + 250px);
+    margin: auto;
+    position: relative;
+    top: -35px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.follow-us {
+    position: relative;
+    left: 60px;
+    top: -35px;
+}
+
+.footer {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    top: 25px;
+    width: 100%;
+    background-color: #00509d;
+    height: 435px;
+}
+
+.textvroom {
+    color: white;
+    text-align: justify;
+    font-weight: 300;
+    position: relative;
+    top: 60px;
+    font-size: 18px;
+}
+
+#footer-about {
+    font-size: 20px;
+    position: relative;
+    top: 70px;
+    font-weight: 400;
+}
+
+.footer-col {
+    width: 20%;
+    padding-top: 30px;
+    padding-left: 30px;
+    margin-left: 80px;
+}
+
+.footer-col h4 {
+    font-size: 18px;
+    color: #ffffff;
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.footer-col ul li a {
+    padding-bottom: 3px;
+    font-size: 16px;
+    text-transform: capitalize;
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 300;
+    transition: all 0.3s ease;
+}
+
+#text {
+    padding-top: 100px;
+    padding-bottom: 0;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+#links {
+    padding-top: 20px;
+    padding-left: 5px;
+    margin-top: -15px;
+}
+
+.q-links {
+    padding-bottom: 10px;
+
+}
+
+.footer-links {
+    font-size: 18px;
+    font-weight: 300;
+    cursor: default;
+    color: #ffffff;
+
+}
+
+.fol {
+    padding-top: 140px;
+    margin-top: 15px;
+
+}
+
+.footer-col ul li span:hover {
+    color: #ffffff;
+    padding-left: 8px;
+    transition: 0.4s ease-in-out;
+}
+
+.quick-links {
+    position: absolute;
+    top: -30px;
+    right: -10px;
+}
+
+/* Css for contact us */
+.Contactinfo {
+    position: absolute;
+    top: 100px;
+    left: 510px;
+    width: 25%;
+    color: white;
+}
+
+.contacts {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 140px;
+}
+
+.contact-title {
+    text-align: center;
+    position: relative;
+    left: 30px;
+}
+
+.footer-info {
+    padding-right: 0px;
+    font-weight: 300;
+    font-size: smaller;
+}
+
+.foot-info2 {
+    margin-left: 200px;
+    position: relative;
+    bottom: 28px;
+    margin-top: 10px;
+}
+
+.footer-info1 {
+    margin-left: 80px;
+    font-weight: 300;
+    font-size: smaller;
+}
+
+.phoneicon {
+    position: relative;
+    top: 40px;
+    left: 75px;
+}
+
+.mailicon {
+    position: relative;
+    left: 270px;
+}
+
+.bigcontentbox {
+    position: relative;
+    bottom: 110px;
+}
+
+.foot-infonum {
+    position: relative;
+    top: 9px;
+    left: 50px;
+}
+
+.copyright {
+    position: relative;
+    left: 530px;
+    top: 90px;
+    color: white;
+}
+
+.copyrightcontent {
+    font-weight: 450;
+}
+
+.privacy {
+    font-weight: 100;
+}
+
+.line {
+    width: 70%;
+    height: 1px;
+    background-color: white;
+    position: absolute;
+    bottom: 65px;
+    /* Adjust this value based on your design */
+    margin-left: 260px;
+}
+
+
+/* Responsive */
+@media (max-width: 767px) {
+    .footer-col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 574px) {
+    .footer-col {
+        width: 100%;
+    }
+}

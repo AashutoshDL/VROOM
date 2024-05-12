@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hind+Siliguri:wght@600&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald&family=Roboto+Slab:wght@100..900&display=swap');
+*{
+    /* font-family: 'Lora',serif; */
+    font-weight: 600;
+    font-size: 18px;
+    /* margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: auto;
+    width: auto; */
+}
+:root{
+    --button-background-color: #28404B;
+    /* Default background color for the button */
+    --button-text-color: #FFFFFF;
+    /* Default text color for the button */
+    --button-border-radius: 8px;
+    /* Default border radius for the button */
+    --button-background-hover: #00509D;
+    --nav-background-color: linear-gradient(270deg, rgba(255, 255, 255, 0.9), rgba(37, 78, 107, 0.9));
+    --nav-link-color: azure;
+    --nav-link-hover: #28404B;
+    --text-font-family: 'lora','serif';
+    --text-font-weight: 450;
+}
