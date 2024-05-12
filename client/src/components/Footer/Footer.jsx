@@ -1,6 +1,7 @@
 // import React from 'react';
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import './Footer.css';
-import logo from '../ImagesFol/logo.png'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faFacebookF, faTwitter, faInstagram, faLinkedinIn } from '@fortawesome/free-brands-svg-icons';
 import { FaPhone } from "react-icons/fa6";
@@ -8,6 +9,10 @@ import { MdOutlineMailOutline } from "react-icons/md";
 import './Footer.css'
 
 const Footer = () => {
+  const navigate = useNavigate();
+  const handleNavigation = (route) => {
+    navigate(route);
+  };
   return (
     <div>
       {/* Footer section */}
@@ -51,8 +56,8 @@ const Footer = () => {
               <h4 id='text'>Quick Links</h4>
               {/* Quick links list */}
               <ul id='links'>
-                <li className='q-links'><span className ="footer-links">Vehicles</span></li>
-                <li className='q-links'><span className ="footer-links">Contact Us</span></li>
+                <li className='q-links'  onClick={() => handleNavigation("/vehicles")}><span className ="footer-links">Vehicles</span></li>
+                <li className='q-links'  onClick={() => handleNavigation("/ContactUs")}><span className ="footer-links">Contact Us</span></li>
                 <li className='q-links'><span className ="footer-links">Hire a Driver</span></li>
               </ul>
             </div>

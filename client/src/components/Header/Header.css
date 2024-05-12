@@ -148,7 +148,7 @@
     z-index: 1;
     padding: 20px;
     /* Increase padding */
-    width: 200px;
+    width: 155px;
     /* Increase width */
 }
 
@@ -173,4 +173,10 @@
 /* Change color of dropdown content links on hover */
 .dropdown-content span:hover {
     background-color: #004080;
+}
+.nav-dropcontent {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: justify;
+    font-family: "Montserrat", sans-serif;
 }

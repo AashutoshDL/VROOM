@@ -29,6 +29,26 @@
     font-family: var(--text-font-family);
     margin-bottom: 5px;
     font-weight: 500;
+    cursor: default;
+}
+.user-links1 {
+    position: relative;
+    top: 70vh;
+    color: white;
+    font-family: var(--text-font-family);
+    margin-bottom: 5px;
+    font-weight: 500;
+    cursor: default;
+}
+.user-links:hover {
+    font-size: 18px;
+    padding-left: 5px;
+    transition: 0.3s ease-out;
+}
+.user-links1:hover{
+    font-size: 18px;
+    padding-left: 5px;
+    transition: 0.3s ease-out;
 }
 .car-icon{
     position: relative;
@@ -135,15 +155,8 @@
     width: 35%;
     height: 20%;
     position: relative;
-    left: 550px;
-    top: -20px;
-}
-.user-details3 {
-    width: 35%;
-    height: 20%;
-    position: relative;
     left: 50px;
-    top: 20px;
+    top: 60px;
 }
 .display-labels{
     font-family: 14px;
