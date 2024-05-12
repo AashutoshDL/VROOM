@@ -6,7 +6,8 @@ const LoginSchema=new mongoose.Schema({
     age: Number,
     address: String,
     accountType:String,
-    password:String
+    password:String,
+    confirmPassword:String
 })
 
 const LoginModel=mongoose.model("login",LoginSchema)

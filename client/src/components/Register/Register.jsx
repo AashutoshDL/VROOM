@@ -12,6 +12,7 @@ const Register = () => {
   const [accountType, setAccountType] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword]=useState('');
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false); // New state for confirm password visibility
   const [showPassword, setShowPassword] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
@@ -56,6 +57,10 @@ const Register = () => {
 
   const togglePasswordVisibility = () => {
     setShowPassword(prevState => !prevState);
+  };
+
+  const toggleConfirmPasswordVisibility = () => {
+    setShowConfirmPassword(prevState => !prevState);
   };
 
   return (
@@ -131,19 +136,19 @@ const Register = () => {
             <label htmlFor='comfirmPassword'>Confirm Password</label>
             <div className="input-group">
               <input
-                type={showPassword ? 'text' : 'password'}
-                id='comfirmPassword'
+                type={showConfirmPassword ? 'text' : 'password'}
+                id='confirmPassword'
                 placeholder='Confirm your password'
                 className='form-control'
                 value={confirmPassword}
-                onChange={(e) => setPassword(e.target.value)}
+                onChange={(e) => setConfirmPassword(e.target.value)}
               />
               <button
                 type="button"
                 className="btn btn-outline-secondary"
-                onClick={togglePasswordVisibility}
+                onClick={toggleConfirmPasswordVisibility}
               >
-                {showPassword ? 'Hide' : 'Show'}
+                {showConfirmPassword ? 'Hide' : 'Show'}
               </button>
             </div>
           </div>
