@@ -16,7 +16,7 @@ import Vehicles from "./components/Vehicles/Vehicles";
 import ContactUs from "./components/contactUs/contactUs";
 import Insurance from "./components/Insurance/Insunrance";
 import BookedInfo from './components/BookedInfo/BookedInfo';
-import UserProfileHistory from "./components/UserProfileHistory/UserProfile";
+import UserProfileHistory from "./components/UserProfileHistory/UserProfileHistory";
 import UserProfile from "./components/UserProfile/UserProfile";
 import PaymentForm from './components/Payment/PaymentForm'
 

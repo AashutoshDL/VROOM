@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import './UserProfileHistory.css';
 function UserProfileHistory() {
   const [bookings, setBookings] = useState([]);
   // fix the issue in which the booking history shows even tho the user is not booked
