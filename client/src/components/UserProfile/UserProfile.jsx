@@ -37,7 +37,7 @@ const UserProfile = () => {
                 </li>
               )}
               {isLoggedIn && (
-                <li className="user-links" onClick={handleLogout}>
+                <li className="user-links1" onClick={handleLogout}>
                   Logout
                 </li>
               )}
@@ -68,7 +68,7 @@ const UserProfile = () => {
                   <label htmlFor="user-name" className='display-labels'>Full Name</label>
                   <input type="text" className='display-texts' value={name} readOnly />
                 </div>
-                <div className="user-details3">
+                <div className="user-details2">
                   <label htmlFor="user-Phonenumber" className='display-labels'>Phone number</label>
                   <input type="text" className='display-texts' value={phoneNumber} readOnly/>
                 </div>
