@@ -3,7 +3,7 @@ import axios from 'axios';
 
 function UserProfileHistory() {
   const [bookings, setBookings] = useState([]);
-
+  // fix the issue in which the booking history shows even tho the user is not booked
   useEffect(() => {
     axios.get('http://localhost:3001/api/getBookings')
       .then(response => {
@@ -13,16 +13,6 @@ function UserProfileHistory() {
         console.error('Error fetching bookings:', error);
       });
   }, []);
-
-  // Check if the user is logged in and if there are bookings available
-  if (bookings.length === 0) {
-    return (
-      <div>
-        <h1>No Booking History Available</h1>
-        {/* You can optionally add a login prompt or redirect here */}
-      </div>
-    );
-  }
 
   return (
     <div>

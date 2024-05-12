@@ -27,6 +27,7 @@ const Register = () => {
 
     if(password != confirmPassword){
       alert("Passwords does not match");
+      return
     }
 
     // Make API call to register user
@@ -152,6 +153,7 @@ const Register = () => {
               </button>
             </div>
           </div>
+
           <div className="form-group">
             <label htmlFor='accountType'>Account Type</label>
             <select
