@@ -3,11 +3,12 @@
 /* Main container */
 .aboutimage {
     background-color: #ffffff;
-    padding: 100px 0; /* Increased padding */
+    padding: 100px 0;
+    /* Increased padding */
 }
 
 .image-container {
-    max-width: 800px;
+    min-width: 700px;
     margin: 0 auto;
     text-align: center;
 }
@@ -15,10 +16,11 @@
 #para-header {
     font-size: 36px;
     color: #333;
-    margin-bottom: 30px; /* Added margin bottom */
+    margin-bottom: 30px;
+    /* Added margin bottom */
 }
 
-.para-content {
+.para-aboutcontent {
     font-size: 18px;
     line-height: 1.6;
     color: #555;
@@ -73,34 +75,38 @@
 
 .icon-text {
     text-align: center;
-    margin-top: 20px; /* Increased margin top */
+    margin-top: 20px;
+    /* Increased margin top */
 }
 
 /* Icon text */
 .icon-text p {
-    margin: 10px 0; /* Added margin */
-    font-size: 18px; /* Increased font size */
-    color: #555; /* Adjusted color */
+    margin: 10px 0;
+    /* Added margin */
+    font-size: 18px;
+    /* Increased font size */
+    color: #555;
+    /* Adjusted color */
 }
 
-.icon-box1{
+.icon-box1 {
     position: relative;
     right: 260px;
 }
 
-.icon-box2{
+.icon-box2 {
     position: relative;
     right: 100px;
     top: 3px;
 }
 
-.icon-box3{
+.icon-box3 {
     position: relative;
     left: 40px;
     top: 5px;
 }
 
-.icon-box4{
+.icon-box4 {
     position: relative;
     left: 230px;
     top: 3px;

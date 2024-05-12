@@ -1,13 +1,13 @@
-.headcontent {
+.in-headcontent {
     position: relative;
     left: 550px;
-    top: 80px;
+    top: 130px;
     font-weight: 700;
 }
 
 .hello {
     position: relative;
-    top: 90px;
+    top: 140px;
     left: 450px;
     font-weight: 600;
     font-size: smaller;
@@ -99,7 +99,7 @@
 .features {
     position: relative;
     top: 340px;
-    left: 200px;
+    left: 85px;
     font-weight: 700;
 }
 
