@@ -1,16 +1,13 @@
 const express = require('express');
 const cors = require('cors');
+const connectDB = require('./config/dbConfig');
+const authController = require('./controllers/authController');
+const bookingController = require('./controllers/bookingController');
+const carController = require('./controllers/carController');
+const userController = require('./controllers/userController');
+const hireController = require('./controllers/hireController');
+
 const app = express();
-// const userRoutes = require('./routes/userRoutes');
-// const carsRoutes = require('./routes/carRoutes');
-// const bookingRoutes = require('./routes/bookingRoutes');
-// const authRoutes = require('./routes/authRoutes');
-const userController=require('./controllers/userController')
-const carController=require('./controllers/carController')
-const authController=require('./controllers/authController')
-const bookingController=require('./controllers/bookingController')
-const paymentController=require('./controllers/esewaController')
-const connectDB= require('./config/dbConfig')
 
 app.use(cors());
 app.use(express.json());
@@ -18,14 +15,20 @@ app.use(express.static('public'));
 
 connectDB();
 
-// Routes
-app.get('/api/getAllUser',userController.getAllUsers);
+// Routes for user, car, booking, and authentication
+app.get('/api/getAllUser', userController.getAllUsers);
 app.post('/api/createUser', userController.createUser);
 app.get('/api/getUserById', userController.getUserById);
 app.put('/api/updateUserById', userController.updateUserById);
 app.delete('/api/deleteUserById', userController.deleteUserById);
 
-app.get('/api/getAllCars',carController.getAllCars);
+app.get('/api/getAllDrivers', hireController.getAllDrivers);
+app.post('/api/createDriver', hireController.createDriver);
+app.get('/api/getDriverById', hireController.getDriverById);
+app.put('/api/updateDriverById', hireController.updateDriverById);
+app.delete('/api/deleteDriverById', hireController.deleteDriverById);
+
+app.get('/api/getAllCars', carController.getAllCars);
 app.post('/api/createCar', carController.createCar);
 app.get('/api/getCarById', carController.getCarById);
 app.put('/api/updateCarById', carController.updateCarById);
@@ -37,10 +40,35 @@ app.get('/api/getBookings', bookingController.getBookings);
 app.post('/api/register', authController.register);
 app.post('/api/login', authController.login);
 
-// Payment routes
-app.post('/process-payment', paymentController.processPayment);
+// Payment route
+// app.post('/process-payment', paymentController.processPayment);
+
+// // Serve HTML file and create dummy data
+// app.get('/', function (req, res) {
+//   res.sendFile(__dirname + '/test.html');
+// });
+
+// app.get('/create-item', async (req, res) => {
+//   try {
+//     const itemData = await Item.create({
+//       name: 'Car',
+//       price: 500,
+//       inStock: true,
+//       category: 'EV',
+//     });
+//     res.json({
+//       success: true,
+//       item: itemData,
+//     });
+//   } catch (error) {
+//     res.status(500).json({
+//       success: false,
+//       error: error.message,
+//     });
+//   }
+// });
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
-    console.log(`Server is running on port ${PORT}`);
+  console.log(`Server is running on port ${PORT}`);
 });

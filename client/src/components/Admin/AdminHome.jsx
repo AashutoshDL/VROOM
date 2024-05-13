@@ -60,6 +60,9 @@ const Home = () => {
             <div className="col-md-6">
               <Link to="/cars" className="btn btn-success btn-block">Manage Cars</Link>
             </div>
+            <div className="col-md-6">
+              <Link to="/driver" className="btn btn-success btn-block">Manage Driver</Link>
+            </div>
           </div>
           <button className="btn btn-danger mt-5" onClick={handleLogout}>Logout</button>
         </div>

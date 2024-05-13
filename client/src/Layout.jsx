@@ -18,8 +18,11 @@ import Insurance from "./components/Insurance/Insunrance";
 import BookedInfo from './components/BookedInfo/BookedInfo';
 import UserProfileHistory from "./components/UserProfileHistory/UserProfile";
 import UserProfile from "./components/UserProfile/UserProfile";
-import PaymentForm from './components/Payment/PaymentForm'
+// import PaymentForm from './components/Payment/PaymentForm'
 import HireDriver from "./components/HireDriver/HireDriver"
+import Driver from './components/Admin/Driver/Driver'
+import CreateDriver from './components/Admin/Driver/CreateDriver'
+import UpdateDriver from './components/Admin/Driver/UpdateDriver'
 
 function Layout() {
   return (
@@ -42,9 +45,12 @@ function Layout() {
         <Route path="/cars" element={<Cars />} />
         <Route path="/createCars" element={<CreateCars />} />
         <Route path="/updateCars/:id" element={<UpdateCars />} />
+        <Route path="/driver" element={<Driver />} />
+        <Route path="/createDriver" element={<CreateDriver />} />
+        <Route path="/updateDriver/:id" element={<UpdateDriver />} />
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/insurance" element={<Insurance />} />
-        <Route path="/payment" element={<PaymentForm />} />
+        {/* <Route path="/payment" element={<PaymentForm />} /> */}
       </Routes>
     </Router>
     </div>

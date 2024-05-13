@@ -13,7 +13,7 @@ const User = () => {
 
     const handleDelete = (id) => {
         if (window.confirm("Are you sure you want to delete this record?")) {
-            axios.delete('http://localhost:3001/api/deleteUserById' + id)
+            axios.delete(`http://localhost:3001/api/deleteUserById/${id}`)
                 .then(res => {
                     console.log(res);
                     window.location.reload(); // Refreshing the page after successful deletion
@@ -39,7 +39,6 @@ const User = () => {
                         <th scope="col">Phone Number</th>
                         <th scope="col">Age</th>
                         <th scope="col">Address</th>
-                        <th scope="col">Account Type</th>
                         <th scope="col">Image</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -52,7 +51,6 @@ const User = () => {
                             <td>{user.age}</td>
                             <td>{user.address}</td>
                             <td><img src={`http://localhost:3001/uploads/${user.image}`} alt="User" style={{ maxWidth: '300px', maxHeight: '300px' }} /></td>
-                            <td>{user.accountType}</td>
                             <td>
                                 <Link to={`/updateUser/${user._id}`} className="btn btn-dark mr-2">Update</Link>
                                 <button className="btn btn-danger" onClick={() => handleDelete(user._id)}>Delete</button>

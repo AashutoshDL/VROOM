@@ -9,7 +9,7 @@ const UpdateUser = () => {
   const [phoneNumber,setPhoneNumber]=useState('');
   const [age,setAge]=useState('');
   const [address,setAddress]=useState('');
-  const [accountType, setAccountType] = useState('');
+  // const [accountType, setAccountType] = useState('');
   const [file,setFile]=useState('')
   const navigate=useNavigate();
 
@@ -33,7 +33,6 @@ const UpdateUser = () => {
       formData.append('phoneNumber',phoneNumber)
       formData.append('age',age)
       formData.append('address',address)
-      formData.append('accountType',accountType)
       
       axios.put(`http://localhost:3001/api/updateUserById/${id}`,formData)
       .then(result => {console.log(result)
@@ -72,7 +71,7 @@ const UpdateUser = () => {
             <input type='' placeholder='Enter address' className='form-control'
             value={address} onChange={(e) => setAddress(e.target.value)}/>
           </div>   
-          <div className="mb-3">
+          {/* <div className="mb-3">
           <label htmlFor=''>Account Type</label>
           <select
               id='accountType'
@@ -83,7 +82,7 @@ const UpdateUser = () => {
               <option value='personal'>Personal Account</option>
               <option value='driver'>Driver Account</option>
             </select>
-          </div>
+          </div> */}
           <div className="mb-3">
             <label htmlFor='file' className="form-label">User Image</label><br />
             <input

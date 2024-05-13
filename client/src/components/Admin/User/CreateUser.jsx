@@ -7,7 +7,7 @@ const CreateUser = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [age, setAge] = useState('');
   const [address, setAddress] = useState('');
-  const [accountType, setAccountType] = useState('');
+  // const [accountType, setAccountType] = useState('');
   const navigate = useNavigate();
   const [file,setFile]=useState();
 
@@ -19,14 +19,11 @@ const CreateUser = () => {
     formData.append('phoneNumber', phoneNumber);
     formData.append('age', age);
     formData.append('address', address);
-    formData.append('accountType', accountType);
+    // formData.append('accountType', accountType);
     formData.append('file', file);
     
-    axios.post('http://localhost:3001/api/createUser', formData, {
-      headers: {
-        'Content-Type': 'multipart/form-data'
-      }
-    })
+    axios.post('http://localhost:3001/api/createUser', formData)
+
     .then(result => {
       console.log(result);  
       navigate('/user');
@@ -79,18 +76,18 @@ const CreateUser = () => {
               onChange={(e) => setAddress(e.target.value)}
             />       
             </div>   
-            <div className="mb-3">
+            {/* <div className="mb-3">
             <label htmlFor='accountType' className="form-label">Account Type</label>
             <select
               id='accountType'
               className='form-select'
               onChange={(e) => setAccountType(e.target.value)}
             >
-              <option value=''>Select Account Type</option>
+              <option value='' disabled>Select Account Type</option>
               <option value='personal'>Personal Account</option>
               <option value='driver'>Driver Account</option>
             </select>
-          </div>
+          </div> */}
           <div className="mb-3">
             <label htmlFor='image' className="form-label">User Image</label>
             <input

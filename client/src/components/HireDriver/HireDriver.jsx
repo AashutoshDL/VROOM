@@ -1,48 +1,66 @@
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import './HireDriver.css'; // Import the provided CSS file
 
-const Hire = () => {
-    const [driverUsers, setDriverUsers] = useState([]);
+const HireDriver = () => {
+  const [drivers, setDrivers] = useState([]);
 
-    useEffect(() => {
-        axios.get('http://localhost:3001/api/getAllUser')
-            .then(result => {
-                // Filter users with accountType as "driver"
-                const driverUsers = result.data.filter(user => user.accountType === 'driver');
-                setDriverUsers(driverUsers);
-            })
-            .catch(err => console.log(err));
-    }, []);
+  useEffect(() => {
+    const fetchDrivers = async () => {
+      try {
+        const response = await fetch('http://localhost:3001/api/getAllDrivers');
+        if (!response.ok) {
+          throw new Error('Failed to fetch drivers');
+        }
+        const data = await response.json();
+        setDrivers(data);
+      } catch (error) {
+        console.error('Error fetching drivers:', error);
+      }
+    };
 
-    return (
-        <div className="container">
-            <div className="header">
-                <div className="header-2">
-                    <h1>Welcome to Vroom </h1>
-                    <h1>Drivers Rental Service</h1>
-                    <p>List of Available Drivers</p>
-                </div>
+    fetchDrivers();
+  }, []);
+
+  return (
+    <div className="driver-cards-container"> {/* Apply container class */}
+      <h2>List of Drivers:</h2>
+      <div className="driver-cards">
+        {drivers.map(driver => (
+          <div key={driver.id} className="card">
+            <div className="profile">
+              <img src={driver.profileImage} alt={driver.name} />
             </div>
-            <div className="available-drivers">
-                <div className="available-driver-1">
-                    <h2>Available Drivers</h2>
-                </div>
-                <div className="available-driver-2">
-                    <ul>
-                        {driverUsers.map(user => (
-                            <li key={user._id}>
-                                <div>
-                                    <img src={user.image} alt={user.name} />
-                                </div>
-                                <div className='name'> {user.name}</div>
-                                <div className='status'> {user.accountType}</div>
-                            </li>
-                        ))}
-                    </ul>
-                </div>
+            <div className="name">{driver.name}</div>
+            <div className="numbers">
+              <table id="stats">
+                <tbody>
+                  <tr>
+                    <td>Phone:</td>
+                    <td>{driver.phoneNumber}</td>
+                  </tr>
+                  <tr>
+                    <td>License:</td>
+                    <td>{driver.licenseNumber}</td>
+                  </tr>
+                  <tr>
+                    <td>Status:</td>
+                    <td>{driver.status}</td>
+                  </tr>
+                  <tr>
+                    <td>Address:</td>
+                    <td>{driver.address}</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
-        </div>
-    );
+            <div className="btn">
+              <a href="#" className="btn-follow">Book Now</a>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
 };
 
-export default Hire;
+export default HireDriver;

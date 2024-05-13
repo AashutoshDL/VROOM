@@ -85,7 +85,7 @@ const CreateCars = () => {
               className='form-select'
               onChange={(e) => setAvailable(e.target.value)}
             >
-              <option value=''>Select Availability</option>
+              <option value='' disabled>Select Availability</option>
               <option value='yes'>Avialable</option>
               <option value='booked'>Booked</option>
               <option value='no'>Not Available</option>
