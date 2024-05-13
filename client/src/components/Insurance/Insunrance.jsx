@@ -9,8 +9,8 @@ import lock from '../ImagesFol/lock.png'
 const Insurance = () => {
   return (
     <div>
-        <h4 className='headcontent'>Our Comprehensive</h4>
-        <h4 className='headcontent'>Insurance Coverage</h4>
+        <h4 className='in-headcontent'>Our Comprehensive</h4>
+        <h4 className='in-headcontent'>Insurance Coverage</h4>
         <p className='hello'>Learn about the detailed insurance policy we offer for your rental cars.</p>
         <div className='allkey'>
 

@@ -162,7 +162,7 @@ const Register = () => {
               value={accountType}
               onChange={(e) => setAccountType(e.target.value)}
             >
-              <option value='' disabled selected>Select Account Type</option>
+              <option value='' disabled>Select Account Type</option>
               <option value='personal'>Personal Account</option>
               <option value='driver'>Driver Account</option>
             </select>

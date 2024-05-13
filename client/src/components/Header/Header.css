@@ -40,12 +40,13 @@
     text-align: center;
     justify-content: space-between;
     position: relative;
-    left: 215px;
+    top: 3px;
+    left: 225px;
 }
 
 .navbar-links {
-    padding-right: 80px;
-    margin-right: 43px;
+    padding-right: 130px;
+    margin-right: 65px;
     font-weight: 700;
     color: black;
     cursor: default;
@@ -117,7 +118,9 @@
 .username {
     color: #000000;
     /* Set the color for the welcome message */
-    margin-right: 10px;
+    position: relative;
+    left: 90px;
+    margin-left: 30px;
     /* Add some margin between welcome message and logout button */
     font-size: 16px;
     /* Increase font size for the welcome message */
@@ -145,7 +148,7 @@
     z-index: 1;
     padding: 20px;
     /* Increase padding */
-    width: 200px;
+    width: 155px;
     /* Increase width */
 }
 
@@ -170,4 +173,86 @@
 /* Change color of dropdown content links on hover */
 .dropdown-content span:hover {
     background-color: #004080;
+}
+
+.nav-dropcontent {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: justify;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+
+    /* Adjust logo position for smaller screens */
+    .logo {
+        height: 100px;
+        /* Decrease logo size */
+        width: 100px;
+        /* Decrease logo size */
+        left: 50%;
+        /* Center the logo horizontally */
+        transform: translateX(-50%) translateY(-50%);
+        /* Center the logo horizontally and vertically */
+    }
+
+    /* Adjust hamburger icon position for smaller screens */
+    .navbar-toggler {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        /* Adjust as needed */
+        transform: translateY(-50%);
+    }
+}
+
+@media (min-width: 2560px) {
+
+    /* Adjust position of navigation links and other elements */
+    .navigation {
+        left: 60%;
+        /* Move navigation links more towards the right */
+    }
+
+    /* Adjust position of login and sign up buttons */
+    .Log,
+    .Sign {
+        margin-left: 50px;
+        /* Increase margin to move buttons further right */
+    }
+
+    /* Adjust position of username/welcome message */
+    .username {
+        left: 50%;
+        /* Move welcome message more towards the right */
+        margin-left: 50px;
+        /* Increase margin to separate from the right edge */
+    }
+
+    /* Adjust position of dropdown content */
+    .dropdown-content {
+        right: 0;
+        /* Align dropdown content to the right edge */
+        left: auto;
+        /* Reset left positioning */
+    }
+
+    /* Adjust position of dropdown button */
+    .dropbtn {
+        right: 0;
+        /* Align dropdown button to the right edge */
+        left: auto;
+        /* Reset left positioning */
+    }
+
+    .login {
+        position: relative;
+        left: 550px;
+    }
+
+    .signup {
+        position: relative;
+        left: 500px;
+    }
 }

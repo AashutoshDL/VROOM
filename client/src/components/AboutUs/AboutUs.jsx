@@ -8,11 +8,11 @@ const AboutUs = () => {
     <>
      <div className="aboutimage">
         {/* About image container */}
-        <div className="image-container">
+        <div className="aboutimage-container">
           {/* Header */}
           <h1 id="para-header">Why us?</h1>
           {/* Paragraph content */}
-          <p className="para-content">
+          <p className="para-aboutcontent">
             Our services are affordable, convenient, and safe. You can rent a car
             from Vroom at any time convenient to you, and it will be
             delivered to your doorstep. In addition to offering an hourly rate

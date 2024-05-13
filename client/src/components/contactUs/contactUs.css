@@ -1,10 +1,11 @@
-.contact-container{
+.contact-container {
     background-color: #ffffff;
     position: absolute;
     min-height: 100vh;
     width: 100%;
 }
-#head-title{
+
+#head-title {
     text-align: center;
     position: relative;
     margin-top: 30px;
@@ -13,7 +14,8 @@
     font-family: var(--text-font-family);
     font-weight: bold;
 }
-.questions{
+
+.questions {
     width: 90%;
     height: 200px;
     position: relative;
@@ -24,17 +26,20 @@
     left: 55px;
     margin-bottom: 110px;
 }
-.faq-display{
+
+.faq-display {
     height: 150px;
     width: 22%;
-   position: relative;
-   top: 20px;
-}
-.question-icons{
     position: relative;
-    left:120px;
+    top: 20px;
 }
-.q-texts{
+
+.question-icons {
+    position: relative;
+    left: 120px;
+}
+
+.q-texts {
     position: relative;
     top: 20px;
     text-align: center;
@@ -42,7 +47,8 @@
     font-family: var(--text-font-family);
     font-weight: 600;
 }
-.answers{
+
+.answers {
     width: 100%;
     height: 450px;
     display: flex;
@@ -50,25 +56,29 @@
     border: 2px solid rgba(128, 128, 128, 0.274);
 
 }
-.answer-part1{
+
+.answer-part1 {
     width: 50%;
     height: 430px;
     background-color: white;
 }
-#ans-1{
+
+#ans-1 {
     position: relative;
     top: 180px;
     text-align: center;
     font-weight: 700;
 }
-.answer-part2{
+
+.answer-part2 {
     width: 50%;
     height: 450px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
 }
-.sub-answers{
+
+.sub-answers {
     max-width: 70%;
     height: 100px;
     position: relative;
@@ -84,7 +94,8 @@
     overflow-wrap: break-word;
     overflow: hidden;
 }
-.contact-form{
+
+.contact-form {
     margin-top: 50px;
     width: 100%;
     height: 500px;
@@ -92,17 +103,20 @@
     flex-direction: column;
     margin-bottom: 80px;
 }
-#formtitle{
+
+#formtitle {
     margin-top: 30px;
     text-align: center;
 }
-#sub-formtitle{
+
+#sub-formtitle {
     margin-top: 20px;
     text-align: center;
     width: 40%;
     margin-left: 390px;
 }
-.message-form{
+
+.message-form {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -111,7 +125,8 @@
     position: relative;
     left: 350px;
 }
-.form-btn{
+
+.form-btn {
     position: relative;
     top: 10px;
     left: 220px;
@@ -123,47 +138,55 @@
     border: none;
     font-weight: 400;
 }
-#name{
+
+#name {
     height: 40px;
 }
-#email{
+
+#email {
     height: 40px;
     width: 625px;
     border-radius: 10px;
     border: 1px solid rgba(128, 128, 128, 0.459);
 }
-#message{
+
+#message {
     height: 100px;
     width: 625px;
     border-radius: 10px;
     border: 1px solid rgba(128, 128, 128, 0.459);
 }
-.sub-image{
+
+.sub-image {
     height: 80px;
     width: 90px;
     position: relative;
     top: 7px;
     left: 12px;
 }
-#q1{
+
+#q1 {
     position: relative;
     top: -70px;
     left: 120px;
     font-size: 17px;
 }
+
 #q2 {
     position: relative;
     top: -70px;
     left: 120px;
     font-size: 17px;
 }
+
 #q3 {
     position: relative;
     top: -70px;
     left: 115px;
     font-size: 17px;
 }
-.ans-text{
+
+.ans-text {
     position: relative;
     top: -70px;
     left: 120px;

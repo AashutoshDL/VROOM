@@ -1,4 +1,4 @@
-.user-container{
+.user-container {
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -6,47 +6,78 @@
     font-family: var(--text-font-family);
     position: fixed;
 }
-.user-dashboard{
+
+.user-dashboard {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
 }
-.user-nav{
+
+.user-nav {
     width: 14%;
     height: auto;
     background-color: #00509D;
 }
-.user-lists{
+
+.user-lists {
     position: relative;
     top: 5px;
     left: 65px;
 }
-.user-links{
+
+.user-links {
     position: relative;
     top: 10vh;
     color: white;
     font-family: var(--text-font-family);
     margin-bottom: 5px;
     font-weight: 500;
+    cursor: default;
 }
-.car-icon{
+
+.user-links1 {
+    position: relative;
+    top: 78vh;
+    color: white;
+    font-family: var(--text-font-family);
+    margin-bottom: 5px;
+    font-weight: 500;
+    cursor: default;
+}
+
+.user-links:hover {
+    font-size: 18px;
+    padding-left: 5px;
+    transition: 0.3s ease-out;
+}
+
+.user-links1:hover {
+    font-size: 18px;
+    padding-left: 5px;
+    transition: 0.3s ease-out;
+}
+
+.car-icon {
     position: relative;
     top: 25px;
     left: -35px;
 }
-.profile-icon{
+
+.profile-icon {
     position: relative;
     top: 24px;
     left: -35px;
 }
+
 /* making display of profile */
-.user-display{
+.user-display {
     width: 86%;
     height: auto;
     background-color: #ffffffc5;
 }
-.user-profileHeader{
+
+.user-profileHeader {
     height: 30%;
     width: 100%;
     position: relative;
@@ -55,9 +86,10 @@
     flex-direction: row;
     margin-bottom: 40px;
 }
-.user-avatar{
+
+.user-avatar {
     position: relative;
-    top:  7vh;
+    top: 7vh;
     left: 60px;
     height: 40%;
     width: 6.5%;
@@ -65,6 +97,7 @@
     margin-right: 30px;
     border-radius: 70%;
 }
+
 .user-welcome {
     position: relative;
     top: 6vh;
@@ -72,7 +105,8 @@
     height: 60%;
     width: 70%;
 }
-.user-status{
+
+.user-status {
     width: 6%;
     height: 12%;
     position: relative;
@@ -80,29 +114,35 @@
     background-color: #484b4e52;
     margin: 5px;
 }
-.user-name{
+
+.user-name {
     padding-bottom: 5px;
 }
-#user-infoname{
+
+#user-infoname {
     font-weight: 700;
 }
-#user-infostatus{
+
+#user-infostatus {
     font-weight: 300;
     font-size: 14px;
     position: relative;
     top: -8px;
     left: 8px;
 }
-.welcome-message{
+
+.welcome-message {
     font-weight: 500;
     font-size: 16px;
 }
-.base-line{
+
+.base-line {
     width: 100%;
     height: 0.1%;
     background-color: #484b4e1c;
 }
-.user-profileContainer{
+
+.user-profileContainer {
     width: 85%;
     height: 50%;
     background-color: #484b4e23;
@@ -110,7 +150,8 @@
     top: 40px;
     left: 95px;
 }
-.detail-title{
+
+.detail-title {
     background-color: #484b4e34;
     height: 30px;
     width: 10%;
@@ -119,37 +160,35 @@
     left: 50px;
     text-align: center;
 }
-.user-subtitle{
+
+.user-subtitle {
     font-size: 20px;
     font-weight: 400;
-    color:#00509D;
+    color: #00509D;
 }
-.user-details1{
+
+.user-details1 {
     width: 35%;
     height: 20%;
     position: relative;
     left: 50px;
     top: 40px;
 }
+
 .user-details2 {
     width: 35%;
     height: 20%;
     position: relative;
-    left: 550px;
-    top: -20px;
-}
-.user-details3 {
-    width: 35%;
-    height: 20%;
-    position: relative;
     left: 50px;
-    top: 20px;
+    top: 60px;
 }
-.display-labels{
+
+.display-labels {
     font-family: 14px;
     font-weight: 500;
 }
-.display-texts{
+
+.display-texts {
     position: relative;
     top: -10px;
     height: 40px;

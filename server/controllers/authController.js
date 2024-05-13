@@ -12,7 +12,7 @@ router.register = async (req, res) => {
             return res.status(409).json({ message: "User with given phone number already exists!!" });
 
         // Create a new user with the provided phone number
-        const newUser = await LoginModel.create({ phoneNumber: req.body.phoneNumber });
+        const newUser = await LoginModel.create(req.body);
 
         res.status(201).json({ message: "User Created Successfully", newUser });
     } catch (err) {

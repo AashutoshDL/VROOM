@@ -69,13 +69,13 @@ const Header = () => {
                           className="nav-droplinks"
                           onClick={() => handleNavigation("/contactUs")}
                         >
-                          <span className="nav-content">FAQs</span>
+                          <span className="nav-dropcontent">FAQs</span>
                         </li>
                         <li
                           className="nav-droplinks"
                           onClick={() => handleNavigation("/insurance")}
                         >
-                          <span className="nav-content">
+                          <span className="nav-dropcontent">
                             Insurance Coverage
                           </span>
                         </li>
