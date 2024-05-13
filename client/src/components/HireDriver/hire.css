@@ -1,0 +1,227 @@
+/* Container styling */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Header styling */
+  .header {
+    width: 100%;
+    height: 380px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+  }
+
+  .header-2 {
+    width: 50%;
+    position: absolute;
+    top: 100px;
+    text-align: center;
+  }
+
+  .header-2 h1 {
+    text-align: left;
+    font-size: xx-large;
+  }
+
+  .header-2 p{
+    text-align: left;
+  }
+  
+  /* Car image styling */
+  .header-1 img {
+    width: auto;
+    height: 70%;
+    margin-top: 50px;
+    float: right;
+    margin-left: 600px;
+  }
+  
+  /* Hire driver form styling */
+.hire-driver-form {
+    width: 100%;
+    max-width: 400px; /* Adjust width as needed */
+    bottom: 30px;
+    margin-left: 30px;
+  }
+  
+  .hire-driver-form h2 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    text-align: center;
+    
+  }
+  
+  .hire-driver-form form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .hire-driver-form form div {
+    margin-bottom: 10px;
+  }
+  
+  .hire-driver-form form label {
+    font-weight: 500;
+  }
+  
+  .hire-driver-form form input[type="text"] {
+    width: 120%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .hire-driver-form form button[type="submit"] {
+    position: relative;
+    top: 10px;
+    left: 160px;
+    width: 150px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #00509D;
+    color: white;
+    border: none;
+    font-weight: 400;
+    bottom: 20px;
+  }
+  
+  /* Available drivers styling */
+  .available-drivers {
+    display: flex;
+    flex-direction: row;
+    align-items: center; /* Center horizontally */
+    margin-top: 20px;
+    margin-left: 200px;
+  }
+  
+  .available-driver-1 {
+    margin-bottom: 10px;
+  }
+  
+  .available-drivers .available-driver-1 h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .available-driver-2 {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to next row */
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    margin-left: 50px;
+    text-align: center;
+  }
+  
+  .available-driver-2 ul {
+    list-style-type: none;
+    padding-left: 60px;
+    display: flex; 
+    flex-wrap: wrap; /* Allow items to wrap to the next row if needed */
+    justify-content: center; /* Center items horizontally */
+  }
+  
+  .available-driver-2 li {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 20px;
+    width: 200px; 
+  }
+
+.available-drivers .available-driver-2 li img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.available-drivers .available-driver-2 li div {
+  margin-bottom: 10px;
+}
+
+.available-drivers .available-driver-2 li div:last-child {
+  margin-bottom: 0;
+}
+
+.available-driver-2 li .name {
+  font-weight: bold; /* Make the name bold */
+}
+
+
+/*Driver Review styling*/
+.driver-review {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Center horizontally */
+  margin-top: 20px;
+  justify-content: space-around;
+}
+
+.driver-review1 {
+  text-align: center;
+  align-items: center;
+  margin-left: 30px;
+}
+
+.driver-review1 h2 {
+  text-align: left;
+  margin-right: 100px;
+  display: flex;
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.driver-review2 {
+  flex-direction: column;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  width: auto;
+  text-align: left;
+  width: auto;
+  align-items: center;
+  background-color: #f2f2f2;
+  margin-left: 80px;
+}
+
+
+.sub-review1 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sub-review1 img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+.sub-review2 {
+  margin-left: 10px;
+}
+
+.driver-name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  padding-right: 90px;
+}
+
+.stars {
+  display: flex;
+  align-items: center;
+  color: #ffc107;
+  margin-right: 10px;
+}
+
+.review {
+  font-size: 18px;
+  margin-bottom: 20px;
+  text-align: justify;
+}

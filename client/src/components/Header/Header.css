@@ -1,0 +1,173 @@
+/* Reset default margin, padding, and box-sizing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    margin: 0;
+    padding: 0;
+    height: 45px;
+    width: 100%;
+}
+
+/* Container for logo */
+.logoDiv {
+    position: relative;
+    left: 30px;
+}
+
+/* Navigation bar */
+#mainnav {
+    margin-top: -2px;
+    background: #ffffff;
+}
+
+/* Logo image */
+.logo {
+    height: 125px;
+    /* Decrease height */
+    width: 125px;
+    /* Decrease width */
+    color: #000000;
+}
+
+/* Navigation links */
+.navigation {
+    display: flex;
+    list-style-type: none;
+    text-align: center;
+    justify-content: space-between;
+    position: relative;
+    left: 215px;
+}
+
+.navbar-links {
+    padding-right: 80px;
+    margin-right: 43px;
+    font-weight: 700;
+    color: black;
+    cursor: default;
+    /* Set the color for normal state */
+    transition: color 0.3s ease;
+    /* Add transition for smooth color change */
+}
+
+.navbar-links:hover {
+    color: #00509D !important;
+    /* Set the color for hover state */
+}
+
+.nav-content {
+    font-size: 20px;
+    font-weight: 550;
+    font-family: "Montserrat", sans-serif;
+}
+
+/* Button styles */
+#btn,
+#login-button,
+#logout-button {
+    width: 90px;
+    /* Decrease width */
+    padding: 8px;
+    /* Decrease padding */
+    border: none;
+    /* Remove border */
+    border-radius: var(--button-border-radius);
+    /* Add border radius */
+    cursor: pointer;
+    /* Add pointer cursor */
+    transition: background-color 0.3s ease;
+    /* Add transition for smooth color change */
+    height: 40px;
+    position: relative;
+    left: 140px;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+#btn:hover,
+#login-button:hover,
+#logout-button:hover {
+    background-color: var(--button-background-hover);
+    color: #FFFFFF;
+}
+
+/* Center text vertically and horizontally */
+.signup,
+.login {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    line-height: 24px;
+    /* Adjust line height for vertical centering */
+    font-size: 20px;
+    /* Decrease font size */
+}
+
+/* Adjust margin for sign up and login buttons */
+.Sign,
+.Log {
+    margin-left: 10px;
+}
+
+/* Welcome message */
+.username {
+    color: #000000;
+    /* Set the color for the welcome message */
+    margin-right: 10px;
+    /* Add some margin between welcome message and logout button */
+    font-size: 16px;
+    /* Increase font size for the welcome message */
+    font-weight: bold;
+    /* Add bold font weight */
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown button */
+.dropbtn {
+    cursor: default;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #00509d;
+    /* Set the background color */
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    padding: 20px;
+    /* Increase padding */
+    width: 200px;
+    /* Increase width */
+}
+
+/* Show the dropdown content when the dropdown button is hovered over */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the appearance of the dropdown button on hover */
+.dropdown:hover .dropbtn {
+    color: 004080;
+}
+
+/* Links inside the dropdown */
+.dropdown-content span {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown content links on hover */
+.dropdown-content span:hover {
+    background-color: #004080;
+}
