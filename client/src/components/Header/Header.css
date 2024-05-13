@@ -180,3 +180,66 @@
     text-align: justify;
     font-family: "Montserrat", sans-serif;
 }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    /* Adjust logo position for smaller screens */
+    .logo {
+        height: 100px; /* Decrease logo size */
+        width: 100px; /* Decrease logo size */
+        left: 50%; /* Center the logo horizontally */
+        transform: translateX(-50%) translateY(-50%); /* Center the logo horizontally and vertically */
+    }
+
+    /* Adjust hamburger icon position for smaller screens */
+    .navbar-toggler {
+        position: absolute;
+        top: 50%;
+        right: 20px; /* Adjust as needed */
+        transform: translateY(-50%);
+    }
+}
+
+@media (min-width: 2560px) {
+    /* Adjust position of navigation links and other elements */
+    .navigation {
+        left: 60%; /* Move navigation links more towards the right */
+    }
+
+    /* Adjust position of login and sign up buttons */
+    .Log,
+    .Sign {
+        margin-left: 50px; /* Increase margin to move buttons further right */
+    }
+
+    /* Adjust position of username/welcome message */
+    .username {
+        left: 50%; /* Move welcome message more towards the right */
+        margin-left: 50px; /* Increase margin to separate from the right edge */
+    }
+
+    /* Adjust position of dropdown content */
+    .dropdown-content {
+        right: 0; /* Align dropdown content to the right edge */
+        left: auto; /* Reset left positioning */
+    }
+
+    /* Adjust position of dropdown button */
+    .dropbtn {
+        right: 0; /* Align dropdown button to the right edge */
+        left: auto; /* Reset left positioning */
+    }
+
+    .login{
+        position: relative;
+        left: 550px;
+    }
+
+    .signup{
+        position: relative;
+        left: 500px;
+    }
+}
+
+
+

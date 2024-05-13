@@ -210,3 +210,64 @@ input[type='datetime-local'] {
     background-color: #0e4988;
     color: #ffffff;
 }
+
+@media (min-width: 2560px){
+    .Name{
+        position: relative;
+        bottom: 50px;
+    }
+
+    .sub-container{
+        position: relative;
+        left: 20px;
+        top: 20px;
+    }
+    
+    .improm{
+        position: relative;
+        right: 30px;
+    }
+
+    .pudate{
+        position: relative;
+        left:340px;
+        top: 20px;
+    }
+
+    .dofl{
+        position: relative;
+        right: 310px;
+    }
+
+    .dofd{
+        position: relative;
+        left: 40px;
+        top: 25px;
+    }
+
+    .buttonfindthecar{
+        position: relative;
+        top: 35px;
+    }
+
+    #textInput1{
+        margin-left: 30px; 
+    }
+
+    #textInput2{
+        margin-left: 24px; 
+    }
+
+    #pickUpDate {
+        margin-left: 30px; 
+    }
+
+    #dropOffDate{
+        margin-left: 20px; 
+    }
+
+    .home-container{
+        position: relative;
+        right: 50px;
+    }
+}

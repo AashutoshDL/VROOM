@@ -23,11 +23,13 @@ const Footer = () => {
           <div className="row">
             {/* Footer column */}
             <div className="footer-col">
+              <div className="firstsec">
               <h4 id="footer-about">About Us</h4>
               {/* Footer text */}
               <p className='textvroom'>
                 Vroom Car Rental Services stands out for its wide vehicle selection, ensuring there's an option for every need. With a user-friendly booking process via app or online, convenience is paramount. 
               </p>
+              </div>
             </div>
             {/* Footer column for contact info */}
             <div className="Contactinfo">
@@ -65,8 +67,9 @@ const Footer = () => {
         </div>
          {/* Copyright notice */}
          <div className="line"></div>
-         <div className="copyright">
+        <div className="copyright">
           <p className='copyrightcontent'>&copy; 2024 Vroom | All Rights Reserved | <span className='privacy'>Privacy Policy</span></p>
+          
         </div>
       </footer>
     </div>

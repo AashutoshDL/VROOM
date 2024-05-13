@@ -131,8 +131,8 @@ const Booking = () => {
             <h1 className="Title">VROOM CAR RENTALS</h1>
           </div>
           <div className="sub-container">
-            <div className="col-lg-6" id="Input1">
-              <label htmlFor="Pickup-Location" id="label1">
+            <div className="col-lg-6 " id="Input1">
+              <label htmlFor="Pickup-Location" id="label1" className='improm'>
                 Pick Up Location
               </label>
               <input
@@ -143,7 +143,7 @@ const Booking = () => {
                 onChange={handleInput1Change}
               />
             </div>
-            <div className="col-lg-6" id="Input2">
+            <div className="col-lg-6 dofl" id="Input2">
               <label htmlFor="Dropoff-Location" id="label2">
                 Drop Off Location
               </label>
@@ -155,7 +155,7 @@ const Booking = () => {
                 onChange={handleInput2Change}
               />
             </div>
-            <div className="col-lg-6" id="Input3">
+            <div className="col-lg-6 pudate" id="Input3">
               <label htmlFor="dateInput1" id="label3">
                 Pick Up Date
               </label>
@@ -170,7 +170,7 @@ const Booking = () => {
                 className="form-control"
               />
             </div>
-            <div className="col-lg-6" id="Input4">
+            <div className="col-lg-6 dofd" id="Input4">
               <label htmlFor="dateInput2" id="label4">
                 Drop Off Date
               </label>
@@ -185,7 +185,7 @@ const Booking = () => {
                 className="form-control"
               />
             </div>
-            <div className="col-lg-12" id="submitbtn">
+            <div className="col-lg-12 buttonfindthecar" id="submitbtn">
               <button id="rentbtn" onClick={handleSubmit}>
                 <h6 id="btntext">Find Car</h6>
               </button>
