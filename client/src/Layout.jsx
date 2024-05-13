@@ -14,11 +14,16 @@ import UpdateCars from "./components/Admin/Cars/UpdateCars";
 import AdminHome from "./components/Admin/AdminHome";
 import Vehicles from "./components/Vehicles/Vehicles";
 import ContactUs from "./components/contactUs/contactUs";
-import Insurance from "./components/Insurance/Insunrance";
+import Insurance from "./components/insurance/Insunrance";
 import BookedInfo from './components/BookedInfo/BookedInfo';
 import UserProfileHistory from "./components/UserProfileHistory/UserProfileHistory";
 import UserProfile from "./components/UserProfile/UserProfile";
 import PaymentForm from './components/Payment/PaymentForm'
+import Driver from './components/Admin/Driver/Driver'
+import CreateDriver from './components/Admin/Driver/CreateDriver'
+import UpdateDriver from './components/Admin/Driver/UpdateDriver'
+import HireDriver from "./components/HireDriver/HireDriver"
+
 
 function Layout() {
   return (
@@ -30,6 +35,7 @@ function Layout() {
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/admin" element={<AdminHome />} />
+        <Route path="/hireDriver" element={<HireDriver />} />
         <Route path="/vehicles" element={<Vehicles />} />
         <Route path="/bookedInfo" element={<BookedInfo />} />
         <Route path="/userHistory" element={<UserProfileHistory />} />
@@ -40,6 +46,9 @@ function Layout() {
         <Route path="/cars" element={<Cars />} />
         <Route path="/createCars" element={<CreateCars />} />
         <Route path="/updateCars/:id" element={<UpdateCars />} />
+        <Route path="/driver" element={<Driver />} />
+        <Route path="/createDriver" element={<CreateDriver />} />
+        <Route path="/updateDriver/:id" element={<UpdateDriver />} />
         <Route path="/contactUs" element={<ContactUs />} />
         <Route path="/insurance" element={<Insurance />} />
         <Route path="/payment" element={<PaymentForm />} />

@@ -1,5 +1,5 @@
 import { useState, useEffect }from 'react'
-import './Insurance.css'
+import './insurance.css'
 import { BiSolidCarCrash } from "react-icons/bi";
 import { FaPeopleRobbery } from "react-icons/fa6";
 import keylock from '../ImagesFol/keylock.png'

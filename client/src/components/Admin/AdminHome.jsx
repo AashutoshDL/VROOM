@@ -103,6 +103,16 @@ const Home = () => {
                       </div>
                     </div>
                   </div>
+                  <div className="col-md-5">
+                    <div id="overalldriver">
+                      <p className="admindriver-caption">Manage the Drivers?</p>
+                      <div id="managedriverbtn">
+                        <Link to="/driver" className="btn btn-success btn-block">
+                          Manage Drivers
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <p id="logout-caption">
                   If you wish to logout <br />
