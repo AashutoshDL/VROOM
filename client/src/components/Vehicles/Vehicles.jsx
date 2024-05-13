@@ -70,13 +70,13 @@ const Vehicles = () => {
 
   return (
     <div>
-      <nav className="navbar">
+      <div className="book-navbar">
         <ul className="pagination">
-          <li className={location.pathname === "/vehicles" ? "active" : ""}>1 : Vehicles</li>
+          <li className= {location.pathname === "/vehicles" ? "active" : ""} >1 : Vehicles </li>
           <li className={location.pathname === "/book" ? "active " : ""}>2 : Booking Process</li>
           <li className={location.pathname === "/bookingConfirm" ? "active": ""}>3 : Confirm Booking</li>
         </ul>
-      </nav>
+      </div>
 
       <div className="sort-container">
         <label htmlFor="sort-select">Sort by:</label>

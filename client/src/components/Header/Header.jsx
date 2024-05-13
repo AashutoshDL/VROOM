@@ -21,7 +21,7 @@ const Header = () => {
       setUserName(name);
     } else {
       setIsLoggedIn(false);
-      setUserName("")
+      setUserName("");
     }
   }, [isLoggedIn]);
 
@@ -41,79 +41,81 @@ const Header = () => {
               <img src={logo} alt="Logo Image" className="logo" />
             </div>
             {/* Navbar toggle button */}
-            <Navbar.Toggle aria-controls="basic-navbar-nav" />
-            <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="me-auto">
-                {/* Navigation links */}
-                <ul className="navigation">
-                  {/* Home link */}
-                  <li
-                    className="navbar-links"
-                    onClick={() => handleNavigation("/")}
-                  >
-                    <span className="nav-content">Home</span>
-                  </li>
-                  {/* Hire link */}
-                  <li
-                    className="navbar-links"
-                    onClick={() => handleNavigation("/hireDriver")}
-                  >
-                    <span className="nav-content">Hire</span>
-                  </li>
-                  {/* Contact Us link */}
-                  <li className="navbar-links">
-                    <div className="dropdown">
-                      <span className="nav-content dropbtn">Contact Us</span>
-                      <ul className="dropdown-content">
-                        <li
-                          className="nav-droplinks"
-                          onClick={() => handleNavigation("/contactUs")}
-                        >
-                          <span className="nav-dropcontent">FAQs</span>
-                        </li>
-                        <li
-                          className="nav-droplinks"
-                          onClick={() => handleNavigation("/insurance")}
-                        >
-                          <span className="nav-dropcontent">
-                            Insurance Coverage
-                          </span>
-                        </li>
-                      </ul>
-                    </div>
-                  </li>
-                </ul>
-              </Nav>
-              {/* Conditional rendering based on user authentication */}
-              {isLoggedIn ? (
-                <Nav className="Log">
-                  <Link to="/userProfile" className="username">
-                    Welcome, {name}
-                  </Link>                  
+            <div className="navlinkDiv">
+              <Navbar.Toggle aria-controls="basic-navbar-nav" />
+              <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="me-auto">
+                  {/* Navigation links */}
+                  <ul className="navigation">
+                    {/* Home link */}
+                    <li
+                      className="navbar-links"
+                      onClick={() => handleNavigation("/")}
+                    >
+                      <span className="nav-content nav1">Home</span>
+                    </li>
+                    {/* Hire link */}
+                    <li
+                      className="navbar-links"
+                      onClick={() => handleNavigation("/hireDriver")}
+                    >
+                      <span className="nav-content nav2">Hire</span>
+                    </li>
+                    {/* Contact Us link */}
+                    <li className="navbar-links">
+                      <div className="dropdown">
+                        <span className="nav-content dropbtn nav3">Contact</span>
+                        <ul className="dropdown-content">
+                          <li
+                            className="nav-droplinks"
+                            onClick={() => handleNavigation("/contactUs")}
+                          >
+                            <span className="nav-dropcontent">FAQs</span>
+                          </li>
+                          <li
+                            className="nav-droplinks"
+                            onClick={() => handleNavigation("/insurance")}
+                          >
+                            <span className="nav-dropcontent">
+                              Insurance Coverage
+                            </span>
+                          </li>
+                        </ul>
+                      </div>
+                    </li>
+                  </ul>
                 </Nav>
-              ) : (
-                <>
+                {/* Conditional rendering based on user authentication */}
+                {isLoggedIn ? (
                   <Nav className="Log">
-                    {/* Login button */}
-                    <button
-                      id="login-button"
-                      onClick={() => handleNavigation("/login")}
-                    >
-                      <h2 className="login">Login</h2>
-                    </button>
+                    <Link to="/userProfile" className="username">
+                      Welcome, {name}
+                    </Link>
                   </Nav>
-                  <Nav className="Sign">
-                    {/* Register button */}
-                    <button
-                      id="btn"
-                      onClick={() => handleNavigation("/register")}
-                    >
-                      <h2 className="signup">Register</h2>
-                    </button>
-                  </Nav>
-                </>
-              )}
-            </Navbar.Collapse>
+                ) : (
+                  <>
+                    <Nav className="Log">
+                      {/* Login button */}
+                      <button
+                        id="login-button"
+                        onClick={() => handleNavigation("/login")}
+                      >
+                        <h2 className="login">Login</h2>
+                      </button>
+                    </Nav>
+                    <Nav className="Sign">
+                      {/* Register button */}
+                      <button
+                        id="btn"
+                        onClick={() => handleNavigation("/register")}
+                      >
+                        <h2 className="signup">Register</h2>
+                      </button>
+                    </Nav>
+                  </>
+                )}
+              </Navbar.Collapse>
+            </div>
           </div>
         </Navbar>
       </div>

@@ -16,7 +16,6 @@ import Vehicles from "./components/Vehicles/Vehicles";
 import ContactUs from "./components/contactUs/contactUs";
 import Insurance from "./components/insurance/Insunrance";
 import BookedInfo from './components/BookedInfo/BookedInfo';
-import UserProfileHistory from "./components/UserProfileHistory/UserProfileHistory";
 import UserProfile from "./components/UserProfile/UserProfile";
 import PaymentForm from './components/Payment/PaymentForm'
 import Driver from './components/Admin/Driver/Driver'
@@ -38,7 +37,6 @@ function Layout() {
         <Route path="/hireDriver" element={<HireDriver />} />
         <Route path="/vehicles" element={<Vehicles />} />
         <Route path="/bookedInfo" element={<BookedInfo />} />
-        <Route path="/userHistory" element={<UserProfileHistory />} />
         <Route path="/userProfile" element={<UserProfile />} />
         <Route path="/user" element={<User />} />
         <Route path="/createUser" element={<CreateUser />} />

@@ -1,84 +1,138 @@
 import React, { useState } from 'react';
-import {useNavigate,useLocation} from 'react-router-dom';
-import axios from 'axios'
-import './bookedinfo.css';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
+import axios from 'axios';
+import './bookedinfo.css'; // Import the stylesheet
+
+const CarImage = ({ carData }) => (
+  <div className="car-image-container">
+    <img src={`http://localhost:3001/uploads/${carData.image}`} alt={carData.model} />
+  </div>
+);
+
+const CarDetails = ({ carData, bookingData }) => (
+  <div>
+    <h3>{carData.model}</h3>
+    <p>Company: {carData.company}</p>
+    <p>Year: {carData.year}</p>
+    <p className="booking-detail">Pickup Details: {bookingData.input1}</p>
+    <p className="booking-detail">Drop-off Details: {bookingData.input2}</p>
+    <p className="booking-detail">Pickup Date: {bookingData.pickUpDate && bookingData.pickUpDate.toString()}</p>
+    <p className="booking-detail">Drop-off Date: {bookingData.dropOffDate && bookingData.dropOffDate.toString()}</p>
+    <p className="booking-detail">Price: {carData.price}</p>
+  </div>
+);
+
+const PaymentMethodSelection = ({ selectedMethod, setSelectedMethod }) => {
+  const handleMethodChange = (event) => {
+    setSelectedMethod(event.target.value);
+  };
+
+  return (
+    <div>
+      <h3 className="payment-title">Payment Method:</h3>
+      <label>
+        <input
+          type="radio"
+          value="eSewa"
+          checked={selectedMethod === 'eSewa'}
+          onChange={handleMethodChange}
+        />
+    eSewa
+      </label>
+      {/* Add other payment method options similarly */}
+    </div>
+  );
+};
+
+const NeedsAndDonts = ({ setClientNeeds, setClientDonts }) => {
+  const handleNeedsChange = (event) => {
+    setClientNeeds(event.target.value);
+  };
+
+  const handleDontsChange = (event) => {
+    setClientDonts(event.target.value);
+  };
+
+  return (
+    <div>
+      <div className="client-needs">
+        <h3>Client Needs:</h3>
+        <input
+          type="text"
+          aria-label="Enter client needs"
+          placeholder="Enter client needs"
+          onChange={handleNeedsChange}
+        />
+      </div>
+      <div className="client-donts">
+        <h3>Client Don'ts:</h3>
+        <input
+          type="text"
+          aria-label="Enter client don'ts"
+          placeholder="Enter client don'ts"
+          onChange={handleDontsChange}
+        />
+      </div>
+    </div>
+  );
+};
+
+const BookingForm = ({ carId, carData, bookingData }) => {
+  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');
+  const navigate = useNavigate();
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    console.log('Form submitted!');
+    console.log('Selected Payment Method:', selectedPaymentMethod);
+
+    try {
+      const response = await axios.post('http://localhost:3001/api/createBooking', {
+        carId: carId,
+        selectedPaymentMethod: selectedPaymentMethod,
+        clientNeeds: '', // Add client needs and don'ts from state here
+        clientDonts: ''
+      });
+      console.log(response.data);
+      alert('Booking submitted successfully!');
+      navigate(`/CarOrderConfirmation/${carId}`);
+    } catch (error) {
+      console.error('Error submitting booking:', error);
+    }
+  };
+
+  return (
+    <div>
+      {/* Booking Form Content */}
+      <div className="booking-form">
+        <form onSubmit={handleSubmit}>
+          <CarImage carData={carData} />
+          <CarDetails carData={carData} bookingData={bookingData} />
+          <NeedsAndDonts />
+          <PaymentMethodSelection
+            selectedMethod={selectedPaymentMethod}
+            setSelectedMethod={setSelectedPaymentMethod}
+          />
+          <button type="submit">Next</button> {/* Use button type="submit" for form submission */}
+        </form>
+      </div>
+    </div>
+  );
+};
+
 
 const BookedInfo = () => {
   const location = useLocation();
-
-
   const { carData, bookingData } = location.state || {};
-  const [showConfirmation, setShowConfirmation] = useState(false);
-  const [dos, setDos] = useState('');
-  const [donts, setDonts] = useState('');
-
-  const navigate=useNavigate();
-  const handleSubmit = () => {
-    setShowConfirmation(true);
-    axios.post('http://localhost:3001/api/createBooking', {
-      carData: carData,
-      bookingData: bookingData,
-      dos: dos,
-      donts: donts
-    })  
-    .then(response => {
-      console.log(response.data);
-      alert('Data sent to the database successfully!');
-      navigate('/payment', {state: {carData: carData}});
-    })
-    .catch(error => {
-      console.error('Error submitting booking:', error);
-    });
-  }
 
   if (!carData || !bookingData) {
-    // Handle the case where carData or bookingData is not available
     return <div>No booking data available</div>;
   }
 
-  const handleDosChange = (event) => {
-    setDos(event.target.value);
-  }
-  
-  const handleDontsChange = (event) => {
-    setDonts(event.target.value);
-  }
-
-  console.log(bookingData)
-  console.log(carData)
   return (
     <div className="container">
-      <div className="left-side">
-        <div className="image-container">
-          <img src={`http://localhost:3001/uploads/${carData.image}`} alt={carData.model} />
-        </div>
-        <div>
-          <h3>{carData.model}</h3>
-          <p>Company: {carData.company}</p>
-          <p>Year: {carData.year}</p>
-        </div>
-        <div>
-          <p>Status: {carData.status}</p>
-          <p>Available: {carData.available}</p>
-          <p>Price: {carData.price}</p>
-          <button className="btn btn-danger" onClick={handleSubmit}>Confirm</button>
-        </div>
-      </div>
-      <div className="right-side">
-        <div>
-          <h3>Booking Information</h3>
-          <p>Pick Up Location: {bookingData.input1}</p>
-          <p>Drop Off Location: {bookingData.input2}</p>
-          <p>Pick Up Date: {bookingData.pickUpDate && bookingData.pickUpDate.toString()}</p>
-          <p>Drop Off Date: {bookingData.dropOffDate && bookingData.dropOffDate.toString()}</p>
-        </div>
-        <div className="text-fields">
-          <h3>{`Do's`}</h3>
-          <input type="text" className="form-control" value={dos} onChange={handleDosChange}/>
-          <h3>{`Don'ts`}</h3>
-          <input type="text" className="form-control" value={donts} onChange={handleDontsChange} />
-        </div>
-      </div>
+      {/* Render the BookingForm component with carId, carData, and bookingData */}
+      <BookingForm carId={carData.id} carData={carData} bookingData={bookingData} />
     </div>
   );
 };

@@ -29,14 +29,6 @@ const UserProfile = () => {
                 My Profile
               </li>
               {isLoggedIn && (
-                <li className="user-links" onClick={() => navigate("/userHistory")}>
-                  <div className="car-icon">
-                    <IoCarSportOutline size={20}/>
-                  </div>
-                  My Bookings
-                </li>
-              )}
-              {isLoggedIn && (
                 <li className="user-links1" onClick={handleLogout}>
                   Logout
                 </li>

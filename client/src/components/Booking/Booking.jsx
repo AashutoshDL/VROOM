@@ -73,7 +73,7 @@ const Booking = () => {
 
   useEffect(() => {
     ScrollReveal().reveal('.aboutimage', {
-      delay: 1000,
+      delay: 200,
       duration: 500,
       origin: 'bottom',
       distance: '20px',
@@ -120,15 +120,16 @@ const Booking = () => {
   return (
     <div>
       <div className="mainbody">
-    <Header />
-
         <video autoPlay loop muted className="background-video">
           <source src={backgroundVideo} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="home-container">
           <div className="Name">
-            <h1 className="Title">VROOM CAR RENTALS</h1>
+            <h1 className="Title">
+              Vroom Car Rental Services
+            </h1>
+            <h5 id="sub-title">At your Door Steps</h5>
           </div>
           <div className="sub-container">
             <div className="col-lg-6 " id="Input1">
@@ -138,7 +139,7 @@ const Booking = () => {
               <input
                 type="text"
                 id="textInput1"
-                placeholder="Enter your text here"
+                placeholder="Enter your location here"
                 value={input1}
                 onChange={handleInput1Change}
               />
@@ -150,7 +151,7 @@ const Booking = () => {
               <input
                 type="text"
                 id="textInput2"
-                placeholder="Enter your text here"
+                placeholder="Enter your location here"
                 value={input2}
                 onChange={handleInput2Change}
               />

@@ -134,7 +134,7 @@ ul {
 .Contactinfo {
     position: absolute;
     top: 100px;
-    left: 510px;
+    left: 550px;
     width: 25%;
     color: white;
 }
@@ -155,18 +155,22 @@ ul {
 
 .footer-info {
     padding-right: 0px;
+    position: relative;
+    left: -5px;
     font-weight: 300;
     font-size: smaller;
 }
 
 .foot-info2 {
-    margin-left: 200px;
+    margin-left: 225px;
     position: relative;
     bottom: 28px;
     margin-top: 10px;
 }
 
 .footer-info1 {
+    position: relative;
+        left: -10px;
     margin-left: 80px;
     font-weight: 300;
     font-size: smaller;
@@ -175,12 +179,12 @@ ul {
 .phoneicon {
     position: relative;
     top: 40px;
-    left: 75px;
+    left: 70px;
 }
 
 .mailicon {
     position: relative;
-    left: 270px;
+    left: 280px;
 }
 
 .bigcontentbox {
@@ -196,7 +200,7 @@ ul {
 
 .copyright {
     position: relative;
-    left: 530px;
+    left: 585px;
     top: 90px;
     color: white;
 }
@@ -234,25 +238,25 @@ ul {
     }
 }
 
-@media (min-width: 2560px){
-    .firstsec{
+@media (min-width: 2560px) {
+    .firstsec {
         position: relative;
         right: 200px;
     }
 
-    .copyright{
+    .copyright {
         position: relative;
         left: 1100px;
     }
 
-    .line{
+    .line {
         width: 70%;
     }
 
-    .quick-links{
+    .quick-links {
         position: relative;
         left: 900px;
     }
 
-  
+
 }

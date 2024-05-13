@@ -3,19 +3,22 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    height: auto;
+    width: auto;
 }
 
 .container {
     margin: 0;
     padding: 0;
     height: 45px;
-    width: 100%;
+    width: auto;
 }
 
 /* Container for logo */
 .logoDiv {
     position: relative;
     left: 30px;
+
 }
 
 /* Navigation bar */
@@ -40,13 +43,13 @@
     text-align: center;
     justify-content: space-between;
     position: relative;
-    top: 3px;
-    left: 225px;
+    top: 1px;
+    left: 285px;
 }
 
 .navbar-links {
     padding-right: 130px;
-    margin-right: 65px;
+    margin-right: 95px;
     font-weight: 700;
     color: black;
     cursor: default;
@@ -84,7 +87,7 @@
     /* Add transition for smooth color change */
     height: 40px;
     position: relative;
-    left: 140px;
+    left: 220px;
     background-color: #FFFFFF;
     color: #000000;
 }
@@ -108,6 +111,11 @@
     /* Decrease font size */
 }
 
+#login-button {
+    position: relative;
+    left: 200px;
+}
+
 /* Adjust margin for sign up and login buttons */
 .Sign,
 .Log {
@@ -119,13 +127,14 @@
     color: #000000;
     /* Set the color for the welcome message */
     position: relative;
-    left: 90px;
+    left: 140px;
     margin-left: 30px;
     /* Add some margin between welcome message and logout button */
     font-size: 16px;
     /* Increase font size for the welcome message */
     font-weight: bold;
     /* Add bold font weight */
+    text-decoration: none;
 }
 
 .dropdown {
@@ -174,6 +183,7 @@
 .dropdown-content span:hover {
     background-color: #004080;
 }
+
 .nav-dropcontent {
     font-size: 18px;
     font-weight: 500;
@@ -181,65 +191,598 @@
     font-family: "Montserrat", sans-serif;
 }
 
-/* Media query for smaller screens */
-@media (max-width: 768px) {
-    /* Adjust logo position for smaller screens */
+@media (min-width: 1550px) and (max-width: 2559px) {
+    .navBar {
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+        height: 75px;
+    }
+
+    /* Container for logo */
+    .logoDiv {
+        position: relative;
+        left: 80px;
+    }
+
+    /* Navigation bar */
+    #mainnav {
+        margin-top: -2px;
+        background: #ffffff;
+    }
+
+    /* Logo image */
     .logo {
-        height: 100px; /* Decrease logo size */
-        width: 100px; /* Decrease logo size */
-        left: 50%; /* Center the logo horizontally */
-        transform: translateX(-50%) translateY(-50%); /* Center the logo horizontally and vertically */
+        height: 160px;
+        /* Decrease height */
+        width: 160px;
+        /* Decrease width */
+        color: #000000;
     }
 
-    /* Adjust hamburger icon position for smaller screens */
-    .navbar-toggler {
-        position: absolute;
-        top: 50%;
-        right: 20px; /* Adjust as needed */
-        transform: translateY(-50%);
-    }
-}
-
-@media (min-width: 2560px) {
-    /* Adjust position of navigation links and other elements */
+    /* Navigation links */
     .navigation {
-        left: 60%; /* Move navigation links more towards the right */
+        display: flex;
+        list-style-type: none;
+        text-align: center;
+        justify-content: space-between;
+        position: relative;
+        top: 5px;
+        left: 310px;
     }
 
-    /* Adjust position of login and sign up buttons */
-    .Log,
-    .Sign {
-        margin-left: 50px; /* Increase margin to move buttons further right */
+    .navbar-links {
+        padding-right: 130px;
+        margin-right: 95px;
+        font-weight: 700;
+        color: black;
+        cursor: default;
+        /* Set the color for normal state */
+        transition: color 0.3s ease;
+        /* Add transition for smooth color change */
     }
 
-    /* Adjust position of username/welcome message */
+    .navbar-links:hover {
+        color: #00509D !important;
+        /* Set the color for hover state */
+    }
+
+    .nav-content {
+        font-size: 26px;
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .nav2 {
+        position: relative;
+        left: 150px;
+    }
+
+    .nav3 {
+        position: relative;
+        left: 250px;
+    }
+
+    /* Button styles */
+    #btn,
+    #login-button,
+    #logout-button {
+        width: 90px;
+        /* Decrease width */
+        padding: 8px;
+        /* Decrease padding */
+        border: none;
+        /* Remove border */
+        border-radius: var(--button-border-radius);
+        /* Add border radius */
+        cursor: pointer;
+        /* Add pointer cursor */
+        transition: background-color 0.3s ease;
+        /* Add transition for smooth color change */
+        height: 40px;
+        position: relative;
+        left: 520px;
+        background-color: #FFFFFF;
+        color: #000000;
+    }
+
+    #login-button {
+        position: relative;
+        left: 470px;
+    }
+
+    #btn:hover,
+    #login-button:hover,
+    #logout-button:hover {
+        background-color: var(--button-background-hover);
+        color: #FFFFFF;
+    }
+
+    /* Center text vertically and horizontally */
+    .signup,
+    .login {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        line-height: 24px;
+        /* Adjust line height for vertical centering */
+        font-size: 30px;
+        /* Decrease font size */
+    }
+
+    /* Adjust margin for sign up and login buttons */
+    .Sign,
+    .Log {
+        margin-left: 10px;
+    }
+
+    /* Welcome message */
     .username {
-        left: 50%; /* Move welcome message more towards the right */
-        margin-left: 50px; /* Increase margin to separate from the right edge */
+        color: #000000;
+        /* Set the color for the welcome message */
+        position: relative;
+        left: 440px;
+        margin-left: 30px;
+        /* Add some margin between welcome message and logout button */
+        font-size: 16px;
+        /* Increase font size for the welcome message */
+        font-weight: bold;
+        /* Add bold font weight */
+        text-decoration: none;
     }
 
-    /* Adjust position of dropdown content */
-    .dropdown-content {
-        right: 0; /* Align dropdown content to the right edge */
-        left: auto; /* Reset left positioning */
+    .dropdown {
+        position: relative;
+        display: inline-block;
     }
 
-    /* Adjust position of dropdown button */
+    /* Dropdown button */
     .dropbtn {
-        right: 0; /* Align dropdown button to the right edge */
-        left: auto; /* Reset left positioning */
+        cursor: default;
     }
 
-    .login{
-        position: relative;
-        left: 550px;
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #00509d;
+        /* Set the background color */
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        padding: 20px;
+        /* Increase padding */
+        width: 200px;
+        /* Increase width */
     }
 
-    .signup{
-        position: relative;
-        left: 500px;
+    /* Show the dropdown content when the dropdown button is hovered over */
+    .dropdown:hover .dropdown-content {
+        display: block;
     }
+
+    /* Change the appearance of the dropdown button on hover */
+    .dropdown:hover .dropbtn {
+        color: 004080;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content span {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color of dropdown content links on hover */
+    .dropdown-content span:hover {
+        background-color: #004080;
+    }
+
+    .nav-dropcontent {
+        font-size: 22px;
+        font-weight: 500;
+        text-align: justify;
+        font-family: "Montserrat", sans-serif;
+    }
+
 }
 
+@media (min-width: 2560px) and (max-width: 2779px) {
+    .navBar {
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+    }
 
+    .container {
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+        height: 95px;
+    }
 
+    /* Container for logo */
+    .logoDiv {
+        position: relative;
+        left: 180px;
+    }
+
+    /* Navigation bar */
+    #mainnav {
+        margin-top: -2px;
+        background: #ffffff;
+    }
+
+    /* Logo image */
+    .logo {
+        height: 200px;
+        /* Decrease height */
+        width: 200px;
+        /* Decrease width */
+        color: #000000;
+    }
+
+    /* Navigation links */
+    .navigation {
+        display: flex;
+        list-style-type: none;
+        text-align: center;
+        justify-content: space-between;
+        position: relative;
+        top: 5px;
+        left: 415px;
+    }
+
+    .navbar-links {
+        padding-right: 130px;
+        margin-right: 295px;
+        font-weight: 700;
+        color: black;
+        cursor: default;
+        /* Set the color for normal state */
+        transition: color 0.3s ease;
+        /* Add transition for smooth color change */
+    }
+
+    .navbar-links:hover {
+        color: #00509D !important;
+        /* Set the color for hover state */
+    }
+
+    .nav-content {
+        font-size: 33px;
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .nav2 {
+        margin-left: 20px;
+    }
+
+    /* Button styles */
+    #btn,
+    #login-button,
+    #logout-button {
+        width: 90px;
+        /* Decrease width */
+        padding: 8px;
+        /* Decrease padding */
+        border: none;
+        /* Remove border */
+        border-radius: var(--button-border-radius);
+        /* Add border radius */
+        cursor: pointer;
+        /* Add pointer cursor */
+        transition: background-color 0.3s ease;
+        /* Add transition for smooth color change */
+        height: 40px;
+        position: relative;
+        left: 380px;
+        background-color: #FFFFFF;
+        color: #000000;
+    }
+
+    #login-button {
+        position: relative;
+        left: 300px;
+    }
+
+    #btn:hover,
+    #login-button:hover,
+    #logout-button:hover {
+        background-color: var(--button-background-hover);
+        color: #FFFFFF;
+    }
+
+    /* Center text vertically and horizontally */
+    .signup,
+    .login {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        line-height: 24px;
+        /* Adjust line height for vertical centering */
+        font-size: 30px;
+        /* Decrease font size */
+    }
+
+    /* Adjust margin for sign up and login buttons */
+    .Sign,
+    .Log {
+        margin-left: 10px;
+    }
+
+    /* Welcome message */
+    .username {
+        color: #000000;
+        /* Set the color for the welcome message */
+        position: relative;
+        left: 360px;
+        margin-left: 30px;
+        /* Add some margin between welcome message and logout button */
+        font-family: "Montserrat", sans-serif;
+        font-size: 24px;
+        /* Increase font size for the welcome message */
+        font-weight: 700;
+        /* Add bold font weight */
+        text-decoration: none;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown button */
+    .dropbtn {
+        cursor: default;
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #00509d;
+        /* Set the background color */
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        padding: 20px;
+        /* Increase padding */
+        width: 200px;
+        /* Increase width */
+    }
+
+    /* Show the dropdown content when the dropdown button is hovered over */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Change the appearance of the dropdown button on hover */
+    .dropdown:hover .dropbtn {
+        color: 004080;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content span {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color of dropdown content links on hover */
+    .dropdown-content span:hover {
+        background-color: #004080;
+    }
+
+    .nav-dropcontent {
+        font-size: 22px;
+        font-weight: 500;
+        text-align: justify;
+        font-family: "Montserrat", sans-serif;
+    }
+
+}
+
+@media (min-width: 2880px) {
+    .navBar {
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: row;
+        width: fit-content;
+        height: 115px;
+    }
+
+    /* Container for logo */
+    .logoDiv {
+        position: relative;
+        left: 180px;
+    }
+
+    /* Navigation bar */
+    #mainnav {
+        margin-top: -2px;
+        background: #ffffff;
+    }
+
+    /* Logo image */
+    .logo {
+        height: 200px;
+        /* Decrease height */
+        width: 200px;
+        /* Decrease width */
+        color: #000000;
+    }
+
+    /* Navigation links */
+    .navigation {
+        display: flex;
+        list-style-type: none;
+        text-align: center;
+        justify-content: space-between;
+        position: relative;
+        top: 5px;
+        left: 475px;
+    }
+
+    .navbar-links {
+        padding-right: 130px;
+        margin-right: 400px;
+        font-weight: 700;
+        color: black;
+        cursor: default;
+        /* Set the color for normal state */
+        transition: color 0.3s ease;
+        /* Add transition for smooth color change */
+    }
+
+    .navbar-links:hover {
+        color: #00509D !important;
+        /* Set the color for hover state */
+    }
+
+    .nav-content {
+        font-size: 38px;
+        font-weight: 600;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .nav2 {
+        margin-left: 20px;
+    }
+
+    /* Button styles */
+    #btn,
+    #login-button,
+    #logout-button {
+        width: 90px;
+        /* Decrease width */
+        padding: 8px;
+        /* Decrease padding */
+        border: none;
+        /* Remove border */
+        border-radius: var(--button-border-radius);
+        /* Add border radius */
+        cursor: pointer;
+        /* Add pointer cursor */
+        transition: background-color 0.3s ease;
+        /* Add transition for smooth color change */
+        height: 40px;
+        position: relative;
+        left: 300px;
+        background-color: #FFFFFF;
+        color: #000000;
+    }
+
+    #login-button {
+        position: relative;
+        left: 220px;
+    }
+
+    #btn:hover,
+    #login-button:hover,
+    #logout-button:hover {
+        background-color: var(--button-background-hover);
+        color: #FFFFFF;
+    }
+
+    /* Center text vertically and horizontally */
+    .signup,
+    .login {
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        line-height: 24px;
+        /* Adjust line height for vertical centering */
+        font-size: 33px;
+        /* Decrease font size */
+    }
+
+    /* Adjust margin for sign up and login buttons */
+    .Sign,
+    .Log {
+        margin-left: 10px;
+    }
+
+    /* Welcome message */
+    .username {
+        color: #000000;
+        /* Set the color for the welcome message */
+        position: relative;
+        left: 350px;
+        margin-left: 30px;
+        /* Add some margin between welcome message and logout button */
+        font-family: "Montserrat", sans-serif;
+        font-size: 26px;
+        /* Increase font size for the welcome message */
+        font-weight: 700;
+        /* Add bold font weight */
+        text-decoration: none;
+    }
+
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+
+    /* Dropdown button */
+    .dropbtn {
+        cursor: default;
+    }
+
+    /* Dropdown content (hidden by default) */
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: #00509d;
+        /* Set the background color */
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 1;
+        padding: 20px;
+        /* Increase padding */
+        width: 200px;
+        /* Increase width */
+    }
+
+    /* Show the dropdown content when the dropdown button is hovered over */
+    .dropdown:hover .dropdown-content {
+        display: block;
+    }
+
+    /* Change the appearance of the dropdown button on hover */
+    .dropdown:hover .dropbtn {
+        color: 004080;
+    }
+
+    /* Links inside the dropdown */
+    .dropdown-content span {
+        color: white;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+    }
+
+    /* Change color of dropdown content links on hover */
+    .dropdown-content span:hover {
+        background-color: #004080;
+    }
+
+    .nav-dropcontent {
+        font-size: 22px;
+        font-weight: 500;
+        text-align: justify;
+        font-family: "Montserrat", sans-serif;
+    }
+
+}

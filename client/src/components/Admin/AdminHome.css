@@ -5,6 +5,8 @@
     overflow: hidden;
     font-family: var(--text-font-family);
     position: fixed;
+    position: absolute;
+    top: 1vh;
 }
 .admin-dashboard {
     width: 100%;
@@ -99,23 +101,39 @@
 .admincar-caption {
     font-size: 20px;
     position: relative;
-    top: 7vh;
+    top: 10vh;
+}
+.admindriver-caption{
+    position: relative;
+    top: -13vh;
 }
 #managecarbtn{
     position: absolute;
-    top: 23vh;
+    top: 25vh;
     left: 25vw;
+    width: 155px;
 }
 #manageuserbtn {
     position: absolute;
     top: 3vh;
     left: 25vw;
+    width: 155px;
+}
+#managedriverbtn{
+    position: absolute;
+        top: 13vh;
+        left: 25vw;
+        width: 155px;
 }
 #overalluser{
     padding-top: 3vh;
     padding-left: 3vw;
 }
 #overallcar{
+    margin-top: 5vh;
+    padding-left: 3vw;
+}
+#overalldriver{
     margin-top: 5vh;
     padding-left: 3vw;
 }

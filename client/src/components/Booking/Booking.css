@@ -36,7 +36,7 @@
     /* Set a fixed width */
     margin: 100px auto;
     /* Center the container horizontally and add space on top */
-    margin-top: 150px;
+    margin-top: 10px;
     padding-bottom: 50px;
     display: flex;
     /* Use flexbox */
@@ -95,7 +95,7 @@ label {
 #label1 {
     position: relative;
     top: 10px;
-    left: 5px;
+    left: 45px;
 }
 
 #label2 {
@@ -107,19 +107,19 @@ label {
 #label3 {
     position: relative;
     top: -97px;
-    left: 320px;
+    left: 360px;
 }
 
 #label4 {
     position: relative;
     top: -19px;
-    left: 20px;
+    left: 22px;
 }
 
 #pickUpDate {
     position: relative;
     top: -105px;
-    left: 320px;
+    left: 360px;
     font-weight: 500;
     padding-left: 15px;
     height: 45px;
@@ -143,7 +143,7 @@ label {
 #textInput1 {
     position: relative;
     top: 5px;
-    left: 5px;
+    left: 45px;
     padding-left: 15px;
     height: 45px;
     width: 260px;
@@ -178,10 +178,10 @@ input[type='datetime-local'] {
     width: fit-content;
     position: relative;
     top: -30px;
-    right: 60px;
+    right: 20px;
     /* Adjust width to fit content */
     margin-left: 77px;
-    width: 94%;
+    width: 83%;
     padding: 7px 45px;
     /* Adjusted padding */
     border: none;
@@ -211,63 +211,215 @@ input[type='datetime-local'] {
     color: #ffffff;
 }
 
-@media (min-width: 2560px){
-    .Name{
+@media (min-width: 1550px) and (max-width: 2559px) {
+    .mainbody {
         position: relative;
-        bottom: 50px;
+        /* Set position to relative */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        /* Set height to full viewport height */
     }
 
-    .sub-container{
-        position: relative;
-        left: 20px;
-        top: 20px;
-    }
-    
-    .improm{
-        position: relative;
-        right: 30px;
-    }
-
-    .pudate{
-        position: relative;
-        left:340px;
-        top: 20px;
+    .background-video {
+        position: absolute;
+        /* Position the video absolutely */
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        /* Ensure the video covers the entire element */
+        z-index: -1;
+        /* Place the video behind other content */
     }
 
-    .dofl{
+    .home-container {
+        background-color: rgba(255, 255, 255, 0.877);
+        /* Semi-transparent white background */
+        padding: 20px;
+        /* Increased padding for more space */
+        border-radius: 10px;
+        box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.2);
+        /* Increased drop shadow */
+        width: 53%;
+        height: 500px;
+        /* Set a fixed width */
+        margin: 100px auto;
+        /* Center the container horizontally and add space on top */
+        margin-top: 150px;
+        padding-bottom: 50px;
+        display: flex;
+        /* Use flexbox */
+        flex-direction: column;
+        /* Stack children vertically */
+        justify-content: center;
+        /* Center vertically */
+        align-items: center;
+        /* Center horizontally */
+    }
+
+    .Title {
         position: relative;
-        right: 310px;
+        top: -50px;
+        font-size: 34px;
+        font-style: 'lora', 'serif';
+        font-weight: 500;
+        text-align: center;
+        color: #000000;
+        margin-bottom: 30px;
+        /* Increased margin for more space */
     }
 
-    .dofd{
+    #sub-title {
         position: relative;
-        left: 40px;
-        top: 25px;
+        top: -65px;
+        font-size: 22px;
+        text-align: center;
+        font-weight: lighter;
+        color: #000000;
     }
 
-    .buttonfindthecar{
+    .sub-container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* Center the items horizontally */
+    }
+
+    .col-lg-6 {
+        width: calc(50% - 10px);
+        /* Adjusted width with a bit of spacing */
+        margin-bottom: 30px;
+        /* Increased margin for more space */
+    }
+
+    label {
+        font-size: 26px;
+        /* Increased font size for better readability */
+        font-weight: 600;
+        color: #000000;
+        margin-bottom: 10px;
+        /* Adjusted margin for better spacing */
+    }
+
+    #label1 {
         position: relative;
-        top: 35px;
+        top: -50px;
+        left: 95px;
     }
 
-    #textInput1{
-        margin-left: 30px; 
+    #label2 {
+        position: relative;
+        top: 60px;
+        right: 380px;
     }
 
-    #textInput2{
-        margin-left: 24px; 
+    #label3 {
+        position: relative;
+        top: -130px;
+        left: 600px;
+    }
+
+    #label4 {
+        position: relative;
+        top: -16px;
+        left: 130px;
     }
 
     #pickUpDate {
-        margin-left: 30px; 
-    }
-
-    #dropOffDate{
-        margin-left: 20px; 
-    }
-
-    .home-container{
         position: relative;
-        right: 50px;
+        top: -85px;
+        left: 450px;
+        font-weight: 500;
+        padding-left: 15px;
+        height: 45px;
+        width: 260px;
+        border-radius: 0%;
+        color: #7F7F7F;
+    }
+
+    #dropOffDate {
+        position: relative;
+        top: 30px;
+        left: -33px;
+        width: 260px;
+        height: 45px;
+        padding-left: 15px;
+        font-weight: 500;
+        color: #7F7F7F;
+        border-radius: 0%;
+    }
+
+    #textInput1 {
+        position: relative;
+        top: -5px;
+        left: -100px;
+        padding-left: 15px;
+        height: 45px;
+        width: 260px;
+        border-radius: 0%;
+    }
+
+    #textInput2 {
+        position: relative;
+        top: 105px;
+        right: 590px;
+        padding-left: 15px;
+        width: 260px;
+        height: 45px;
+        border-radius: 0%;
+    }
+
+    .input-container {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    input[type='text'],
+    input[type='datetime-local'] {
+        width: calc(100% - 10px);
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        font-size: 16px;
+    }
+
+    #rentbtn {
+        width: fit-content;
+        position: relative;
+        top: 30px;
+        left: 30px;
+        /* Adjust width to fit content */
+        margin-left: 77px;
+        width: 79%;
+        padding: 7px 45px;
+        /* Adjusted padding */
+        border: none;
+        /* Removed border */
+        border-radius: 5px;
+        font-size: 24px;
+        /* Reduced font size */
+        background-color: #00509D;
+        color: #fff;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        display: flex;
+        /* Use flexbox */
+        justify-content: center;
+        /* Center horizontally */
+        align-items: center;
+        /* Center vertically */
+    }
+
+    #btntext {
+        position: relative;
+        top: 4px;
+    }
+
+    #rentbtn:hover {
+        background-color: #0e4988;
+        color: #ffffff;
     }
 }

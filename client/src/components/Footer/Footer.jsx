@@ -60,7 +60,7 @@ const Footer = () => {
               <ul id='links'>
                 <li className='q-links'  onClick={() => handleNavigation("/vehicles")}><span className ="footer-links">Vehicles</span></li>
                 <li className='q-links'  onClick={() => handleNavigation("/ContactUs")}><span className ="footer-links">Contact Us</span></li>
-                <li className='q-links'><span className ="footer-links">Hire a Driver</span></li>
+                <li className='q-links' onClick={() => handleNavigation("/hireDriver")}><span className ="footer-links">Hire a Driver</span></li>
               </ul>
             </div>
           </div>

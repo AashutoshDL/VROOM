@@ -1,18 +1,23 @@
 .in-headcontent {
     position: relative;
-    left: 550px;
-    top: 130px;
+    left: 630px;
+    top: 80px;
     font-weight: 700;
 }
 
 .hello {
     position: relative;
-    top: 140px;
-    left: 450px;
+    top: 90px;
+    left: 520px;
     font-weight: 600;
     font-size: smaller;
 }
-
+.allkey {
+    position: relative;
+    top: 240px;
+    left: 100px;
+    font-weight: 700;
+}
 .key {
     position: relative;
     top: 240px;
@@ -60,7 +65,6 @@
 .theft {
     font-size: large;
 }
-
 .theftcontent,
 .theftcontent2 {
     font-size: small;
@@ -134,6 +138,7 @@
 .downsection {
     position: relative;
     bottom: 30px;
+    left: 100px;
 }
 
 .twenty {
@@ -197,5 +202,5 @@
 .copyof2 {
     position: relative;
     bottom: 30px;
-    right: 10px;
+    left: 20px;
 }
