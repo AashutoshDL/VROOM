@@ -34,7 +34,7 @@ router.login = async (req, res) => {
             return res.status(401).json({ message: "Invalid credentials" });
         }
         
-        res.json({ message: "Login Successful", name: user.name });
+        res.json({ message: "Login Successful", name: user.name, phoneNumber:user.phoneNumber});
 
     } catch (err) {
         console.error("Error during Login:", err);

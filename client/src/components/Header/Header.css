@@ -40,12 +40,13 @@
     text-align: center;
     justify-content: space-between;
     position: relative;
-    left: 215px;
+    top: 3px;
+    left: 225px;
 }
 
 .navbar-links {
-    padding-right: 80px;
-    margin-right: 43px;
+    padding-right: 130px;
+    margin-right: 65px;
     font-weight: 700;
     color: black;
     cursor: default;
@@ -117,7 +118,9 @@
 .username {
     color: #000000;
     /* Set the color for the welcome message */
-    margin-right: 10px;
+    position: relative;
+    left: 90px;
+    margin-left: 30px;
     /* Add some margin between welcome message and logout button */
     font-size: 16px;
     /* Increase font size for the welcome message */
@@ -145,7 +148,7 @@
     z-index: 1;
     padding: 20px;
     /* Increase padding */
-    width: 200px;
+    width: 155px;
     /* Increase width */
 }
 
@@ -170,4 +173,10 @@
 /* Change color of dropdown content links on hover */
 .dropdown-content span:hover {
     background-color: #004080;
+}
+.nav-dropcontent {
+    font-size: 18px;
+    font-weight: 500;
+    text-align: justify;
+    font-family: "Montserrat", sans-serif;
 }

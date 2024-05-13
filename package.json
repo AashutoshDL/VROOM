@@ -1,1 +1,5 @@
-{"scripts":{"start":"npm run start:frontend & npm run start:backend","start:frontend":"cd landing && npm run dev","start:backend":"cd server && npm start"},"dependencies":{"cors":"^2.8.5","express":"^4.19.2","mongoose":"^8.3.4","nodemon":"^3.1.0"}}
+<<<<<<< HEAD
+{"scripts":{"start":"npm run start:frontend & npm run start:backend","start:frontend":"cd landing && npm run dev","start:backend":"cd server && npm start"},"dependencies":{"package.json":"^2.0.1","react-router-dom":"^6.23.1"},"devDependencies":{"vite":"^5.2.10"}}
+=======
+{"scripts":{"start":"npm run start:frontend & npm run start:backend","start:frontend":"cd client && npm run dev","start:backend":"cd server && npm start"},"dependencies":{"cors":"^2.8.5","express":"^4.19.2","mongoose":"^8.3.4","nodemon":"^3.1.0"}}
+>>>>>>> 861b31e74e50e796eec32973c6c1678e7fa1dc95

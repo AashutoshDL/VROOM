@@ -3,6 +3,7 @@ import "./contactUs.css";
 import { FaQuestionCircle } from "react-icons/fa";
 import Footer from "../Footer/Footer";
 import image from "../ImagesFol/square.png";
+
 const contact = () => {const [formData, setFormData] = useState({
     name: "",
     email: "",

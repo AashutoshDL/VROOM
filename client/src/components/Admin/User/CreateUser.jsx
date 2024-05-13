@@ -9,15 +9,29 @@ const CreateUser = () => {
   const [address, setAddress] = useState('');
   const [accountType, setAccountType] = useState('');
   const navigate = useNavigate();
+  const [file,setFile]=useState();
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3001/api/createUser', { name, phoneNumber, age, address, accountType})
-      .then(result => {
-        console.log(result);  
-        navigate('/user');
-      })
-      .catch(err => console.log(err));
+    const formData = new FormData();
+    formData.append('name', name);
+    formData.append('phoneNumber', phoneNumber);
+    formData.append('age', age);
+    formData.append('address', address);
+    formData.append('accountType', accountType);
+    formData.append('file', file);
+    
+    axios.post('http://localhost:3001/api/createUser', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    })
+    .then(result => {
+      console.log(result);  
+      navigate('/user');
+    })
+    .catch(err => console.log(err));
   };
 
   return (
@@ -77,6 +91,13 @@ const CreateUser = () => {
               <option value='driver'>Driver Account</option>
             </select>
           </div>
+          <div className="mb-3">
+            <label htmlFor='image' className="form-label">User Image</label>
+            <input
+              type='file'
+              onChange={(e) => setFile(e.target.files[0])}
+            />       
+            </div> 
           <div className="d-flex justify-content-end">
             <button className='btn btn-secondary me-2' onClick={() => navigate('/user')}>Back</button>
             <button type="submit" className='btn btn-success'>Submit</button>
