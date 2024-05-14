@@ -1,14 +1,7 @@
 .register-container {
-  display: flex;
   justify-content: center;
   align-items: center;
   min-height: 140vh;
-  background-image: url('../ImagesFol/background2.jpg');
-  /* Set background image */
-  background-size: cover;
-  /* Cover the entire container */
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
 .register-form {
@@ -27,6 +20,8 @@
   height: 680px;
   position: relative;
   top: 30px;
+  left: 28vw;
+  margin-bottom: 70px;
 }
 
 .register-heading {

@@ -2,7 +2,8 @@ import { useState } from 'react';
 import axios from 'axios';
 import Popup from '../Popup/Popup';
 import './Register.css';
-import background2 from '../ImagesFol/background2.jpg'
+import backgroundVideo from '../ImagesFol/backvid.mp4';
+import Footer from "../Footer/Footer";
 
 const Register = () => {
   const [name, setName] = useState('');
@@ -65,7 +66,11 @@ const Register = () => {
   };
 
   return (
-    <div className='register-container' style={{ backgroundImage: background2}}>
+    <div className='register-container'>
+      <video autoPlay loop muted className="background-video">
+          <source src={backgroundVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       <div className='register-form'>
         <form onSubmit={handleSubmit}>
           <h2 className="register-heading">Register</h2>
@@ -162,7 +167,7 @@ const Register = () => {
               value={accountType}
               onChange={(e) => setAccountType(e.target.value)}
             >
-              <option value='' disabled selected>Select Account Type</option>
+              <option value='' disabled>Select Account Type</option>
               <option value='personal'>Personal Account</option>
               <option value='driver'>Driver Account</option>
             </select>
@@ -173,6 +178,7 @@ const Register = () => {
         </form>
       </div>
       {showPopup && <Popup />}
+      <Footer />
     </div>
   );
 };

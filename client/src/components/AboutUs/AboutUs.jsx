@@ -6,7 +6,8 @@ import './AboutUs.css';
 const AboutUs = () => {
   return (
     <>
-     <div className="aboutimage">
+    <div className="about-maincontainer">
+      <div className="aboutimage">
         {/* About image container */}
         <div className="aboutimage-container">
           {/* Header */}
@@ -70,6 +71,7 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
+    </div>
     </>
 
   );
