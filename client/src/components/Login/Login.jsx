@@ -56,7 +56,7 @@ const Login = () => {
           Your browser does not support the video tag.
         </video>
       <div className='login-form'>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='login-infoform'>
           <h2 className="login-heading">Login</h2>
           <div className="form-group">
             <label htmlFor='phone number'className='login-labels'>Phone Number</label>

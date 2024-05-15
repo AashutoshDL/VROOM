@@ -1,14 +1,65 @@
 .booking-form {
-  max-width: 2000px;
   width: 1200px;
   height: auto;
   margin: 30px auto;
+
   padding: 20px;
+  padding-left: 100px;
+
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #fff;
   position: relative;
-  left: 90px;
+  left: 80px;
+}
+
+.book-navbar {
+  background-color: #00509d;
+  padding: 12px;
+  width: 100%;
+  top: 60px;
+  z-index: 1000;
+}
+
+.book-navbar .pagination {
+  position: relative;
+
+}
+
+.book-navbar .pagination {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.book-navbar .pagination li {
+  margin-right: 300px;
+}
+
+
+.book-navbar .pagination li a {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #f0f2f7;
+}
+
+.book-navbar .pagination li.active {
+  font-weight: bold;
+  text-decoration: underline;
+  color: #f0f2f7;
+}
+
+
+.availability-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 80%;
+  height: 2px;
+  background-color: #f0f2f7;
+  transform: translateX(-50%) scaleX(1);
 }
 
 .booking-detail1 {
@@ -19,6 +70,7 @@
   /* Text color */
   margin-bottom: 20px;
   /* Add spacing between details */
+
 }
 
 .booking-form .booking-total-amount {
@@ -38,16 +90,15 @@
 .car-image-container {
   width: 800px;
   height: 400px;
-  /* Add this line to set the height of the container */
   overflow: hidden;
-  /* Add this line to hide any overflow */
 }
 
 .car-image-container img {
   width: 500px;
-  /* Add this line to set the width of the image to 100% of the container */
   height: 400px;
-  /* Add this line to maintain the aspect ratio of the image */
+  object-fit: cover;
+  /* Ensure the image covers the specified dimensions */
+
 }
 
 .car-details {
@@ -57,9 +108,7 @@
 
 .payment-title {
   font-size: 24px;
-  /* Adjust the font size as desired */
   color: #333;
-  /* Text color */
 }
 
 .booking-form label {
@@ -77,25 +126,17 @@
 
 
 .client-donts {
-  position: abso;
-}
-
-/* Additional styles to differentiate Client Don'ts */
-.client-donts {
   position: absolute;
-  top: 300px;
-  /* Adjust the top distance as needed */
-  right: 340px;
-  /* Align to the right with a margin */
-  width: 300px;
-  /* Set a specific width */
+  top: 200px;
+  left: 700px;
+  width: 400px;
 }
 
 .client-needs {
   position: absolute;
   top: 20px;
-  left: 550px;
-  width: 300px;
+  left: 700px;
+  width: 400px;
 }
 
 .client-needs h3,
@@ -117,67 +158,52 @@
 
 .client-needs input[type="text"],
 .client-donts input[type="text"] {
-  width: 700px;
-  /* Set the width to 100% of the container */
-  padding: 88px;
-  /* Add padding for better appearance */
+  width: 100%;
+  padding: 5px 10px;
+  /* Reduced padding */
+  height: 100px;
+  /* Fixed height */
   box-sizing: border-box;
-  /* Include padding in width calculation */
 }
 
-/* CarBookingForm.css */
 .client-needs input[type="text"]::placeholder,
 .client-donts input[type="text"]::placeholder {
   color: #777;
-  /* Placeholder text color */
   opacity: 1;
-  /* Placeholder text opacity */
 }
 
-/* Additional styling for input fields */
 .client-needs input[type="text"],
 .client-donts input[type="text"] {
-  width: 600px;
-  /* Fixed width value */
-  padding: 100px;
-  /* Padding inside the input */
+  width: 100%;
   margin-bottom: 15px;
-  /* Bottom margin */
   border: 1px solid #ccc;
-  /* Border */
   border-radius: 5px;
-  /* Border radius */
-  padding-left: 18px;
-  /* Add left padding to shift placeholder text */
+  padding-left: 10px;
 }
 
-
-
 .booking-form button {
-  width: 500px;
+  width: 400px;
   padding: 12px;
   background-color: #00509D;
   color: #fff;
   border: none;
   border-radius: 5px;
-  margin-top: -15px;
+  margin-top: -220px;
   cursor: pointer;
   font-size: 18px;
   position: absolute;
-  top: 600px;
-  /* Adjust this value to position the button from the top */
-  right: 100px;
-  /* Adjust this value to position the button from the right */
+  top: 550px;
+  left: 700px;
 }
+
 
 .booking-form button:hover {
   background-color: #0056b3;
 }
 
 .payment-logo {
-  width: 40px;
+  width: 30px;
   margin-right: 8px;
-  /* Adjust spacing as needed */
 }
 
 /* Media queries for responsiveness */
@@ -220,9 +246,7 @@
 
   .booking-nav-links {
     flex-wrap: wrap;
-    /* Allow links to wrap onto multiple lines */
     justify-content: center;
-    /* Center-align wrapped links */
   }
 
   .booking-navbar-links {
@@ -230,7 +254,6 @@
     margin-bottom: 10px;
     text-align: center;
     width: 100%;
-    /* Make each link take full width */
   }
 
   .availability-link {
@@ -238,9 +261,9 @@
   }
 }
 
+
 @media (max-width: 669px) {
   .availability-link {
     font-size: 12px;
-    /* Further reduce font size for smaller screens */
   }
 }

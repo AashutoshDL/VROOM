@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
-import './bookedinfo.css'; // Import the stylesheet
+import esewaLogo from '../ImagesFol/esewa.png';
+import './bookedinfo.css';
 
 const CarImage = ({ carData }) => (
   <div className="car-image-container">
@@ -37,7 +38,7 @@ const PaymentMethodSelection = ({ selectedMethod, setSelectedMethod }) => {
           checked={selectedMethod === 'eSewa'}
           onChange={handleMethodChange}
         />
-    eSewa
+        <img src={esewaLogo} alt="eSewa" className="payment-logo" /> eSewa
       </label>
       {/* Add other payment method options similarly */}
     </div>
@@ -48,28 +49,25 @@ const NeedsAndDonts = ({ setClientNeeds, setClientDonts }) => {
   const handleNeedsChange = (event) => {
     setClientNeeds(event.target.value);
   };
-
   const handleDontsChange = (event) => {
     setClientDonts(event.target.value);
   };
-
   return (
     <div>
       <div className="client-needs">
-        <h3>Client Needs:</h3>
+        <h3>Requirements:</h3>
         <input
           type="text"
           aria-label="Enter client needs"
-          placeholder="Enter client needs"
+          placeholder="Dos"
           onChange={handleNeedsChange}
         />
       </div>
       <div className="client-donts">
-        <h3>Client Don'ts:</h3>
         <input
           type="text"
           aria-label="Enter client don'ts"
-          placeholder="Enter client don'ts"
+          placeholder="Donts"
           onChange={handleDontsChange}
         />
       </div>
@@ -93,6 +91,7 @@ const BookingForm = ({ carId, carData, bookingData }) => {
         clientNeeds: '', // Add client needs and don'ts from state here
         clientDonts: ''
       });
+      
       console.log(response.data);
       alert('Booking submitted successfully!');
       navigate(`/CarOrderConfirmation/${carId}`);
@@ -102,37 +101,44 @@ const BookingForm = ({ carId, carData, bookingData }) => {
   };
 
   return (
-    <div>
-      {/* Booking Form Content */}
-      <div className="booking-form">
-        <form onSubmit={handleSubmit}>
-          <CarImage carData={carData} />
-          <CarDetails carData={carData} bookingData={bookingData} />
-          <NeedsAndDonts />
-          <PaymentMethodSelection
-            selectedMethod={selectedPaymentMethod}
-            setSelectedMethod={setSelectedPaymentMethod}
-          />
-          <button type="submit">Next</button> {/* Use button type="submit" for form submission */}
-        </form>
-      </div>
+    <div className="booking-form">
+      <form onSubmit={handleSubmit}>
+        <CarImage carData={carData} />
+        <CarDetails carData={carData} bookingData={bookingData} />
+        <NeedsAndDonts />
+        <PaymentMethodSelection
+          selectedMethod={selectedPaymentMethod}
+          setSelectedMethod={setSelectedPaymentMethod}
+        />
+        <button type="submit">Next</button> {/* Use button type="submit" for form submission */}
+      </form>
     </div>
   );
 };
 
-
 const BookedInfo = () => {
   const location = useLocation();
-  const { carData, bookingData } = location.state || {};
+  const navigate = useNavigate();
 
+  const { carData, bookingData } = location.state || {};
+  
   if (!carData || !bookingData) {
     return <div>No booking data available</div>;
   }
 
   return (
-    <div className="container">
-      {/* Render the BookingForm component with carId, carData, and bookingData */}
-      <BookingForm carId={carData.id} carData={carData} bookingData={bookingData} />
+    <div className="booked-info">
+      <div className="book-navbar">
+        <ul className="pagination">
+        <li className= {location.pathname === "/vehicles" ? "active" : ""} >1 : Vehicles </li>
+        <li className={location.pathname === "/book" ? "active" : ""}><Link to="/book">2: Booking Process</Link></li>
+          <li className={location.pathname === "/bookingConfirm" ? "active": ""}>3 : Confirm Booking</li>
+
+        </ul>
+      </div>
+      <div className="container">
+        <BookingForm carId={carData._id} carData={carData} bookingData={bookingData} />
+      </div>
     </div>
   );
 };

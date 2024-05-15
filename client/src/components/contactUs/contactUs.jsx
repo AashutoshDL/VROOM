@@ -5,16 +5,16 @@ import Footer from "../Footer/Footer";
 import image from "../ImagesFol/square.png";
 
 const contact = () => {const [formData, setFormData] = useState({
-    name: "",
+    name1: "",
     email: "",
     message: ""
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name1, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name1]: value
     });
   };
 
@@ -24,7 +24,7 @@ const contact = () => {const [formData, setFormData] = useState({
     console.log(formData);
     // Clear form fields after submission
     setFormData({
-      name: "",
+      name1: "",
       email: "",
       message: ""
     });
@@ -80,10 +80,10 @@ const contact = () => {const [formData, setFormData] = useState({
         <h3 id="formtitle">Still have questions?</h3>
         <h6 id="sub-formtitle">Reach out to us by filling out the form below. We'll get back to you as soon as possible.</h6>
         <form className="message-form" onSubmit={handleSubmit}>
-          <label htmlFor="name" className='contactform-labels'>Name:</label>
+          <label htmlFor="name1" className='contactform-labels'>Name:</label>
           <input
             type="text"
-            id="name"
+            id="name1"
             name="name"
             value={formData.name}
             onChange={handleChange}

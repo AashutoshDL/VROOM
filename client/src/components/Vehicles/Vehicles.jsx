@@ -30,25 +30,27 @@ const Vehicles = () => {
       <div className="image-section">
         <img src={`http://localhost:3001/uploads/${car.image}`} alt={car.model} />
       </div>
-      <h2 className="title">{car.model}</h2>
       <div className="listing-section">
         <ul>
-          <li>Company: {car.company}</li>
-          <li>Year: {car.year}</li>
-          <li>Status: {car.status}</li>
-          <li>Available: {car.available}</li>
+        <li>
+      <span className="car-title"> {car.model}</span>
+       </li>          
+          <li> <span className="car-sub">Company:{car.company}</span></li>
+          <li><span className="car-sub">Year: {car.year}</span></li>
+          <li><span className="car-sub">Status: {car.status}</span></li>
+          <li><span className="car-sub">Available:{car.available}</span></li>
         </ul>
       </div>
-      <div className="features">
-        {/* Add other details as needed */}
-      </div>
+      
       <div className="price-section">
-        <p>Price: {car.price}</p>
+        <p>Estimated Price </p>
+        <p>NPR. {car.price}</p>
         <div className="btn">
           <button className="book-now-button" onClick={() => handleSubmit(car)}>Book Now</button>
         </div>
       </div>
     </div>
+    
   );
 
   CarDetails.propTypes = {
@@ -85,7 +87,6 @@ const Vehicles = () => {
           <option value="2">Company</option>
           <option value="3">Year</option>
           <option value="4">Status</option>
-          {/* Add more sorting options as needed */}
         </select>
       </div>
 
