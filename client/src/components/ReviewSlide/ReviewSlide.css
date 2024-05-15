@@ -1,12 +1,8 @@
 
 .review-slide {
     width: 100%; /* Set width to 100% for responsiveness */
-    max-width: 1800px;
-    margin: 16px auto; /* Center the .review-slide horizontally */
+    max-width: 1800; /* Center the .review-slide horizontally */
     padding: 40px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     background-color: #ffffff;
     position: relative; /* Establishes a containing block for absolute positioning */
   }
