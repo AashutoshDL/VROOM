@@ -1,0 +1,229 @@
+body {
+  background-color: #eeeeee;
+}
+
+.book-navbar {
+  background-color: #00509d;
+  padding: 12px;
+  width: 100%;
+  top: 60px;
+  z-index: 1000;
+}
+
+.vnavbar {
+  position: relative;
+
+}
+
+.pagination {
+  position: relative;
+
+}
+
+.pagination li {
+  margin-right: 300px;
+  position: relative;
+  left: 160px;
+}
+
+
+
+.availability-link::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  width: 80%;
+  height: 2px;
+  background-color: #f0f2f7;
+  transform: translateX(-50%) scaleX(1);
+}
+
+.sort-container select {
+  color: #171718;
+  background-color: #eeeeee;
+}
+
+.sort-container option {
+  color: #000;
+  background-color: #eeeeee;
+}
+
+.sort-container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 50px;
+  color: #000;
+  position: relative;
+  top: -10px;
+  right: 175px;
+}
+
+.sort-container label {
+  margin-right: 5px;
+  color: #000;
+}
+#sort-select{
+  position: relative;
+  top: -2px;
+}
+.title {
+  margin-left: 15px;
+}
+
+.title2 {
+  margin-left: 10px;
+}
+
+.title3 {
+  margin-left: 35px;
+}
+
+.title4 {
+  margin-left: 35px;
+}
+
+.car-details {
+  font-family: Arial, sans-serif;
+  color: #0c0c0c;
+  width: 1300px;
+  margin: 20px auto;
+  margin-left: 150px;
+  padding: 10px;
+  background-color: #fdfbfb;
+  border-radius: 8px;
+  box-shadow: #0c0c0c;
+  height: 400px;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+
+}
+
+.image-section {
+  flex: 0 0 auto;
+  margin-right: 20px;
+}
+
+.image-section img {
+  max-width: 50%;
+  /* Add this line */
+  max-height: 50%;
+  /* Add this line */
+  width: auto;
+  /* Add this line */
+  height: auto;
+  /* Add this line */
+  border-radius: 8px;
+}
+
+
+.listing-section ul {
+  position: absolute;
+  top: -70px;
+  right: 720px;
+  margin-top: 170px;
+}
+
+.listing-section ul {
+  list-style-type: none;
+  flex: 1;
+
+}
+
+.listing-section ul li {
+  margin-bottom: 5px;
+}
+
+.listing-section {
+  padding-left: 40px;
+  position: relative;
+  left: 500px;
+  bottom: 200px;
+}
+
+.features {
+  justify-content: flex;
+  margin-left: 120px;
+  margin-top: 75px;
+}
+
+.features ul {
+  list-style-type: none;
+}
+
+.features ul li {
+  margin-bottom: 5px;
+}
+
+.features2 {
+  justify-content: flex;
+  margin-left: 40px;
+  margin-top: 75px;
+}
+
+.features2 ul {
+  list-style-type: none;
+}
+
+.features2 ul li {
+  margin-bottom: 5px;
+}
+
+.features3 {
+  justify-content: flex;
+  margin-left: 50px;
+  margin-top: 75px;
+}
+
+.features3 ul {
+  list-style-type: none;
+}
+
+.features3 ul li {
+  margin-bottom: 5px;
+}
+
+.features4 {
+  justify-content: flex;
+  margin-left: 70px;
+  margin-top: 75px;
+}
+
+.features4 ul {
+  list-style-type: none;
+}
+
+.features4 ul li {
+  margin-bottom: 5px;
+}
+
+.price-section {
+  margin-top: 20px;
+  text-align: center;
+  margin-left: 110px;
+
+}
+
+.price-section p {
+  font-size: 24px;
+  font-weight: 600;
+  color: #0c0c0c;
+}
+
+.price-section p:first-child {
+  padding-left: 10px;
+}
+
+.book-now-button {
+  margin-top: 5px;
+  padding: 12px 24px;
+  background-color: #5557d4;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: relative;
+  top: 20px;
+}

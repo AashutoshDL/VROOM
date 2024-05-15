@@ -1,0 +1,199 @@
+.user-container {
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    font-family: var(--text-font-family);
+    position: fixed;
+}
+
+.user-dashboard {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.user-nav {
+    width: 14%;
+    height: auto;
+    background-color: #00509D;
+}
+
+.user-lists {
+    position: relative;
+    top: 5px;
+    left: 65px;
+}
+
+.user-links {
+    position: relative;
+    top: 3vh;
+    color: white;
+    font-family: var(--text-font-family);
+    margin-bottom: 5px;
+    font-weight: 500;
+    cursor: default;
+}
+
+.user-links1 {
+    position: relative;
+    top: 72vh;
+    color: white;
+    font-family: var(--text-font-family);
+    margin-bottom: 5px;
+    font-weight: 500;
+    cursor: default;
+}
+
+.user-links:hover {
+    font-size: 18px;
+    padding-left: 5px;
+    transition: 0.3s ease-out;
+}
+
+.user-links1:hover {
+    font-size: 18px;
+    padding-left: 5px;
+    transition: 0.3s ease-out;
+}
+
+.car-icon {
+    position: relative;
+    top: 25px;
+    left: -35px;
+}
+
+.profile-icon {
+    position: relative;
+    top: 24px;
+    left: -35px;
+}
+
+/* making display of profile */
+.user-display {
+    width: 86%;
+    height: auto;
+    background-color: #ffffffc5;
+}
+
+.user-profileHeader {
+    height: 30%;
+    width: 100%;
+    position: relative;
+    top: 5vh;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 40px;
+}
+
+.user-avatar {
+    position: relative;
+    top: 7vh;
+    left: 60px;
+    height: 40%;
+    width: 6.5%;
+    background-color: #484b4e77;
+    margin-right: 30px;
+    border-radius: 70%;
+}
+
+.user-welcome {
+    position: relative;
+    top: 6vh;
+    left: 70px;
+    height: 60%;
+    width: 70%;
+}
+
+.user-status {
+    width: 6%;
+    height: 12%;
+    position: relative;
+    left: -5px;
+    background-color: #484b4e52;
+    margin: 5px;
+}
+
+.user-name {
+    padding-bottom: 5px;
+}
+
+#user-infoname {
+    font-weight: 700;
+}
+
+#user-infostatus {
+    font-weight: 300;
+    font-size: 14px;
+    position: relative;
+    top: -8px;
+    left: 8px;
+}
+
+.welcome-message {
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.base-line {
+    width: 100%;
+    height: 0.1%;
+    position: relative;
+    top: -4vh;
+    background-color: #484b4e1c;
+}
+
+.user-profileContainer {
+    width: 85%;
+    height: 50%;
+    background-color: #484b4e23;
+    position: relative;
+    top: 10px;
+    left: 95px;
+}
+
+.detail-title {
+    background-color: #484b4e34;
+    height: 30px;
+    width: 10%;
+    position: relative;
+    top: 20px;
+    left: 50px;
+    text-align: center;
+}
+
+.user-subtitle {
+    font-size: 20px;
+    font-weight: 400;
+    color: #00509D;
+}
+
+.user-details1 {
+    width: 35%;
+    height: 20%;
+    position: relative;
+    left: 50px;
+    top: 40px;
+}
+
+.user-details2 {
+    width: 35%;
+    height: 20%;
+    position: relative;
+    left: 50px;
+    top: 60px;
+}
+
+.display-labels {
+    font-family: 14px;
+    font-weight: 500;
+}
+
+.display-texts {
+    position: relative;
+    top: -10px;
+    height: 40px;
+    border: none !important;
+    border-radius: 0 !important;
+}

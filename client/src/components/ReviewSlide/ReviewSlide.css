@@ -1,0 +1,121 @@
+
+.review-slide {
+    width: 100%; /* Set width to 100% for responsiveness */
+    max-width: 1800px;
+    margin: 16px auto; /* Center the .review-slide horizontally */
+    padding: 40px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    position: relative; /* Establishes a containing block for absolute positioning */
+  }
+  
+  .review-slide h2 {
+    text-align: center;
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+
+.feedback-item {
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-bottom: 30px;
+  height: 360px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.feedback-item img.user-photo {
+  width: 190px;
+  height: 190px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 2px 4px rgba(187, 22, 22, 0.2);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.rating .star,
+.rating .star-half {
+  color: #ffc107; /* Golden color */
+  font-size: 24px;
+  margin-right: 5px; /* Add right margin between stars */
+}
+
+.feedback-item p {
+  text-align: center;
+  font-size: 18px;
+  color: #555;
+  margin-top: 10px;
+}
+
+.Review_btn button {
+  padding: 12px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #00509D;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  outline: none;
+  transition: background-color 0.3s ease;
+  min-width: 100px;
+}
+
+.Review_btn button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.Review_btn button:hover {
+  background-color: #101111;
+}
+
+.button-icon {
+  margin-right: 8px;
+  position: relative;
+}
+
+.Review_btn {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.Review_btn {
+    position: absolute;
+    top: 200px; /* Adjust top position for placement at the top of the .review-slide container */
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 80px); /* Ensure buttons are centered and have space on each side */
+  }
+  
+.Review_btn button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.Review_btn button:hover {
+    background-color: #0056b3;
+}
+
+.disabled {
+    background-color: #ccc;
+    color: #666;
+    cursor: not-allowed;
+}

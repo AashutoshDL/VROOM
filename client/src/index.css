@@ -1,0 +1,992 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Hind+Siliguri:wght@600&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald&family=Roboto+Slab:wght@100..900&display=swap");
+
+* {
+  /* font-family: 'Lora',serif; */
+  font-weight: 600;
+  font-size: 18px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+  /* margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: auto;
+    width: auto; */
+}
+
+:root {
+  --button-background-color: #28404b;
+  /* Default background color for the button */
+  --button-text-color: #ffffff;
+  /* Default text color for the button */
+  --button-border-radius: 8px;
+  /* Default border radius for the button */
+  --button-background-hover: #00509d;
+  --nav-background-color: linear-gradient(
+    270deg,
+    rgba(255, 255, 255, 0.9),
+    rgba(37, 78, 107, 0.9)
+  );
+  --nav-link-color: azure;
+  --nav-link-hover: #28404b;
+  --text-font-family: "lora", "serif";
+  --text-font-weight: 450;
+}
+
+@media (max-width: 2880px) {
+  * {
+    box-sizing: border-box;
+    height: auto;
+    width: auto;
+    margin: 0px;
+    padding: 0px;
+  }
+}
+/* for Google Pixel XL */
+@media (max-width: 411px) and (max-height: 731px) {
+  /* ------Landing Page, Header and Footer --------*/
+  * {
+    max-height: 731px;
+    max-width: 411px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .container {
+    width: 411px;
+  }
+  #mainnav {
+    width: 411px;
+  }
+  .logoDiv {
+    position: relative;
+    top: -40px;
+    left: -100px;
+  }
+
+  #smallnavbar {
+    position: relative;
+    top: -40px;
+    left: -40px;
+  }
+  .navBar {
+    position: relative;
+    z-index: 1000;
+    /* Ensure the navbar is positioned relative */
+  }
+
+  .nav-links {
+    width: 411px;
+    position: absolute;
+    /* Position the links absolutely */
+    top: 60px;
+    left: 0px;
+    /* Position the links below the navbar */
+    background-color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 999;
+  }
+
+  .nav-links.open {
+    display: block;
+  }
+  .nav-content {
+    position: relative;
+    left: -350px;
+    text-align: center;
+  }
+  .nav2 {
+    position: relative;
+    left: -360px;
+  }
+  .nav3 {
+    position: relative;
+    left: -340px;
+  }
+  .nav3:hover {
+    position: absolute;
+    left: -425px;
+    top: -20px;
+  }
+  .Log,
+  .Sign {
+    position: relative;
+    top: -60px;
+    left: 50vw;
+    z-index: 999;
+    width: 50%;
+  }
+  #login-button,
+  #btn {
+    position: relative;
+    left: 50px;
+  }
+  .username {
+    position: relative;
+    top: 20px;
+    left: -20px;
+  }
+  .dropdown-content {
+    position: absolute;
+    left: -450px;
+    top: 10px;
+    height: 14vh;
+    padding-bottom: 0px;
+    z-index: 1;
+  }
+  .dropdown-content:hover {
+    display: block;
+    left: -360px;
+    top: 30px;
+  }
+  .nav-droplinks {
+    position: relative;
+    top: -25px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+  }
+  .nav-dropcontent {
+    font-size: 16px;
+    height: 30px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    padding-bottom: 0;
+    font-weight: 500;
+    text-align: justify;
+    font-family: "Montserrat", sans-serif;
+  }
+  .drop-content1 {
+    position: relative;
+    top: -40px;
+  }
+  .dropcontent1 {
+    height: 60px;
+  }
+  .home-container {
+    height: 500px;
+    width: 300px;
+  }
+  .Name {
+    height: 30px;
+  }
+
+  .Title {
+    font-size: 22px;
+    position: relative;
+    top: -20px;
+  }
+  #sub-title {
+    font-size: 14px;
+    top: -50px;
+  }
+  .sub-container {
+    width: 90%;
+    position: relative;
+    top: 30px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+  }
+  #Input1 {
+    width: 100%;
+    position: absolute;
+    top: -5px;
+    left: 0px;
+  }
+  #Input2 {
+    width: 100%;
+    position: absolute;
+    top: 80px;
+    left: 0px;
+  }
+  #Input3 {
+    width: 100%;
+    position: absolute;
+    top: 170px;
+    left: 0px;
+  }
+  #Input4 {
+    width: 100%;
+    position: absolute;
+    top: 260px;
+    left: 0px;
+  }
+  #label1,
+  #textInput1 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  #label2,
+  #textInput2 {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  #label3,
+  #pickUpDate {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  #label4,
+  #dropOffDate {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+  input[type="text"],
+  input[type="datetime-local"] {
+    width: calc(100% - 10px);
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+  }
+  #submitbtn {
+    position: absolute;
+    top: 385px;
+    right: 50px;
+  }
+  /* about us starts from here */
+  .about-maincontainer {
+    max-width: 411px;
+    position: relative;
+    top: -80px;
+  }
+  .aboutimage {
+    background-color: #ffffff;
+    height: 400px;
+  }
+
+  .aboutimage-container {
+    width: 411px;
+    background-color: #ffffff;
+    position: relative;
+    left: -290px;
+  }
+  #para-header {
+    text-align: right;
+  }
+  .para-aboutcontent {
+    width: 50%;
+    text-align: justify;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555;
+  }
+  .big-container {
+    height: 700px;
+    max-width: 411px;
+  }
+  .how-to {
+    width: 90%;
+  }
+  .icon-box-container {
+    width: 100%;
+    position: relative;
+    top: -60px;
+    left: 0;
+  }
+  .icon-box1 {
+    width: 20%;
+    margin-right: 15px;
+    margin-left: 5px;
+    position: relative;
+    left: 0px;
+  }
+  .icon-box2 {
+    width: 20%;
+    margin-right: 15px;
+    margin-left: 5px;
+    position: relative;
+    left: 0px;
+  }
+  .icon-box3 {
+    width: 20%;
+    margin-right: 15px;
+    margin-left: 5px;
+    position: relative;
+    left: 0px;
+  }
+  .icon-box4 {
+    width: 20%;
+    margin-right: 15px;
+    margin-left: 5px;
+    position: relative;
+    left: 0px;
+  }
+  .about-icons {
+    width: 60px;
+  }
+  .icon-text p {
+    font-size: 15px;
+    text-align: center;
+  }
+  /* start of review slide */
+  .review-slide {
+    position: relative;
+    top: 10px;
+  }
+  .feedback-item {
+    position: relative;
+    top: 15px;
+  }
+  .Review_btn button {
+    padding-left: 10px;
+    padding-right: 0;
+    min-width: 50px !important;
+  }
+  .disabled {
+    background-color: #ccc;
+    position: relative;
+    top: 3px;
+    color: #666;
+    cursor: not-allowed;
+  }
+  .page-container Footer {
+    position: absolute;
+    margin-top: 0;
+    padding-top: 0;
+    top: 2075px;
+  }
+  /* starting footer */
+  .footer {
+    max-width: 411px;
+  }
+  .foot-container {
+    width: 411px;
+    margin: auto;
+    position: relative;
+    top: -35px;
+  }
+  .row {
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+  }
+  .firstsec {
+    height: 150px;
+    width: 411px;
+    position: absolute;
+    top: 35px;
+    left: 0px;
+  }
+  #footer-about {
+    position: relative;
+    top: 20px;
+    left: -15px;
+    text-align: center;
+  }
+  .textvroom {
+    position: relative;
+    width: 80%;
+    top: -5px;
+    left: -8px;
+    font-size: 14px;
+  }
+  .Contactinfo {
+    position: absolute;
+    width: 225px;
+    height: 200px;
+    top: 200px;
+    left: 15px;
+  }
+  .contact-title {
+    font-size: 20px;
+    position: relative;
+    left: -25px;
+  }
+  .footer-icons {
+    width: 20px;
+    position: relative;
+    top: -20px;
+    left: -65px;
+  }
+  .mailicon {
+    position: relative;
+    top: 12px;
+    left: 190px;
+  }
+  .bigcontentbox {
+    position: relative;
+    left: -80px;
+  }
+  .footer-info1 {
+    position: relative;
+    top: -20px;
+    left: 0px;
+  }
+  .footer-info {
+    position: relative;
+    left: 50px;
+    top: -20px;
+  }
+  .foot-infonum {
+    font-size: 12px;
+    position: relative;
+    left: 70px;
+    top: -15px;
+  }
+  .foot-info2 {
+    font-size: 12px;
+    position: relative;
+    top: -43px;
+    left: -71px;
+  }
+  .quick-links {
+    height: 200px;
+    width: 150px;
+    position: absolute;
+    top: 170px;
+    left: 160px;
+  }
+  #text {
+    position: relative;
+    top: -100px;
+  }
+  #links {
+    position: relative;
+    top: -120px;
+  }
+  .footer-links {
+    font-size: 16px;
+  }
+  .line {
+    position: absolute;
+    left: -210px;
+  }
+  .copyright {
+    position: absolute;
+    left: 60px;
+    top: 87%;
+  }
+  .copyrightcontent,
+  .privacy {
+    font-size: 12px;
+  }
+  /* ------------UserDashboard---------- */
+  .user-container {
+    max-width: 411px;
+  }
+  .user-dashboard {
+    width: 411px;
+  }
+  .user-nav {
+    width: 25%;
+  }
+  .user-links {
+    font-size: 12px;
+    position: relative;
+    left: -35px;
+    top: -5px;
+  }
+  .user-links:hover {
+    font-size: 12px;
+  }
+  .user-icon {
+    width: 16px;
+    position: relative;
+    top: -2px;
+    left: 8px;
+  }
+  .user-links1 {
+    position: relative;
+    font-size: 14px;
+    left: -45px;
+  }
+  .user-display {
+    width: 75%;
+  }
+  .user-profileHeader {
+    width: 75%;
+    position: relative;
+    left: -75px;
+    top: -10px;
+  }
+  .user-avatar {
+    width: 20%;
+    height: 20%;
+  }
+  .user-welcome {
+    position: relative;
+    left: 50px;
+    top: 50px;
+  }
+  .user-status {
+    width: 30%;
+  }
+  .welcome-message {
+    font-size: 12px;
+    font-weight: 500;
+  }
+  .base-line {
+    position: relative;
+    top: -90px;
+  }
+  .user-profileContainer {
+    position: relative;
+    top: -50px;
+    left: 0px;
+  }
+  .detail-title {
+    position: relative;
+    left: -70px;
+    width: 37%;
+    text-align: left;
+    padding-left: 5px;
+  }
+  .user-subtitle {
+    font-size: 17px;
+    text-align: left;
+  }
+  .user-details1 {
+    position: relative;
+    left: -11px;
+    width: 80%;
+  }
+  .user-details2 {
+    position: relative;
+    left: -11px;
+    width: 80%;
+  }
+  /* -------Login----------- */
+  .login-container {
+    max-width: 411px;
+    position: absolute;
+  }
+  .login-form {
+    width: 80%;
+    position: relative;
+    left: 0;
+  }
+  .login-labels {
+    font-size: 14px;
+  }
+  #phoneNumber {
+    position: relative;
+    margin-left: 10px;
+  }
+  #password {
+    margin-left: 3px;
+  }
+  /* ------Register------ */
+  .register-container {
+    max-width: 411px;
+    max-width: 731px;
+    position: absolute;
+  }
+  .register-form {
+    height: 625px;
+    width: 80%;
+    position: relative;
+    left: -10px;
+    top: 60px;
+  }
+  .signup-form {
+    width: 100%;
+    position: relative;
+    top: 20px;
+  }
+  .register-heading {
+    position: relative;
+    top: -10px;
+  }
+  .form-control {
+    width: 70%;
+  }
+  .form-group1 {
+    font-size: 16px;
+    width: 100%;
+    height: 40px;
+    position: relative;
+    margin-bottom: 20px;
+    left: 0;
+    top: -5px;
+  }
+  .form-group1 input[type="text"],
+  input[type="password"],
+  #accountType,
+  #name {
+    height: 40px;
+    width: 70%;
+  }
+  #name {
+    position: relative;
+    left: 15px !important;
+    margin-right: 30px;
+  }
+  #phoneNumber {
+    padding-left: 20px;
+    position: relative;
+    left: -10px;
+  }
+  #age {
+    position: relative;
+    left: 30px;
+    margin-right: 40px;
+  }
+  #address {
+    position: relative;
+    left: 5px;
+    margin-right: 15px;
+  }
+  #accountType {
+    font-size: 14px;
+    font-weight: 500;
+    margin-right: 15px;
+    position: relative;
+    left: 5px;
+  }
+  .form-group1 label {
+    font-size: 16px;
+    position: relative;
+    left: 0px;
+  }
+  .input-group button {
+    width: 30%;
+    font-size: 14px;
+    position: relative;
+    left: -10px;
+  }
+  #password {
+    height: 40px;
+    position: relative;
+    left: -7px;
+  }
+  #confirmPassword {
+    height: 40px;
+    position: relative;
+    left: -5px;
+  }
+  .btn-primary {
+    position: relative;
+    top: 15px;
+  }
+  /* faqs */
+  .contact-container {
+    max-width: 411px;
+    max-height: 731px;
+    position: absolute;
+    background-color: #ffffff;
+  }
+  .contact-container Footer {
+    position: absolute;
+    margin-top: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    top: 1375px;
+  }
+  .questions {
+    position: relative;
+    left: 0;
+  }
+  #head-title {
+    font-size: 22px;
+  }
+  .faq-icons {
+    width: 40px;
+    position: relative;
+    left: -100px;
+  }
+  .q-texts {
+    font-size: 14px;
+  }
+  .answers {
+    position: relative;
+    left: 0px;
+    background-color: #ffffff;
+  }
+  .answer-part1 {
+    position: relative;
+    left: -10px;
+  }
+  .answer-part2 {
+    position: relative;
+    left: -5px;
+    width: 65%;
+  }
+  .sub-answers {
+    position: relative;
+    left: 0px;
+    width: 400px;
+  }
+  .sub-image {
+    width: 40%;
+    height: 80%;
+  }
+  #q1,
+  #q2,
+  #q3 {
+    position: relative;
+    left: 90px;
+  }
+  .ans-text {
+    position: relative;
+    left: 90px;
+  }
+  .contact-form {
+    position: absolute;
+    left: 0px;
+    height: 550px;
+    background-color: #ffffff;
+    position: relative;
+    top: 0px;
+    margin-bottom: 0;
+    margin-top: 0;
+    padding-bottom: 0;
+    padding-top: 0;
+  }
+  #sub-formtitle {
+    width: 90%;
+    position: relative;
+    left: -410px;
+    font-size: 16px;
+  }
+  .message-form {
+    position: relative;
+    left: -50px;
+    width: 80%;
+    height: 300px;
+  }
+  #name,
+  #email,
+  #message {
+    width: 90%;
+    position: relative;
+    left: 70px;
+  }
+  .contactform-labels {
+    position: relative;
+    left: 50px;
+  }
+  .form-btn {
+    position: relative;
+    left: 120px;
+  }
+  /* insurance */
+  .insurance-container {
+    max-width: 411px;
+    max-height: 731px;
+    position: absolute;
+  }
+  .in-headcontent {
+    position: relative;
+    left: 100px;
+  }
+  .hello {
+    position: relative;
+    left: 0px;
+    width: 80%;
+    text-align: center;
+  }
+  .allkey {
+    position: relative;
+    width: 90%;
+    top: 90px;
+    left: 0px;
+  }
+  .key {
+    position: relative;
+    top: 0px;
+    left: 100px;
+    font-size: 16px;
+  }
+  .cardiv {
+    width: 90%;
+    position: relative;
+    left: 0px;
+    top: 5px;
+  }
+  .theftdiv {
+    width: 90%;
+    position: relative;
+    left: 0px;
+    top: 15px;
+  }
+  .border-box,
+  .border-box2 {
+    width: 100%;
+  }
+  .insurance-icon {
+    width: 40px;
+    position: relative;
+    top: 10px;
+  }
+  .content,
+  .content2 {
+    width: 80%;
+    height: 80%;
+    position: relative;
+    left: 40px;
+  }
+  .damagecontent2 {
+    position: relative;
+    top: -25px;
+    left: 70px;
+  }
+  .theftcontent2 {
+    position: relative;
+    top: -25px;
+    left: 60px;
+  }
+  .downsection {
+    width: 90%;
+    position: relative;
+    top: 40px;
+    left: 0;
+  }
+  .features {
+    font-size: 16px;
+    position: relative;
+    top: 10px;
+    left: 0;
+  }
+  .insidecontent {
+    position: relative;
+    top: 350px;
+    left: -820px;
+  }
+  .lock-image {
+    width: 50px;
+    position: relative;
+    margin-left: 40px;
+  }
+  .keylock-image {
+    width: 50px;
+    position: relative;
+    margin-left: 10px;
+  }
+  .collision {
+    margin-left: 20px;
+  }
+  .twenty,
+  .twentytwo {
+    font-size: 18px;
+    margin-left: 40px;
+  }
+  .fifty {
+    font-size: 18px;
+    margin-left: 15px;
+    margin-top: 25px;
+  }
+  .fiftytwo {
+    font-size: 18px;
+    margin-left: 15px;
+  }
+  .copyof2 {
+    position: relative;
+    left: 10px;
+    top: 270px;
+    width: 90%;
+  }
+  .copy,
+  .copy2 {
+    position: relative;
+    top: 0;
+    left: 0;
+    text-align: center;
+    font-size: 15px;
+  }
+  /* ---------admin--------- */
+  .admin-container {
+    max-width: 411px;
+    max-width: 731px;
+  }
+  .admin-dashboard {
+    width: 100%;
+    position: absolute;
+  }
+  .admin-nav {
+    width: 25%;
+  }
+  .admin-display {
+    width: 75%;
+    position: relative;
+  }
+  .admin-displaycontainer {
+    width: 100%;
+    height: 731px;
+    position: relative;
+    left: 0;
+  }
+  #admin-welcometitle {
+    position: relative;
+    left: 0;
+    text-align: center;
+    font-size: 25px;
+  }
+  #admin-detailsubtitle {
+    position: relative;
+    left: 0;
+    text-align: center;
+    font-size: 16px;
+  }
+  .adminbtns {
+    position: relative;
+    left: -80px;
+  }
+  .adminuser-caption,
+  .admincar-caption,
+  .admindriver-caption {
+    font-size: 16px;
+    position: relative;
+    top: 0;
+    left: -10px;
+  }
+  .adminuser-caption {
+    top: -10px;
+  }
+  #overalluser,
+  #overalldriver,
+  #overallcar {
+    width: 100%;
+    height: 50px;
+  }
+  #overalldriver {
+    margin-left: 25px;
+  }
+  #manageuserbtn,
+  #managecarbtn,
+  #managedriverbtn {
+    position: absolute;
+  }
+  #manageuserbtn {
+    left: 230px;
+    top: 2%;
+  }
+  #managecarbtn {
+    top: 80px;
+    left: 230px;
+  }
+  #managedriverbtn {
+    top: 74%;
+    left: 240px;
+  }
+  .adminsignin-background {
+    width: 100%;
+  }
+  #logout-caption {
+    display: block;
+    color: #fff;
+    position: absolute;
+    width: 22vw;
+    top: 5vh;
+    font-size: 15px;
+    font-weight: 400;
+    left: -22vw;
+  }
+
+  .adminlogoutbtn {
+    position: absolute;
+    width: 30px;
+    top: 18vh;
+    left: -22vw;
+  }
+}
