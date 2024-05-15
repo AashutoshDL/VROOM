@@ -35,11 +35,11 @@ const Footer = () => {
             <div className="Contactinfo">
               <h5 className="contact-title">Contact Info</h5>
               <div className='phoneicon'>
-              <FaPhone size={35}/>
+              <FaPhone size={20}/>
               </div>
 
               <div className='mailicon'>
-              <MdOutlineMailOutline size={45}/>
+              <MdOutlineMailOutline size={30}/>
               </div>
               <div className='bigcontentbox'>
               <ul className="contacts">

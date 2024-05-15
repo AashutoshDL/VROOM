@@ -4,6 +4,7 @@
 .aboutimage {
     background-color: #ffffff;
     padding: 100px 0;
+    border: 5px solid #e4e4e4; /* 5px solid  border */
     /* Increased padding */
 }
 
@@ -34,6 +35,7 @@
 .big-container {
     background-color: #fff;
     padding: 50px 0;
+    border: 5px solid #e4e4e4; /* 5px solid gray border */
 }
 
 .how-to-container {
