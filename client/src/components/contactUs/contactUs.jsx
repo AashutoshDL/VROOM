@@ -35,21 +35,21 @@ const contact = () => {const [formData, setFormData] = useState({
       <div className="questions">
         <div className="faq-display">
           <div className="question-icons">
-            <FaQuestionCircle size={50}/>
+            <FaQuestionCircle size={50} className="faq-icons"/>
           </div>
           <p className="q-texts">How do I make a reservation?</p>
         </div>
 
         <div className="faq-display">
           <div className="question-icons">
-            <FaQuestionCircle size={50}/>
+            <FaQuestionCircle size={50} className="faq-icons"/>
           </div>
            <p className="q-texts">What insurance options do you offer?</p>
         </div>
 
         <div className="faq-display">
           <div className="question-icons">
-            <FaQuestionCircle size={50}/>
+            <FaQuestionCircle size={50} className="faq-icons"/>
           </div>
            <p className="q-texts">Are there any age restrictions on renting a car?</p>
         </div>
@@ -80,7 +80,7 @@ const contact = () => {const [formData, setFormData] = useState({
         <h3 id="formtitle">Still have questions?</h3>
         <h6 id="sub-formtitle">Reach out to us by filling out the form below. We'll get back to you as soon as possible.</h6>
         <form className="message-form" onSubmit={handleSubmit}>
-          <label htmlFor="name">Name:</label>
+          <label htmlFor="name" className='contactform-labels'>Name:</label>
           <input
             type="text"
             id="name"
@@ -90,7 +90,7 @@ const contact = () => {const [formData, setFormData] = useState({
             required
           />
 
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email" className='contactform-labels'>Email:</label>
           <input
             type="email"
             id="email"
@@ -100,7 +100,7 @@ const contact = () => {const [formData, setFormData] = useState({
             required
           />
 
-          <label htmlFor="message">Message:</label>
+          <label htmlFor="message" className='contactform-labels'>Message:</label>
           <textarea
             id="message"
             name="message"

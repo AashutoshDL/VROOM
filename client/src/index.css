@@ -349,6 +349,12 @@
       color: #666;
       cursor: not-allowed;
   }
+  .page-container Footer{
+    position: absolute;
+    margin-top: 0;
+    padding-top: 0;
+    top: 2075px;
+  }
   /* starting footer */
   .footer{
     max-width: 411px;
@@ -550,5 +556,333 @@
     width: 80%;
 }
 /* -------Login----------- */
-
+.login-container{
+  max-width: 411px;
+  position: absolute;
+}
+.login-form{
+  width: 80%;
+  position: relative;
+  left: 0;
+}
+.login-labels{
+  font-size: 14px;
+}
+#phoneNumber{
+  position: relative;
+  margin-left: 10px;
+}
+#password{
+  margin-left: 3px;
+}
+/* ------Register------ */
+.register-container{
+  max-width: 411px;
+  max-width: 731px;
+  position: absolute;
+}
+.register-form{
+  height: 625px;
+  width: 80%;
+  position: relative;
+  left: -10px;
+  top: 60px;
+}
+.signup-form{
+  width: 100%;
+  position: relative;
+  top:20px;
+}
+.register-heading{
+  position: relative;
+  top: -10px;
+}
+.form-control{
+  width: 70%;
+}
+.form-group1{
+  font-size: 16px;
+  width: 100%;
+  height: 40px;
+  position: relative;
+  margin-bottom: 20px;
+  left: 0;
+  top: -5px;
+}
+.form-group1 input[type="text"],
+input[type="password"], #accountType, #name{
+    height: 40px;
+    width: 70%;
+}
+#name{
+  position: relative;
+  left: 15px !important;
+  margin-right: 30px;
+}
+#phoneNumber{
+  padding-left: 20px;
+  position: relative;
+  left: -10px;
+}
+#age{
+  position: relative;
+    left: 30px;
+    margin-right: 40px;
+}
+#address{
+  position: relative;
+    left: 5px;
+    margin-right: 15px;
+}
+#accountType{
+  font-size: 14px;
+  font-weight: 500;
+  margin-right: 15px;
+  position: relative;
+  left: 5px;
+}
+.form-group1 label{
+  font-size: 16px;
+  position: relative;
+  left: 0px;
+}
+.input-group button{
+  width: 30%;
+  font-size: 14px;
+  position:relative;
+  left: -10px;
+}
+#password {
+  height: 40px;
+  position: relative;
+  left: -7px;
+}
+#confirmPassword{
+  height: 40px;
+  position: relative;
+  left: -5px;
+}
+.btn-primary{
+  position: relative;
+  top: 15px;
+}
+/* faqs */
+.contact-container{
+  max-width: 411px;
+  max-height: 731px;
+  position: absolute;
+  background-color: #ffffff;
+}
+.contact-container Footer{
+  position: absolute;
+  margin-top: 0;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom:0 ;
+  top: 1375px;
+}
+.questions{
+  position: relative;
+  left: 0;
+}
+#head-title{
+  font-size: 22px;
+}
+.faq-icons{
+  width: 40px;
+  position: relative;
+  left: -100px;
+}
+.q-texts{
+  font-size: 14px;
+}
+.answers{
+  position: relative;
+  left: 0px;
+  background-color: #ffffff;
+}
+.answer-part1{
+  position: relative;
+  left: -10px;
+}
+.answer-part2 {
+  position: relative;
+  left: -5px;
+  width: 65%;
+}
+.sub-answers{
+  position: relative;
+  left: 0px;
+  width: 400px;
+}
+.sub-image{
+  width: 40%;
+  height: 80%;
+}
+#q1, #q2, #q3{
+  position: relative;
+  left: 90px;
+}
+.ans-text{
+  position: relative;
+  left: 90px;
+}
+.contact-form{
+  position: absolute;
+  left: 0px;
+  height: 550px;
+  background-color: #ffffff;
+  position: relative;
+  top: 0px;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding-bottom: 0;
+  padding-top: 0;
+}
+ #sub-formtitle{
+  width: 90%;
+  position: relative;
+  left: -410px;
+  font-size: 16px;
+}
+.message-form{
+  position: relative;
+  left: -50px;
+  width: 80%;
+  height: 300px;
+}
+#name , #email, #message{
+  width: 90%;
+  position: relative;
+  left: 70px;
+}
+.contactform-labels{
+  position: relative;
+  left: 50px;
+}
+.form-btn{
+  position: relative;
+  left: 120px;
+}
+/* insurance */
+.insurance-container{
+  max-width: 411px;
+  max-height: 731px;
+  position: absolute;
+}
+.in-headcontent{
+  position: relative;
+  left: 100px;
+}
+.hello {
+  position: relative;
+  left: 0px;
+  width: 80%;
+  text-align: center;
+}
+.allkey{
+  position: relative;
+  width: 90%;
+  top: 90px;
+  left: 0px;
+}
+.key{
+  position: relative;
+  top: 0px;
+  left: 100px;
+  font-size: 16px;
+}
+.cardiv {
+  width: 90%;
+  position: relative;
+  left: 0px;
+  top: 5px;
+}
+.theftdiv {
+  width: 90%;
+  position: relative;
+  left: 0px;
+  top: 15px;
+}
+.border-box , .border-box2{
+  width: 100%;
+}
+.insurance-icon{
+  width: 40px;
+  position: relative;
+  top: 10px;
+}
+.content, .content2{
+  width: 80%;
+  height: 80%;
+  position: relative;
+  left: 40px;
+}
+.damagecontent2{
+  position: relative;
+  top: -25px;
+  left: 70px;
+}
+.theftcontent2 {
+  position: relative;
+  top: -25px;
+  left: 60px;
+}
+.downsection{
+  width: 90%;
+  position: relative;
+  top: 40px;
+  left: 0;
+}
+.features{
+  font-size: 16px;
+  position: relative;
+  top: 10px;
+  left: 0;
+}
+.insidecontent{
+  position: relative;
+  top: 350px;
+  left: -820px;
+}
+.lock-image{
+  width: 50px;
+  position: relative;
+  margin-left: 40px;
+}
+ .keylock-image {
+   width: 50px;
+   position: relative;
+   margin-left: 10px;
+ }
+ .collision{
+  margin-left: 20px;
+ }
+ .twenty, .twentytwo{
+  font-size: 18px;
+  margin-left: 40px;
+ }
+ .fifty{
+   font-size: 18px;
+   margin-left: 15px;
+   margin-top: 25px;
+ }
+ .fiftytwo {
+   font-size: 18px;
+   margin-left: 15px;
+ }
+ .copyof2{
+  position: relative;
+  left: 10px;
+  top: 270px;
+  width: 90%;
+ }
+ .copy, .copy2{
+  position: relative;
+  top: 0;
+  left: 0;
+  text-align: center;
+  font-size: 15px;
+ }
+ /* ---------admin--------- */
 }

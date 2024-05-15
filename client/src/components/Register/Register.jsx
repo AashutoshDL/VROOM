@@ -72,60 +72,60 @@ const Register = () => {
           Your browser does not support the video tag.
         </video>
       <div className='register-form'>
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className='signup-form'>
           <h2 className="register-heading">Register</h2>
-          <div className="form-group">
+          <div className="form-group1">
             <label htmlFor='name'>Name</label>
             <input
               type='text'
               id='name'
               placeholder='Enter name'
-              className='form-control'
+              className='form-control1'
               value={name}
               onChange={(e) => setName(e.target.value)}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group1">
             <label htmlFor='phone number'>Phone Number</label>
             <input
               type='text'
               id='phoneNumber'
               placeholder='Enter phone number'
-              className='form-control'
+              className='form-control1'
               value={phoneNumber}
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group1">
             <label htmlFor='age'>Age</label>
             <input
               type='text'
               id='age'
               placeholder='Enter age'
-              className='form-control'
+              className='form-control1'
               value={age}
               onChange={(e) => setAge(e.target.value)}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group1">
             <label htmlFor='address'>Address</label>
             <input
               type='text'
               id='address'
               placeholder='Enter address'
-              className='form-control'
+              className='form-control1'
               value={address}
               onChange={(e) => setAddress(e.target.value)}
             />
           </div>
-          <div className="form-group">
+          <div className="form-group1">
             <label htmlFor='password'>Password</label>
             <div className="input-group">
               <input
                 type={showPassword ? 'text' : 'password'}
                 id='password'
                 placeholder='Enter password'
-                className='form-control'
+                className='form-control1'
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
@@ -138,14 +138,14 @@ const Register = () => {
               </button>
             </div>
           </div>
-          <div className="form-group">
+          <div className="form-group1">
             <label htmlFor='comfirmPassword'>Confirm Password</label>
             <div className="input-group">
               <input
                 type={showConfirmPassword ? 'text' : 'password'}
                 id='confirmPassword'
                 placeholder='Confirm your password'
-                className='form-control'
+                className='form-control1'
                 value={confirmPassword}
                 onChange={(e) => setConfirmPassword(e.target.value)}
               />
@@ -159,7 +159,7 @@ const Register = () => {
             </div>
           </div>
 
-          <div className="form-group">
+          <div className="form-group1">
             <label htmlFor='accountType'>Account Type</label>
             <select
               id='accountType'
