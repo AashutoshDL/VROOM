@@ -23,6 +23,8 @@ const HireDriver = () => {
 
   return (
     <div className="driver-cards-container"> {/* Apply container class */}
+      <h1>VROOM Drivers Rental Service</h1>
+      <p>Select a driver for rental</p>
       <h2>List of Drivers:</h2>
       <div className="driver-cards">
         {drivers.map(driver => (

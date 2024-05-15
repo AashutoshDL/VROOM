@@ -3,7 +3,7 @@
     width: 100%; /* Set width to 100% for responsiveness */
     max-width: 1800; /* Center the .review-slide horizontally */
     padding: 40px;
-    background-color: #ffffff;
+    background-color: hsl(0, 0%, 100%);
     position: relative; /* Establishes a containing block for absolute positioning */
   }
   
