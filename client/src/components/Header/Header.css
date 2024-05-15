@@ -7,6 +7,13 @@
     width: auto;
 }
 
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
 .container {
     margin: 0;
     padding: 0;
@@ -73,9 +80,9 @@
 #btn,
 #login-button,
 #logout-button {
-    width: 90px;
+    width: 70px;
     /* Decrease width */
-    padding: 8px;
+    padding: 5px;
     /* Decrease padding */
     border: none;
     /* Remove border */
@@ -87,7 +94,7 @@
     /* Add transition for smooth color change */
     height: 40px;
     position: relative;
-    left: 220px;
+    left: 160px;
     background-color: #FFFFFF;
     color: #000000;
 }
@@ -113,7 +120,7 @@
 
 #login-button {
     position: relative;
-    left: 200px;
+    left: 150px;
 }
 
 /* Adjust margin for sign up and login buttons */
