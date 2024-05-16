@@ -6,12 +6,15 @@ const bookingController = require('./controllers/bookingController');
 const carController = require('./controllers/carController');
 const userController = require('./controllers/userController');
 const hireController = require('./controllers/hireController');
+const multer=require('multer')
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
 app.use(express.static('public'));
+
+const upload = multer({ dest: 'public/uploads' });
 
 connectDB();
 
@@ -29,9 +32,9 @@ app.put('/api/updateDriverById', hireController.updateDriverById);
 app.delete('/api/deleteDriverById', hireController.deleteDriverById);
 
 app.get('/api/getAllCars', carController.getAllCars);
-app.post('/api/createCar', carController.createCar);
+app.post('/api/createCar', upload.single('file'),carController.createCar);
 app.get('/api/getCarById', carController.getCarById);
-app.put('/api/updateCarById', carController.updateCarById);
+app.put('/api/updateCarById', upload.single('file'),carController.updateCarById);
 app.delete('/api/deleteCarById', carController.deleteCarById);
 
 app.post('/api/createBooking', bookingController.createBooking);
