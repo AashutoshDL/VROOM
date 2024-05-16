@@ -1,6 +1,6 @@
 .in-headcontent {
     position: relative;
-    left: 630px;
+    left: 40vw;
     top: 80px;
     font-weight: 700;
 }
@@ -8,14 +8,14 @@
 .hello {
     position: relative;
     top: 90px;
-    left: 520px;
+    left: 30vw;
     font-weight: 600;
     font-size: smaller;
 }
 .allkey {
     position: relative;
     top: 240px;
-    left: 100px;
+    left: 2vw;
     font-weight: 700;
 }
 .key {
@@ -102,8 +102,8 @@
 
 .features {
     position: relative;
-    top: 340px;
-    left: 85px;
+    top: 70vh;
+    left: 10vw;
     font-weight: 700;
 }
 
@@ -182,7 +182,8 @@
 
 .insidecontent {
     position: relative;
-    top: 500px;
+    left: -7vw;
+    top: 45vw;
 }
 
 .copy {
@@ -201,6 +202,7 @@
 
 .copyof2 {
     position: relative;
-    bottom: 30px;
-    left: 20px;
+    bottom: 3vw;
+    left: -5vw;
+    top: 20vh;
 }

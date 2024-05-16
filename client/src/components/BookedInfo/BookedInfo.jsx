@@ -11,7 +11,7 @@ const CarImage = ({ carData }) => (
 );
 
 const CarDetails = ({ carData, bookingData }) => (
-  <div>
+  <div className='bookedcar-details'>
     <h3>{carData.model}</h3>
     <p>Company: {carData.company}</p>
     <p>Year: {carData.year}</p>
@@ -29,7 +29,7 @@ const PaymentMethodSelection = ({ selectedMethod, setSelectedMethod }) => {
   };
 
   return (
-    <div>
+    <div className='bookedcar-price'>
       <h3 className="payment-title">Payment Method:</h3>
       <label>
         <input
@@ -136,7 +136,7 @@ const BookedInfo = () => {
 
         </ul>
       </div>
-      <div className="container">
+      <div className="booking-container">
         <BookingForm carId={carData._id} carData={carData} bookingData={bookingData} />
       </div>
     </div>

@@ -2,7 +2,7 @@ import { useState } from 'react';
 import axios from 'axios';
 import Popup from '../Popup/Popup';
 import './Register.css';
-import backgroundVideo from '../ImagesFol/backvid.mp4';
+import backgroundVideo1 from '../ImagesFol/backvid.mp4';
 import Footer from "../Footer/Footer";
 
 const Register = () => {
@@ -67,8 +67,8 @@ const Register = () => {
 
   return (
     <div className='register-container'>
-      <video autoPlay loop muted className="background-video">
-          <source src={backgroundVideo} type="video/mp4" />
+      <video autoPlay loop muted className="background-video1">
+          <source src={backgroundVideo1} type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       <div className='register-form'>
@@ -173,7 +173,7 @@ const Register = () => {
             </select>
           </div>
           <div className="d-flex justify-content-end">
-            <button type="submit" className='btn btn-primary'>Submit</button>
+            <button type="submit" className='registersub btn btn-primary'>Submit</button>
           </div>
         </form>
       </div>

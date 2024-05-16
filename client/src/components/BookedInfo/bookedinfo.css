@@ -37,7 +37,9 @@
   margin-right: 300px;
 }
 
-
+.booking-container{
+  position: absolute;
+}
 .book-navbar .pagination li a {
   font-weight: bold;
   text-decoration: underline;

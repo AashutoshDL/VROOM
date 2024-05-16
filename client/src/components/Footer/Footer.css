@@ -134,7 +134,7 @@ ul {
 .Contactinfo {
     position: absolute;
     top: 100px;
-    left: 520px;
+    left: 38vw;
     width: 25%;
     color: white;
 }
@@ -152,7 +152,6 @@ ul {
     position: relative;
     left: 30px;
 }
-
 .footer-info {
     padding-right: 0px;
     position: relative;
@@ -162,7 +161,7 @@ ul {
 }
 
 .foot-info2 {
-    margin-left: 225px;
+    margin-left: 15vw;
     position: relative;
     bottom: 28px;
     margin-top: 10px;
@@ -184,7 +183,8 @@ ul {
 
 .mailicon {
     position: relative;
-    left: 280px;
+    left: 20vw;
+    top: 0.8vw;
 }
 
 .bigcontentbox {
@@ -195,7 +195,7 @@ ul {
 .foot-infonum {
     position: relative;
     top: 9px;
-    left: 50px;
+    left: 3vw;
 }
 
 .copyright {

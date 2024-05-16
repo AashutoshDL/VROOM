@@ -71,7 +71,7 @@ const Vehicles = () => {
   };
 
   return (
-    <div>
+    <div className='vehicle-container'>
       <div className="book-navbar">
         <ul className="pagination">
           <li className= {location.pathname === "/vehicles" ? "active" : ""} >1 : Vehicles </li>

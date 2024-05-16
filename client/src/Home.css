@@ -5,3 +5,7 @@
     justify-content: center;
     min-height: 100vh; /* Ensures that the container takes up at least the height of the viewport */
   }
+  .page-container Footer{
+    position: absolute;
+    top: 360vh;
+  }

@@ -1,81 +1,84 @@
 * {
-    box-sizing: border-box; /* Ensure padding and border are included in the element's total width and height */
-  }
-  
-  .driver-cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    margin-top: 10vh; /* Adjust the margin-top to move the cards down */
-  }
-  
-  .driver-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-  }
-  
-  .card {
-    background: #ffffff;
-    height: 300px;
-    width: 200px;
-    margin: 10px;
-    margin-top: 20px; /* Adjust the margin-top to move the cards down */
-    border-radius: 3px;
-    box-shadow: 0 1px 4px 0px rgba(0,0,0,.05);
-    font-weight: 700;
-  }
-  
-  .profile {
-    width: 100%;
-    height: 150px;
-    background: none;
-  }
-  
-  .profile img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  .name {
-    text-align: center;
-    font-size: 1.1em;
-  }
-  
-  .numbers {
-    text-align: center;
-  }
-  
-  #stats {
-    color: #c1c1c1;
-    font-size: .9em;
-  }
-  
-  .btn-follow {
-    background: #00936E;
-    height: 32px;
-    width: 100%;
-    display: block;
-    margin: 0 auto;
-    font-size: .8em;
-    font-weight: 700;
-    line-height: 34px;
-    border-radius: 2px;
-    text-align: center;
-    color: #ffffff;
-    text-decoration: none;
-  }
-  
-  .btn-follow:hover {
-    background: #00896E;
-  }
-  
-  .btn-follow:active {
-    border-bottom: none;
-    border-top: 1px solid #006D59;
-    background: #00896E;
-  }
-  
+  box-sizing: border-box;
+  /* Ensure padding and border are included in the element's total width and height */
+}
+
+.driver-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-top: 10vh;
+  /* Adjust the margin-top to move the cards down */
+  flex-direction: column;
+}
+
+.driver-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.card {
+  background: #ffffff;
+  height: 300px;
+  width: 200px;
+  margin: 10px;
+  margin-top: 20px;
+  /* Adjust the margin-top to move the cards down */
+  border-radius: 3px;
+  box-shadow: 0 1px 4px 0px rgba(0, 0, 0, .05);
+  font-weight: 700;
+}
+
+.profile {
+  width: 100%;
+  height: 150px;
+  background: none;
+}
+
+.profile img {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+.name {
+  text-align: center;
+  font-size: 1.1em;
+}
+
+.numbers {
+  text-align: center;
+}
+
+#stats {
+  color: #c1c1c1;
+  font-size: .9em;
+}
+
+.btn-follow {
+  background: #00936E;
+  height: 32px;
+  width: 100%;
+  display: block;
+  margin: 0 auto;
+  font-size: .8em;
+  font-weight: 700;
+  line-height: 34px;
+  border-radius: 2px;
+  text-align: center;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.btn-follow:hover {
+  background: #00896E;
+}
+
+.btn-follow:active {
+  border-bottom: none;
+  border-top: 1px solid #006D59;
+  background: #00896E;
+}

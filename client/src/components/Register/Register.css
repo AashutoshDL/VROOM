@@ -23,13 +23,13 @@
   left: 28vw;
   margin-bottom: 70px;
 }
- .background-video {
+ .background-video1 {
    position: absolute;
    /* Position the video absolutely */
    top: 0;
    left: 0;
    width: 100%;
-   height: 100%;
+   height: 150vh;
    object-fit: cover;
    /* Ensure the video covers the entire element */
    z-index: -1;
