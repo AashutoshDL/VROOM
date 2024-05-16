@@ -1,0 +1,36 @@
+.createdriver-container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url('../../../components/ImagesFol/background4.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+}
+.createdriver-sub{
+    width: 50%;
+    height: 88%;
+    background-color: rgb(117, 115, 115, 0.2);
+    position: absolute;
+    top: 7vh;
+    left: 25vw;
+    border-radius: 2vw;
+}
+.createdriver-header{
+    position: relative;
+    left: 18vw;
+    top: 3vh;
+}
+.createdriver-form {
+    width: 90%;
+    position: relative;
+    top: 3vh;
+    left: 3vw;
+}
+.form-control3{
+    margin-bottom: 0.6vh;
+}
+.createdriver-form button{
+    margin-top: 1vh;
+    width: 8vw;
+    border-radius: 0.5vw;
+}

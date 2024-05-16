@@ -1,0 +1,20 @@
+.updateuser-container{
+    min-width: 100vw;
+    min-height: 120vh;
+    background-image: url('../../../components/ImagesFol/background4.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+    position: absolute;
+}
+.updateuser-sub{
+    height: 93%;
+    width: 100%;
+    background-color: rgb(116, 110, 110, 0.2);
+    border-radius: 2vw;
+}
+#userage, #useraddress{
+    width: 98%;
+    font-size: 16px;
+    height: 7.5vh;
+}

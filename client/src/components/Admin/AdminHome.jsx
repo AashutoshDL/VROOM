@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import background3 from "../ImagesFol/background3.jpg";
+import background3 from "../ImagesFol/background4.png";
 import "./AdminHome.css";
 const Home = () => {
   const [username, setUsername] = useState("");
@@ -97,7 +97,7 @@ const Home = () => {
                     <div id="overallcar">
                       <p className="admincar-caption">Manage the cars?</p>
                       <div id="managecarbtn">
-                        <Link to="/cars" className="btn btn-success btn-block">
+                        <Link to="/cars" className="btn btn-secondary btn-block">
                           Manage Cars
                         </Link>
                       </div>
@@ -107,7 +107,7 @@ const Home = () => {
                     <div id="overalldriver">
                       <p className="admindriver-caption">Manage the Drivers?</p>
                       <div id="managedriverbtn">
-                        <Link to="/driver" className="btn btn-success btn-block">
+                        <Link to="/driver" className="btn btn-secondary btn-block">
                           Manage Drivers
                         </Link>
                       </div>

@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import './CreateUser.css';
+import background4 from "../../../components/ImagesFol/background4.png";
 
 const CreateUser = () => {
   const [name, setName] = useState('');
@@ -35,9 +37,9 @@ const CreateUser = () => {
   };
 
   return (
-    <div className='d-flex vh-110 bg-primary justify-content-center align-items-center'>
-      <div className='vh-102 w-50 bg-white rounded p-3'>
-        <form onSubmit={handleSubmit}>
+    <div className='createuser-container d-flex vh-110 bg-primary justify-content-center align-items-center' style={{ backgroundImage: background4 }}>
+      <div className='createuser-sub vh-102 w-50 rounded p-3'>
+        <form onSubmit={handleSubmit} className='createuser-form'>
           <h2 className="text-left mb-4">Add User</h2>
           <div className="mb-3">
             <label htmlFor='name' className="form-label">Name</label>

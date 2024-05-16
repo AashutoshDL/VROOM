@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import background4 from "../../../components/ImagesFol/background4.png";
+import './User.css';
 
 const User = () => {
     const [users, setUsers] = useState([]);
@@ -23,39 +25,39 @@ const User = () => {
     };
 
     return (
-        <div className="container mt-5">
+        <div className="admin-container mt-5" style={{ backgroundImage: background4 }}>
             <div className="row">
                 <div className="col-lg-6">
                     <h1 className="user-heading">User Information</h1>
                 </div>
-                <div className="col-lg-6 d-flex justify-content-end">
-                    <Link to="/createUser" className="btn">Add User</Link>
+                <div className="adduserbtn col-lg-6 d-flex justify-content-end">
+                    <Link to="/createUser" className="adduser-btn">Add User</Link>
                 </div>
             </div>
             <table className="table mt-3">
                 <thead className="thead-dark">
                     <tr>
-                        <th scope="col">UserName</th>
-                        <th scope="col">Phone Number</th>
-                        <th scope="col">Age</th>
-                        <th scope="col">Address</th>
-                        <th scope="col">Account Type</th>
-                        <th scope="col">Image</th>
-                        <th scope="col">Action</th>
+                        <th scope="col" className='user-labeltitle'>UserName</th>
+                        <th scope="col" className='user-labeltitle'>Phone Number</th>
+                        <th scope="col" className='user-labeltitle'>Age</th>
+                        <th scope="col" className='user-labeltitle'>Address</th>
+                        <th scope="col" className='user-labeltitle'>Account Type</th>
+                        <th scope="col" className='user-labeltitle'>Image</th>
+                        <th scope="col" className='user-labeltitle'>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                     {users.map((user) => (
                         <tr key={user._id}>
-                            <td>{user.name}</td>
-                            <td>{user.phoneNumber}</td>
-                            <td>{user.age}</td>
-                            <td>{user.address}</td>
-                            <td><img src={`http://localhost:3001/uploads/${user.image}`} alt="User" style={{ maxWidth: '300px', maxHeight: '300px' }} /></td>
-                            <td>{user.accountType}</td>
-                            <td>
-                                <Link to={`/updateUser/${user._id}`} className="btn btn-dark mr-2">Update</Link>
-                                <button className="btn btn-danger" onClick={() => handleDelete(user._id)}>Delete</button>
+                            <td className='user-information'>{user.name}</td>
+                            <td className='user-information'>{user.phoneNumber}</td>
+                            <td className='user-information'>{user.age}</td>
+                            <td className='user-information'>{user.address}</td>
+                            <td className='user-information'><img src={`http://localhost:3001/uploads/${user.image}`} alt="User" style={{ maxWidth: '300px', maxHeight: '300px' }} /></td>
+                            <td className='user-information'>{user.accountType}</td>
+                            <td className='user-information'>
+                                <Link to={`/updateUser/${user._id}`} className="updateuser-btn btn-dark">Update</Link>
+                                <button className="deleteuser-btn btn-danger" onClick={() => handleDelete(user._id)}>Delete</button>
                             </td>
                         </tr>
                     ))}

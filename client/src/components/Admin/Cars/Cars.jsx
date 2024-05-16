@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import background4 from "../../../components/ImagesFol/background4.png";
+import './Cars.css';
 
 const User = () => {
     const [cars, setCars] = useState([]);
@@ -23,38 +25,38 @@ const User = () => {
     };
 
     return (
-        <div className="container mt-5">
+        <div className="cars-container mt-5"  style={{ backgroundImage: background4 }}>
             <div className="row">
                 <div className="col-lg-10">
-                    <h1 className="user-heading">Car Information</h1>
+                    <h1 className="car-heading">Car Information</h1>
                 </div>
-                <div className="col-lg-6 d-flex justify-content-center align-items-center">
-                    <Link to="/createCars" className="btn btn-success">Add Car</Link>
+                <div className="addcarbtn col-lg-6 d-flex justify-content-center align-items-center">
+                    <Link to="/createCars" className="addcars-btn btn-success">Add Car</Link>
                 </div>
             </div>
-            <div className="mt-3">
+            <div className="addcarstable mt-3">
                 <table className="table">
                     <thead className="thead-dark">
                         <tr>
-                            <th scope="col">Company</th>
-                            <th scope="col">Model</th>
-                            <th scope="col">Year</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Image</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Action</th>
+                            <th scope="col" className='carlabel-title'>Company</th>
+                            <th scope="col" className='carlabel-title'>Model</th>
+                            <th scope="col" className='carlabel-title'>Year</th>
+                            <th scope="col" className='carlabel-title'>Price</th>
+                            <th scope="col" className='carlabel-title'>Image</th>
+                            <th scope="col" className='carlabel-title'>Status</th>
+                            <th scope="col" className='carlabel-title'>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {cars.map((car) => (
                             <tr key={car._id}>
-                                <td>{car.company}</td>
-                                <td>{car.model}</td>
-                                <td>{car.year}</td>
-                                <td>{car.price}</td>
-                                <td><img src={`http://localhost:3001/uploads/${car.image}`} alt="Car" style={{ maxWidth: '300px', maxHeight: '300px' }} /></td>
-                                <td>{car.status}</td>
-                                <td>
+                                <td className='car-information'>{car.company}</td>
+                                <td className='car-information'>{car.model}</td>
+                                <td className='car-information'>{car.year}</td>
+                                <td className='car-information'>{car.price}</td>
+                                <td className='car-information'><img src={`http://localhost:3001/uploads/${car.image}`} alt="Car" style={{ maxWidth: '300px', maxHeight: '300px' }} /></td>
+                                <td className='car-information'>{car.status}</td>
+                                <td className='car-information'>
                                     <Link to={`/updateCars/${car._id}`} className="btn btn-secondary me-2">Update</Link>
                                     <button className="btn btn-danger" onClick={() => handleDelete(car._id)}>Delete</button>
                                 </td>

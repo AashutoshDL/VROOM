@@ -1,0 +1,18 @@
+.createuser-container{
+    min-width: 100vw;
+    min-height: 100vh;
+    background-image: url('../../../components/ImagesFol/background4.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(10px);
+}
+.createuser-sub{
+    height: 100%;
+    width: 100%;
+    background-color: rgb(116, 110, 110, 0.2);
+    border-radius: 2vw;
+}
+.createuser-form{
+    height: 90%;
+    width: 100%;
+}

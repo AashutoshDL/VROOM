@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import './CreateDriver.css';
+import background4 from "../../../components/ImagesFol/background4.png";
 const CreateDriver = () => {
     const [name, setName] = useState('');
     const [licenseNumber, setLicenseNumber] = useState('');
@@ -29,10 +30,11 @@ const CreateDriver = () => {
       };
 
     return (
-        <div>
-            <h2>Add Driver</h2>
-            <form onSubmit={handleSubmit}>
-                <div>
+        <div className='createdriver-container' style={{ backgroundImage: background4 }}>
+            <div className="createdriver-sub">
+                 <h2 className='createdriver-header'>Add Driver</h2>
+            <form onSubmit={handleSubmit} className='createdriver-form'>
+                <div className='form-control3'>
                     <label htmlFor="name">Name:</label>
                     <input
                         type="text"
@@ -42,7 +44,7 @@ const CreateDriver = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className='form-control3'>
                     <label htmlFor="license">License Number:</label>
                     <input
                         type="text"
@@ -52,7 +54,7 @@ const CreateDriver = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className='form-control3'>
                     <label htmlFor="phoneNumber">Phone Number:</label>
                     <input
                         type="text"
@@ -62,7 +64,7 @@ const CreateDriver = () => {
                         required
                     />
                 </div>
-                <div>
+                <div className='form-control3'>
                     <label htmlFor="status">Status:</label>
                     <select
                         id="status"
@@ -75,7 +77,7 @@ const CreateDriver = () => {
                         <option value="booked">Booked</option>
                     </select>
                 </div>
-                <div>
+                <div className='form-control3'>
                     <label htmlFor="address">Address:</label>
                     <input
                         type="text"
@@ -87,6 +89,7 @@ const CreateDriver = () => {
                 </div>
                 <button type="submit">Add Driver</button>
             </form>
+            </div>
         </div>
     );
 };

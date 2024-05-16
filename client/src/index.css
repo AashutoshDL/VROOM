@@ -43,6 +43,32 @@
     padding: 0px;
   }
 }
+
+@media (min-width: 1900)and (min-height: 1070px) {
+  * {
+    max-height: 182vh;
+    /* 731px */
+    max-width: 140.55vw;
+    /* 411px */
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .navBar {
+    position: relative;
+    z-index: 1000;
+    /* Ensure the navbar is positioned relative */
+  }
+
+  .mainnav {
+    width: 100%;
+  }
+
+  .container {
+    display: flex;
+    flex-direction: row;
+  }
+}
 /* for Google Pixel XL */
 @media (max-width: 421px) and (max-height: 740px) {
   /* ------Landing Page, Header and Footer --------*/

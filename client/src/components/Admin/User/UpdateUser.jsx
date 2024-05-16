@@ -1,7 +1,8 @@
 import {useState, useEffect} from 'react';
 import { useParams,useNavigate } from 'react-router-dom';
 import axios from "axios";
-
+import './UpdateUser.css';
+import background4 from "../../../components/ImagesFol/background4.png";
 const UpdateUser = () => {
 
   const {id }= useParams();
@@ -33,9 +34,9 @@ const UpdateUser = () => {
     }
   return (
     // Outer container with flexbox styling
-    <div className='d-flex vh-100 bg-primary justify-content-center align-items-center'>
+    <div className='updateuser-container d-flex vh-100 bg-primary justify-content-center align-items-center' style={{ backgroundImage: background4 }}>
       {/* Inner container with white background and padding */}
-      <div className='w-50 bg-white rounded p-3'>
+      <div className='updateuser-sub w-50 rounded p-3'>
         {/* Form for updating a user */}
         <form onSubmit={Update}>
           <h2 className='text-left mb-4'>Update User</h2>
@@ -54,12 +55,12 @@ const UpdateUser = () => {
           {/* Input field for age */}
           <div className="mb-3">
             <label htmlFor=''>Age</label>
-            <input type='' placeholder='Enter age' className='form-control'
+            <input type='' placeholder='Enter age' className='form-control' id='userage'
             value={age} onChange={(e) => setAge(e.target.value)}/>
           </div>
           <div className="mb-3">
             <label htmlFor=''>Address</label>
-            <input type='' placeholder='Enter address' className='form-control'
+            <input type='' placeholder='Enter address' className='form-control' id='useraddress'
             value={address} onChange={(e) => setAddress(e.target.value)}/>
           </div>   
           <div className="mb-3">

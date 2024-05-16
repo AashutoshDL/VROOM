@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import background4 from "../../../components/ImagesFol/background4.png";
+import './UpdateCars.css';
 
 const UpdateCars = () => {
   const { id } = useParams();
@@ -47,8 +49,8 @@ const UpdateCars = () => {
   };
 
   return (
-    <div className='d-flex vh-100 bg-primary justify-content-center align-items-center'>
-      <div className='w-50 bg-white rounded p-3'>
+    <div className='updatecar-container d-flex vh-100 bg-primary justify-content-center align-items-center'  style={{ backgroundImage: background4 }}>
+      <div className='updatecar-sub w-50 rounded p-3'>
         <form onSubmit={handleUpdate}>
           <h2 className='text-left mb-4'>Update Car</h2>
           <div className="mb-3">

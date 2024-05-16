@@ -17,12 +17,12 @@
 .admin-nav {
     width: 14%;
     height: 100%;
-    background-color: #00509D;
+    background-color: #142459;
 }
 .admin-display {
     width: 86%;
     height: auto;
-    background-image: url('../ImagesFol/background3.jpg');
+    background-image: url('../ImagesFol/background4.png');
     background-repeat: no-repeat;
     background-size: cover;
     backdrop-filter: blur(10px);
@@ -35,7 +35,7 @@
 .adminsignin-background{
     width: 55vw;
     height: 55vh;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5));
+    background: linear-gradient(to bottom, rgba(90, 80, 80, 0.1), rgba(51, 44, 44, 0.5));
     transition: background 0.5s ease;
     border-radius: 10px;
 }
@@ -109,9 +109,8 @@
 }
 #managecarbtn{
     position: absolute;
-    top: 25vh;
+    top: 26vh;
     left: 25vw;
-    width: 155px;
 }
 #manageuserbtn {
     position: absolute;
@@ -121,7 +120,7 @@
 }
 #managedriverbtn{
     position: absolute;
-        top: 13vh;
+        top: 15vh;
         left: 25vw;
         width: 155px;
 }
