@@ -44,8 +44,9 @@ const Header = () => {
         <Navbar expand="lg" id="mainnav">
           <div className="container">
             <div className="logoDiv">
-              {/* Logo */}
+              <Link to='/' className="logo-link">
               <img src={logo} alt="Logo Image" className="logo" />
+              </Link>
             </div>
             {/* Navbar toggle button */}
             <Navbar.Toggle
