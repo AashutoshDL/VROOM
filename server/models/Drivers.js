@@ -6,6 +6,8 @@ const DriverSchema=new mongoose.Schema({
     phoneNumber:Number,
     address: String,
     status:String,
+    image:String,
+    
 })
 
 const DriverModel=mongoose.model("drivers",DriverSchema)

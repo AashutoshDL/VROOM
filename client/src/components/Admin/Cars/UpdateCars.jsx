@@ -50,7 +50,7 @@ const UpdateCars = () => {
     <div className='d-flex vh-100 bg-primary justify-content-center align-items-center'>
       <div className='w-50 bg-white rounded p-3'>
         <form onSubmit={handleUpdate}>
-          <h2 className='text-left mb-4'>U</h2>
+          <h2 className='text-left mb-4'>Update Cars</h2>
           <div className="mb-3">
             <label htmlFor='company'>Company</label>
             <input
@@ -99,10 +99,10 @@ const UpdateCars = () => {
               value={available}
               onChange={(e) => setAvailable(e.target.value)}
             >
-              <option value=''>Select Availability</option>
-              <option value='yes'>Available</option>
+              <option value='' disabled>Select Availability</option>
+              <option value='available'>Available</option>
               <option value='booked'>Booked</option>
-              <option value='no'>Not Available</option>
+              <option value='not-avaibable'>Not Available</option>
             </select>
           </div>
           <div className="mb-3">

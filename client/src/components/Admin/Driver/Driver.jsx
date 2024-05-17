@@ -51,7 +51,7 @@
                                 <td>{driver.phoneNumber}</td>
                                 <td>{driver.address}</td>
                                 <td>{driver.status}</td>
-                                <td><img src={`http://localhost:3001/uploads/${driver.image}`} alt="Driver" style={{ maxWidth: '300px', maxHeight: '300px' }} /></td>
+                                <td><img src={`http://localhost:3001/drivers/${driver.image}`} alt="Driver" style={{ maxWidth: '300px', maxHeight: '300px' }} /></td>
                                 <td>
                                     <Link to={`/updateDriver/${driver._id}`} className="btn btn-dark mr-2">Update</Link>
                                     <button className="btn btn-danger" onClick={() => handleDelete(driver._id)}>Delete</button>

@@ -19,11 +19,11 @@ const UpdateDriver = () => {
       .then(result =>
         {
           const driverData=result.data;
-        setUserName(driverData.data.userName)
-        setLicenseNumber(driverData.data.licenseNumber)
-        setPhoneNumber(driverData.data.phoneNumber)
-        setAddress(driverData.data.address)
-        setStatus(driverData.data.status)
+        setUserName(driverData.userName)
+        setLicenseNumber(driverData.licenseNumber)
+        setPhoneNumber(driverData.phoneNumber)
+        setAddress(driverData.address)
+        setStatus(driverData.status)
       }) 
       .catch(err => console.log(err));
   }, [id]);
@@ -32,16 +32,16 @@ const UpdateDriver = () => {
 
     e.preventDefault();
 
-    const drivData= new FormData();
+    const formData= new FormData();
 
-    drivData.append('file',file)
-    drivData.append('userName',userName);
-    drivData.append('licenseNumber',licenseNumber)
-    drivData.append('phoneNumber',phoneNumber)
-    drivData.append('address',address)
-    drivData.append('status',status)
+    formData.append('file',file)
+    formData.append('userName',userName);
+    formData.append('licenseNumber',licenseNumber)
+    formData.append('phoneNumber',phoneNumber)
+    formData.append('address',address)
+    formData.append('status',status)
     
-    axios.put(`http://localhost:3001/api/updateDriver/${id}`, drivData)
+    axios.put(`http://localhost:3001/api/updateDriver/${id}`, formData)
     .then(result => {console.log(result)
           navigate('/drivers')
         })
@@ -92,7 +92,7 @@ const UpdateDriver = () => {
             </select>
           </div>
           <div className="mb-3">
-            <label htmlFor='image' className="form-label">Driver Image</label><br />
+            <label htmlFor='file' className="form-label">Driver Image</label><br />
             <input
               type='file'
               id='file'

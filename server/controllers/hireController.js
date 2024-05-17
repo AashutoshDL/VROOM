@@ -11,27 +11,6 @@ exports.getAllDrivers = async (req, res) => {
   }
 };
 
-// Create a new user
-exports.createDriver = async (req, res) => {
-  try {
-    const {userName,phoneNumber,licenseNumber,address,status}=req.body
-
-    const driverData={
-        userName,
-        licenseNumber,
-        phoneNumber,
-        address,
-        status
-    }
-
-    const newDriver = await DriverModel.create(driverData);
-    res.json(newDriver);
-    
-  } catch (error) {
-    console.error('Error creating driver:', error);
-    res.status(400).json({ error: error.message });
-  }
-};
 
 // Get user by ID
 exports.getDriverById = async (req, res) => {
@@ -48,10 +27,42 @@ exports.getDriverById = async (req, res) => {
   }
 };
 
+// Create a new user
+exports.createDriver = async (req, res) => {
+    const {userName,phoneNumber,licenseNumber,address,status}=req.body
+
+    if(!req.file){
+      return res.status(400).json({error:'Image file is required'});
+
+  }
+
+  const image = req.file.filename;
+
+    const driverData={
+        userName,
+        licenseNumber,
+        phoneNumber,
+        address,
+        status,
+        image,
+    }
+
+try{
+    const driver= await DriverModel.create(driverData);
+    res.json(driver);
+    
+  } catch (error) {
+    console.error('Error creating driver:', error);
+    res.status(400).json({ error: error.message });
+  }
+};
+
+
 // Update user by ID
 exports.updateDriverById = async (req, res) => {
     const id = req.params.id;
     const {userName,phoneNumber,licenseNumber,address,status}=req.body
+
     const updatedData={
         userName,
         licenseNumber,
@@ -60,9 +71,16 @@ exports.updateDriverById = async (req, res) => {
         status
     }
     
+    if (req.file) {
+      // If a new image is uploaded, update the image field
+      const image = req.file.filename;
+      updatedData.image = image;
+  }
+
+  
     try {
-      const updatedDriver = await DriverModel.findByIdAndUpdate(id, updatedData, { new: true });
-      res.json(updatedDriver);
+      const driver = await DriverModel.findByIdAndUpdate(id, updatedData, { new: true });
+      res.json(driver);
     } catch (error) {
       console.error('Error updating driver:', error);
       res.status(400).json({ error: error.message });

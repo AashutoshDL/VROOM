@@ -5,12 +5,14 @@ import { Elements, useStripe, useElements, CardElement } from '@stripe/react-str
 import PropTypes from 'prop-types';
 import axios from 'axios';
 import './bookedinfo.css';
+import backgroundVideo from '../ImagesFol/backvid.mp4';
+
 
 const stripePromise = loadStripe('pk_test_51PH5jXBtceYPOTuZlF0OS76U2SIOYk9tFt3rXYozriWLcYOF6XLa4iJhstcdTywZllIHBDrdJXP1veAutfuth4qe00TEi1A7rv');
 
 const CarImage = ({ carData }) => (
   <div className="car-image-container">
-    <img src={`http://localhost:3001/uploads/${carData.image}`} alt={carData.model} />
+    <img src={`http://localhost:3001/cars/${carData.image}`} alt={carData.model} />
   </div>
 );
 
@@ -171,6 +173,10 @@ const BookedInfo = () => {
 
   return (
     <div className="booked-info">
+          <video autoPlay loop muted className="background-video">
+          <source src={backgroundVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+          </video>
       <div className="book-navbar">
         <ul className="pagination">
           <li className={location.pathname === "/vehicles" ? "active" : ""}>1: Vehicles</li>

@@ -53,7 +53,7 @@ const User = () => {
                                 <td>{car.model}</td>
                                 <td>{car.year}</td>
                                 <td>{car.price}</td>
-                                <td><img src={`http://localhost:3001/uploads/${car.image}`} alt="Car" style={{ maxWidth: '500px', maxHeight: '500px' }} /></td>
+                                <td><img src={`http://localhost:3001/cars/${car.image}`} alt="Car" style={{ maxWidth: '500px', maxHeight: '500px' }} /></td>
                                 <td>{car.available}</td>
                                 <td>{car.status}</td>
                                 <td>

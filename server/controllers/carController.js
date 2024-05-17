@@ -3,7 +3,7 @@ const CarModel = require('../models/Cars'); // Ensure this is the correct path t
 // Get all cars
 exports.getAllCars = async (req, res) => {
     try {
-        const cars = await CarModel.find({});
+        const cars = await CarModel.find();
         res.json(cars);
     } catch (err) {
         console.error(err);

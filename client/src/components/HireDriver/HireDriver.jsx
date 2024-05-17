@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './HireDriver.css'; // Import the provided CSS file
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import './HireDriver.css'
 
 const HireDriver = () => {
   const [drivers, setDrivers] = useState([]);
@@ -24,7 +25,7 @@ const HireDriver = () => {
   }, []);
 
   return (
-    <div className="driver-cards-container"> {/* Apply container class */}
+    <div className="driver-cards-container">
       <h2>List of Drivers:</h2>
       <div className="driver-cards">
         {drivers.map(driver => (
@@ -33,6 +34,9 @@ const HireDriver = () => {
             <div className="numbers">
               <table id="stats">
                 <tbody>
+                  <tr>
+                    <td><img src={`http://localhost:3001/drivers/${driver.image}`} alt="DriverImg" style={{maxHeight:'300%' ,maxWidth:'180%'}}></img></td>
+                  </tr>
                   <tr>
                     <td>License Number:</td>
                     <td>{driver.licenseNumber}</td>
@@ -51,7 +55,6 @@ const HireDriver = () => {
             <Popup trigger={<button className="btn-follow">Book</button>} position="right center">
                 <h3>Call to Confirm Your Ride</h3>
                 <p><strong>Contact No:</strong> {driver.phoneNumber}</p>
-                <button className="btn-follow" >Close</button>
             </Popup>
           </div>
         ))}

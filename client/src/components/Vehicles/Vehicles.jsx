@@ -3,6 +3,8 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '../Vehicles/Vehicles.css';
+import backgroundVideo from '../ImagesFol/backvid.mp4';
+
 
 const Vehicles = () => {
   const [cars, setCars] = useState([]);
@@ -27,18 +29,22 @@ const Vehicles = () => {
 
   const CarDetails = ({ car }) => (
     <div className="car-details">
+          <video autoPlay loop muted className="background-video">
+          <source src={backgroundVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+          </video>
       <div className="image-section">
-        <img src={`http://localhost:3001/uploads/${car.image}`} alt={car.model} />
+        <img src={`http://localhost:3001/cars/${car.image}`} alt={car.model} />
       </div>
       <div className="listing-section">
         <ul>
         <li>
-      <span className="car-title"> {car.model}</span>
+      <span className="car-title"> MODEL:{car.model}</span>
        </li>          
-          <li> <span className="car-sub">Company:{car.company}</span></li>
-          <li><span className="car-sub">Year: {car.year}</span></li>
-          <li><span className="car-sub">Status: {car.status}</span></li>
-          <li><span className="car-sub">Available:{car.available}</span></li>
+          <li><span className="car-sub">COMPANY:{car.company}</span></li>
+          <li><span className="car-sub">YEAR:{car.year}</span></li>
+          <li><span className="car-sub">STATUS:{car.status}</span></li>
+          <li><span className="car-sub">AVAILABLE:{car.available}</span></li>
         </ul>
       </div>
       
