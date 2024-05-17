@@ -394,31 +394,47 @@
     }
   
     .aboutimage {
-      background-color: #ffffff;
+      display: flex;
       height: 52.48vh;
+      max-width: 100%;
+      padding-right: 0;
+      padding-left: 0;
+      justify-content: center;
+        align-items: center;
+        background-color: pink;
+        position: relative;
       /* 400px */
     }
   
     .aboutimage-container {
-      width: 100vw;
+      min-width: 40vw;
+      height: 52.5vh;
+      padding-right: 0;
+      margin-right: 0;
+      box-sizing: border-box;
       /* 411px */
-      background-color: #ffffff;
       position: relative;
-      left: -70.56vw;
+      left: 0vw;
       /* -290px */
     }
   
     #para-header {
-      text-align: right;
+      text-align: center;
+      position: relative;
+      top: 4vh;
     }
   
     .para-aboutcontent {
-      width: 50%;
+     
+      width: 90%;
       text-align: justify;
       font-size: 1.84vh;
       /* 14px */
       line-height: 1.6;
       color: #555;
+      position: relative;
+      top: 4vh;
+      left: 0vw;
     }
   
     .big-container {
@@ -1365,6 +1381,7 @@
    text-align: center;
    font-size: 5.42vw;
    /* 25px */
+   color: #fff;
  }
 
  #admin-detailsubtitle {
@@ -1373,6 +1390,7 @@
    text-align: center;
    font-size: 3.59vw;
    /* 16px */
+   color:#fff;
  }
 
  .adminbtns {
@@ -1389,6 +1407,7 @@
    position: relative;
    top: 0;
    left: -1.22vw;
+   color: #ffffff;
    /* -10px */
  }
 
@@ -1426,6 +1445,7 @@
    top: 10.93vh;
    /* 80px */
    left: 55.64vw;
+   width: 60%;
    /* 230px */
  }
 
@@ -1577,7 +1597,6 @@
 .car-image-container img{
   width: 100%;
   height: 100%;
-  background-color: palevioletred;
 }
 .bookedcar-details{
   position: relative;
@@ -1614,5 +1633,231 @@
   position: absolute;
   top: 117.5vh;
   left: 60vw;
+}
+/* ----------Admin User------------- */
+/* Admin User home */
+.user-heading{
+  font-size: 5vh;
+  font-weight: 600;
+  color: #fff;
+  text-align: left;
+  max-width: 65%;
+  position: relative;
+  left: -28vw;
+}
+.adduserbtn{
+  position: relative;
+  top:-12vh;
+  width: 34vw;
+  left: 35vw;
+}
+.admin-container{
+  max-width: 100%;
+  max-height: 100%;
+  display: flex;
+  flex-direction: column;
+ 
+}
+.admin-container table{
+  min-width: 70%;
+  position: relative;
+  top: -10vh;
+  left: 0.5vw;
+}
+.user-labeltitle{
+  width: 50vw;
+  height: 5.2vh;
+  position: relative;
+  top: 20vh;
+  left: 10vh;
+  
+}
+ .thead-dark,
+ .user-information {
+   display: block;
+  position: relative;
+    left: -18vw;
+    top: -20vh;
+ }
+
+ .userthead th, .user-information {
+   display: flex;
+   justify-content: space-between;
+   flex-direction: row;
+  
+ }
+ .userthead th{
+  position: relative;
+  
+ }
+ .user-information{
+  position: relative;
+  top: -36.3vh;
+  width: 60%;
+  left: 19vw;
+  height: 5.2vh;
+ }
+ .user-information img {
+   max-width: 100px;
+   max-height: 100px;
+ }
+ .updateuser-btn,
+ .deleteuser-btn {
+  display: block;
+   font-size: 0.875rem;
+   position: relative;
+   left: -10vw;
+   top: 0.1vh;
+ }
+ .user-information Link{
+vertical-align: top;
+  margin-bottom: 0.2vh;
+  
+ }
+ .updateuser-btn{
+  padding-bottom: 3vh;
+  width: 15vw;
+  text-align: center;
+ }
+ .deleteuser-btn{
+  width: 15vw;
+  position: relative;
+  left: -18vw;
+  top: -0.3vh;
+ }
+ /* ------------Create User---------- */
+ .createuser-container{
+  max-width: 100vw;
+  min-height: 118vh;
+  position: absolute;
+  top: 0vh;
+
+ }
+ .createuser-sub{
+  min-width: 85%;
+  min-height: 103vh;
+  position: relative;
+  top: 4vh;
+  background-color: rgb(116, 110, 110, 0.6);
+ }
+ .createuser-form{
+  color: #000000;
+  width: 100%;
+  position: relative;
+  left: 0;
+ }
+ .name1 {
+  min-width: 100%;
+  margin-left: -3.5vw !important;
+ }
+ .age1 {
+   min-width: 100%;
+   margin-left: -8.5vw !important;
+ }
+ /* --------Update User-------------- */
+ .updateuser-container{
+  max-width: 100vw;
+  max-height: 100vh;
+  position: absolute;
+ }
+ .updateuser-sub{
+  min-width: 80%;
+  background-color: rgb(116, 110, 110, 0.6);
+  color: #000000;
+ }
+ .updateuser-form label{
+  color: black;
+  font-size: 3vh;
+ }
+ /* ---------Manage Drivers Home---------- */
+ .driver-container{
+  position: absolute;
+  max-width: 100vw;
+  max-height: 100vh;
+ }
+.driver-heading {
+  font-size: 5vh;
+  font-weight: 600;
+  color: #fff;
+  text-align: left;
+  max-width: 65%;
+  position: relative;
+  left: -30vw;
+}
+
+.addDriver {
+  position: relative;
+  top: -11vh;
+  width: 39vw;
+  left: 30vw;
+}
+.driver-container table{
+  display: flex;
+  flex-direction: row;
+  width: 95%;
+  height: auto;
+  position: relative;
+  left: 0;
+}
+.driver-thead{
+ position: relative;
+ max-width: 100%;
+ top: 0;
+ left: -1.2vw;
+ display: block;
+}
+.driver-labels {
+  max-width: 23vw;
+}
+.driverbody{
+  max-width: 100%;
+  max-height: 100%;
+  position: relative;
+  top: 10vh;
+  left: -96vw;
+  display: block;
+  align-items: center;
+}
+.driver-information{
+  min-width: 15vw !important;
+ font-size: 2vh;
+}
+.deletebtndriver{
+  width: 12vw;
+  font-size: 2vw;
+  position: relative;
+  left: -0.5vw !important;
+}
+.updatebtndriver{
+  font-size: 2vw !important;
+  padding-right: 2.4vw;
+  padding-left: 2.4vw;
+}
+/* --------Create Driver---------- */
+.createdriver-container{
+  max-width: 100vw;
+  max-height: 100vh;
+  position: absolute;
+  top: 0vh;
+
+}
+
+.createdriver-sub{
+  min-width: 85%;
+  max-height: 80vh;
+  position: relative;
+  top: 13vh;
+  left: -1.3vw;
+  background-color: rgb(116, 110, 110, 0.6);
+}
+
+.createdriver-form{
+  color: #000000;
+  width: 95%;
+  position: relative;
+  left: 0.6vw;
+}
+.form-control3{
+  margin-bottom: 2vh !important;
 }
 }

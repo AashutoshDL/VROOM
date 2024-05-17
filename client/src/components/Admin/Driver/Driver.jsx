@@ -34,7 +34,7 @@ const Driver = () => {
                 </div>
             </div>
             <table className="table mt-3">
-                <thead className="thead-dark">
+                <thead className="thead-dark driver-thead">
                     <tr>
                         <th scope="col" className='driver-labels'>Name</th>
                         <th scope="col" className='driver-labels'>License Number</th>
@@ -51,8 +51,8 @@ const Driver = () => {
                             <td className='driver-information'>{driver.phoneNumber}</td>
                             <td className='driver-information'>{driver.address}</td>
                             <td className='driver-information'>
-                                <Link to={`/updateDriver/${driver._id}`} className="btn btn-dark mr-2">Update</Link>
-                                <button className="btn btn-danger" onClick={() => handleDelete(driver._id)}>Delete</button>
+                                <Link to={`/updateDriver/${driver._id}`} className="updatebtndriver btn btn-dark mr-2">Update</Link>
+                                <button className="btn btn-danger deletebtndriver" onClick={() => handleDelete(driver._id)}>Delete</button>
                             </td>
                         </tr>
                     ))}

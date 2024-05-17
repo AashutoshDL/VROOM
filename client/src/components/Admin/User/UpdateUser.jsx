@@ -38,7 +38,7 @@ const UpdateUser = () => {
       {/* Inner container with white background and padding */}
       <div className='updateuser-sub w-50 rounded p-3'>
         {/* Form for updating a user */}
-        <form onSubmit={Update}>
+        <form onSubmit={Update} className='updateuser-form'>
           <h2 className='text-left mb-4'>Update User</h2>
           {/* Input field for name */}
           <div className="mb-3">

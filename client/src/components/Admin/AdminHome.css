@@ -35,12 +35,12 @@
 .adminsignin-background{
     width: 55vw;
     height: 55vh;
-    background: linear-gradient(to bottom, rgba(90, 80, 80, 0.1), rgba(51, 44, 44, 0.5));
+    background: linear-gradient(to bottom, rgba(90, 80, 80, 0.1), rgba(255, 255, 255, 0.5));
     transition: background 0.5s ease;
     border-radius: 10px;
 }
 .form-label{
-    color: #fff;
+    color: #000000;
     font-size: 22px;
     font-weight: 500;
 }

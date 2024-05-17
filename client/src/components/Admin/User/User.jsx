@@ -34,8 +34,8 @@ const User = () => {
                     <Link to="/createUser" className="adduser-btn">Add User</Link>
                 </div>
             </div>
-            <table className="table mt-3">
-                <thead className="thead-dark">
+            <table className="table mt-3 usercontainertable">
+                <thead className="thead-dark userthead">
                     <tr>
                         <th scope="col" className='user-labeltitle'>UserName</th>
                         <th scope="col" className='user-labeltitle'>Phone Number</th>
@@ -46,7 +46,7 @@ const User = () => {
                         <th scope="col" className='user-labeltitle'>Action</th>
                     </tr>
                 </thead>
-                <tbody>
+                <tbody className='userbody'>
                     {users.map((user) => (
                         <tr key={user._id}>
                             <td className='user-information'>{user.name}</td>
