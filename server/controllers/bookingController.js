@@ -4,14 +4,13 @@ const Booking = require('../models/Booking');
 exports.createBooking = async (req, res) => {
   // Create booking logic
   try {
-    const { carData, bookingData, dos, donts } = req.body;
+    const { carData, bookingData, paymentDetails} = req.body;
 
     // Create a new booking document
     const newBooking = new Booking({
+      paymentDetails,
       carData,
       bookingData,
-      dos,
-      donts
     });
 
     // Save the booking to the database

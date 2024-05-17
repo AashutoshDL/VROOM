@@ -14,10 +14,10 @@ exports.getAllDrivers = async (req, res) => {
 // Create a new user
 exports.createDriver = async (req, res) => {
   try {
-    const {name,phoneNumber,licenseNumber,address,status}=req.body
+    const {userName,phoneNumber,licenseNumber,address,status}=req.body
 
     const driverData={
-        name,
+        userName,
         licenseNumber,
         phoneNumber,
         address,
@@ -51,9 +51,9 @@ exports.getDriverById = async (req, res) => {
 // Update user by ID
 exports.updateDriverById = async (req, res) => {
     const id = req.params.id;
-    const {name,phoneNumber,licenseNumber,address,status}=req.body
+    const {userName,phoneNumber,licenseNumber,address,status}=req.body
     const updatedData={
-        name,
+        userName,
         licenseNumber,
         phoneNumber,
         address,

@@ -1,100 +1,99 @@
-const multer = require('multer');
-const CarsModel = require('../models/Cars');
+const CarModel = require('../models/Cars'); // Ensure this is the correct path to your model
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, './public/uploads');
-  },
-  filename: function (req, file, cb) {
-    cb(null, `${Date.now()}-${file.originalname}`);
-  }
-});
-
-const upload = multer({ storage });
-
+// Get all cars
 exports.getAllCars = async (req, res) => {
-  try {
-    const cars = await CarsModel.find({});
-    res.json(cars);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Internal server error" });
-  }
+    try {
+        const cars = await CarModel.find({});
+        res.json(cars);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Internal server error' });
+    }
 };
 
+// Get a car by ID
+exports.getCarById = async (req, res) => {
+    const id = req.params.id;
+    try {
+        const car = await CarModel.findById(id);
+        if (!car) {
+            return res.status(404).json({ error: 'Car not found' });
+        }
+        res.json(car);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Internal server error' });
+    }
+};
+
+// Create a new car
 exports.createCar = async (req, res) => {
-  try {
     const { company, model, year, price, available, status } = req.body;
+
+    if(!req.file){
+        return res.status(400).json({error:'Image file is required'});
+
+    }
+
     const image = req.file.filename;
     const name = req.file.originalname;
 
     const carData = {
-      company,
-      model,
-      year,
-      price,
-      available,
-      status,
-      name,
-      image,
+        company,
+        model,
+        year,
+        price,
+        available,
+        status,
+        name,
+        image,
     };
 
-    const newCar = await CarsModel.create(carData);
-    res.json(newCar);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Internal server error" });
-  }
-};
-
-exports.getCarById = async (req, res) => {
-  const id = req.params.id;
-  try {
-    const car = await CarsModel.findById(id);
-    if (!car) {
-      return res.status(404).json({ error: "Car not found" });
+    try {
+        const car = await CarModel.create(carData);
+        res.json(car);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Internal server error' });
     }
-    res.json(car);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Internal server error" });
-  }
 };
 
+// Update a car by ID
 exports.updateCarById = async (req, res) => {
-  const id = req.params.id;
-  const { company, model, year, price, available, status } = req.body;
-  const updatedData = {
-    company,
-    model,
-    year,
-    price,
-    available,
-    status,
-  };
+    const id = req.params.id;
+    const { company, model, year, price, available, status } = req.body;
+    const updatedData = {
+        company,
+        model,
+        year,
+        price,
+        available,
+        status,
+    };
 
-  if (req.file) {
-    // If a new image is uploaded, update the image field
-    const image = req.file.filename;
-    updatedData.image = image;
-  }
+    if (req.file) {
+        // If a new image is uploaded, update the image field
+        const image = req.file.filename;
+        updatedData.image = image;
+    }
 
-  try {
-    const updatedCar = await CarsModel.findByIdAndUpdate({ _id: id }, updatedData, { new: true });
-    res.json(updatedCar);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Internal server error" });
-  }
+    try {
+        const car = await CarModel.findByIdAndUpdate(id, updatedData, { new: true });
+        res.json(car);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Internal server error' });
+    }
 };
 
+// Delete a car by ID
 exports.deleteCarById = async (req, res) => {
-  const id = req.params.id;
-  try {
-    const result = await CarsModel.findByIdAndDelete({ _id: id });
-    res.json(result);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ error: "Internal server error" });
-  }
+    const id = req.params.id;
+    try {
+        const result = await CarModel.findByIdAndDelete(id);
+        res.json(result);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: 'Internal server error' });
+    }
 };

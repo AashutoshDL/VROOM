@@ -3,7 +3,7 @@ const router = express.Router();
 const LoginModel = require('../models/Login');
 
 // Register endpoint
-router.register = async (req, res) => {
+exports.register = async (req, res) => {
     try {
         // Check if user with given phone number exists
         const existingUser = await LoginModel.findOne({ phoneNumber: req.body.phoneNumber });
@@ -21,7 +21,7 @@ router.register = async (req, res) => {
 };
 
 // Login endpoint
-router.login = async (req, res) => {
+exports.login = async (req, res) => {
     const { phoneNumber, password } = req.body;
     try {
         // Check if user with given phone number exists
@@ -41,5 +41,3 @@ router.login = async (req, res) => {
         res.status(500).json({ error: err.message });
     }   
 };
-
-module.exports = router;

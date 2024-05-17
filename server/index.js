@@ -4,45 +4,48 @@ const connectDB = require('./config/dbConfig');
 const authController = require('./controllers/authController');
 const bookingController = require('./controllers/bookingController');
 const carController = require('./controllers/carController');
-const userController = require('./controllers/userController');
+const stripeController = require('./controllers/stripeController');
 const hireController = require('./controllers/hireController');
 const multer=require('multer')
 
-const app = express();
-
-app.use(cors());
-app.use(express.json());
-app.use(express.static('public'));
-
-const upload = multer({ dest: 'public/uploads' });
 
 connectDB();
 
-// Routes for user, car, booking, and authentication
-app.get('/api/getAllUser', userController.getAllUsers);
-app.post('/api/createUser', userController.createUser);
-app.get('/api/getUserById', userController.getUserById);
-app.put('/api/updateUserById', userController.updateUserById);
-app.delete('/api/deleteUserById', userController.deleteUserById);
+const app = express();
+app.use(express.json());
+app.use(cors());
 
-app.get('/api/getAllDrivers', hireController.getAllDrivers);
-app.post('/api/createDriver', hireController.createDriver);
-app.get('/api/getDriverById', hireController.getDriverById);
-app.put('/api/updateDriverById', hireController.updateDriverById);
-app.delete('/api/deleteDriverById', hireController.deleteDriverById);
+const storage = multer.diskStorage({
+    destination: function (req, file, cb) {
+        cb(null, './public/uploads');
+    },
+    filename: function (req, file, cb) {
+        cb(null, `${Date.now()}-${file.originalname}`);
+    }
+});
 
-app.get('/api/getAllCars', carController.getAllCars);
-app.post('/api/createCar', upload.single('file'),carController.createCar);
-app.get('/api/getCarById', carController.getCarById);
-app.put('/api/updateCarById', upload.single('file'),carController.updateCarById);
-app.delete('/api/deleteCarById', carController.deleteCarById);
+const upload = multer({ storage });
+
+// Define routes and use the controller methods
+app.get('/api/cars', carController.getAllCars);
+app.get('/api/getCars/:id', carController.getCarById);
+app.post('/api/createCar', upload.single('file'), carController.createCar);
+app.put('/api/updateCar/:id', upload.single('file'), carController.updateCarById);
+app.delete('/api/deleteCar/:id', carController.deleteCarById);
+
+app.get('/api/drivers', hireController.getAllDrivers);
+app.post('/api/createDriver',hireController.createDriver);
+app.get('/api/getDriver/:id', hireController.getDriverById);
+app.put('/api/updateDriver/:id',hireController.updateDriverById);
+app.delete('/api/deleteDriver/:id',hireController.deleteDriverById);
 
 app.post('/api/createBooking', bookingController.createBooking);
-app.get('/api/getBookings', bookingController.getBookings);
+app.get('/api/getBooking', bookingController.getBookings);
 
 app.post('/api/register', authController.register);
 app.post('/api/login', authController.login);
 
+app.post('/api/payment',stripeController.processPayment);
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {

@@ -1,7 +1,7 @@
 const mongoose=require('mongoose')
 
 const DriverSchema=new mongoose.Schema({
-    name:String,
+    userName:String,
     licenseNumber:Number,
     phoneNumber:Number,
     address: String,
