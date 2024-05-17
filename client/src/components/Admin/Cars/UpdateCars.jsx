@@ -14,7 +14,7 @@ const UpdateCars = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    axios.get(`http://localhost:3001/api/cars/${id}`)
+    axios.get(`http://localhost:3001/api/getCars/${id}`)
       .then(result => {
         const carData = result.data;
         setCompany(carData.company);
@@ -38,7 +38,7 @@ const UpdateCars = () => {
     formData.append('available', available);
     formData.append('status', status);
   
-    axios.put(`http://localhost:3001/api/updateCarById/${id}`, formData)
+    axios.put(`http://localhost:3001/api/updateCar/${id}`, formData)
       .then(result => {
         console.log(result);
         navigate('/cars');
@@ -50,7 +50,7 @@ const UpdateCars = () => {
     <div className='d-flex vh-100 bg-primary justify-content-center align-items-center'>
       <div className='w-50 bg-white rounded p-3'>
         <form onSubmit={handleUpdate}>
-          <h2 className='text-left mb-4'>Update Car</h2>
+          <h2 className='text-left mb-4'>U</h2>
           <div className="mb-3">
             <label htmlFor='company'>Company</label>
             <input
@@ -107,13 +107,20 @@ const UpdateCars = () => {
           </div>
           <div className="mb-3">
             <label htmlFor='status'>Status</label>
-            <input
-              type='text'
+            <select
               placeholder='Enter status'
               className='form-control'
               value={status}
               onChange={(e) => setStatus(e.target.value)}
-            />
+            >
+              <option value='' disabled>Select Status</option>
+              <option value='in-service'>In Service</option>
+              <option value='out-of-service'>Out of Service</option>
+              <option value='pending'>Pending</option>
+              <option value='rented'>Rented</option>
+              <option value='reserved'>Reserved</option>
+              <option value='returned'>Returned</option>
+            </select>
           </div>
           <div className="mb-3">
             <label htmlFor='file' className="form-label">Car Image</label><br />

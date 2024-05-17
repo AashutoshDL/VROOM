@@ -3,27 +3,29 @@ import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const CreateDriver = () => {
-    const [name, setName] = useState('');
+    const [userName, setUserName] = useState('');
     const [licenseNumber, setLicenseNumber] = useState('');
     const [phoneNumber, setPhoneNumber] = useState('');
     const [status, setStatus] = useState('');
     const [address, setAddress] = useState('');
+    const [file,setFile]=useState('');
 
     const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const formData = new FormData();
-        formData.append('name', name);
-        formData.append('licenseNumber', licenseNumber);
-        formData.append('phoneNumber', phoneNumber);
-        formData.append('address', address);
-        formData.append('status', status);        
+        const drivData = new FormData();
+        drivData.append('userName', userName);
+        drivData.append('licenseNumber', licenseNumber);
+        drivData.append('phoneNumber', phoneNumber);
+        drivData.append('address', address);
+        drivData.append('status', status);  
+        drivData.append('file',file)      
         
-        axios.post('http://localhost:3001/api/createDriver', formData)
+        axios.post('http://localhost:3001/api/createDriver', drivData)
         .then(result => {
           console.log(result);  
-          navigate('/driver');
+          navigate('/drivers');
         })
         .catch(err => console.log(err));
       };
@@ -33,12 +35,12 @@ const CreateDriver = () => {
             <h2>Add Driver</h2>
             <form onSubmit={handleSubmit}>
                 <div>
-                    <label htmlFor="name">Name:</label>
+                    <label htmlFor="userName">Name:</label>
                     <input
                         type="text"
-                        id="name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
+                        id="userName"
+                        value={userName}
+                        onChange={(e) => setUserName(e.target.value)}
                         required
                     />
                 </div>
@@ -85,7 +87,15 @@ const CreateDriver = () => {
                         required
                     />
                 </div>
-                <button type="submit">Add Driver</button>
+                <div>
+                    <label htmlFor="image">Image:</label>
+                    <input
+                        type="file"
+                        onChange={(e) => setFile(e.target.files[0])}
+                    />
+                </div>
+                <button className='btn btn-secondary me-2' onClick={() => navigate('/drivers')}>Back</button>
+                <button type="submit">Submit</button>
             </form>
         </div>
     );

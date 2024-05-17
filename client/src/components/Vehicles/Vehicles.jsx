@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
@@ -11,7 +11,7 @@ const Vehicles = () => {
   const location = useLocation();
 
   useEffect(() => {
-    axios.get('http://localhost:3001/api/getAllCars')
+    axios.get('http://localhost:3001/api/cars')
       .then(response => {
         setCars(response.data);
       })
@@ -44,7 +44,7 @@ const Vehicles = () => {
       
       <div className="price-section">
         <p>Estimated Price </p>
-        <p>NPR. {car.price}</p>
+        <p>USD: {car.price}</p>
         <div className="btn">
           <button className="book-now-button" onClick={() => handleSubmit(car)}>Book Now</button>
         </div>

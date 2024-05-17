@@ -36,7 +36,6 @@ exports.createCar = async (req, res) => {
     }
 
     const image = req.file.filename;
-    const name = req.file.originalname;
 
     const carData = {
         company,
@@ -45,7 +44,6 @@ exports.createCar = async (req, res) => {
         price,
         available,
         status,
-        name,
         image,
     };
 

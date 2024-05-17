@@ -5,38 +5,45 @@ import axios from "axios";
 const UpdateDriver = () => {
 
   const {id} =useParams();
-  const [name,setName]=useState('');
+  const [userName,setUserName]=useState('');
   const [licenseNumber,setLicenseNumber]=useState('');
   const [phoneNumber,setPhoneNumber]=useState('');
-  const [status,setStatus]=useState('')
   const [address,setAddress]=useState('');
+  const [status,setStatus]=useState('')
+  const [file,setFile]=useState('');
+  
   const navigate=useNavigate();
   
   useEffect(() => {
-    axios.get('http://localhost:3001/api/getAllDriver/' + id)
-      .then(result => {console.log(result)
-        setName(result.data.name)
-        setLicenseNumber(result.data.licenseNumber)
-        setPhoneNumber(result.data.phoneNumber)
-        setAddress(result.data.address)
-        setStatus(result.data.status)
+    axios.get(`http://localhost:3001/api/getDriver/${id}`)
+      .then(result =>
+        {
+          const driverData=result.data;
+        setUserName(driverData.data.userName)
+        setLicenseNumber(driverData.data.licenseNumber)
+        setPhoneNumber(driverData.data.phoneNumber)
+        setAddress(driverData.data.address)
+        setStatus(driverData.data.status)
       }) 
       .catch(err => console.log(err));
   }, [id]);
 
-  const Update = (e) => {
-    e.preventDefault();
-    const formData= new FormData();
+  const handleUpdate = (e) => {
 
-    formData.append('name',name);
-    formData.append('licenseNumber',licenseNumber)
-    formData.append('phoneNumber',phoneNumber)
-    formData.append('address',address)
-    formData.append('status',status)
+    e.preventDefault();
+
+    const drivData= new FormData();
+
+    drivData.append('file',file)
+    drivData.append('userName',userName);
+    drivData.append('licenseNumber',licenseNumber)
+    drivData.append('phoneNumber',phoneNumber)
+    drivData.append('address',address)
+    drivData.append('status',status)
     
-    axios.put(`http://localhost:3001/api/updateDriverById/${id}`,formData)
+    axios.put(`http://localhost:3001/api/updateDriver/${id}`, drivData)
     .then(result => {console.log(result)
-          navigate('/driver')
+          navigate('/drivers')
         })
     .catch(err => console.log(err));
   }
@@ -44,13 +51,18 @@ const UpdateDriver = () => {
 <div className='d-flex vh-100 bg-primary justify-content-center align-items-center'>
       <div className='w-50 bg-white rounded p-3'>
         {/* Form for updating a user */}
-        <form onSubmit={Update}>
+        <form onSubmit={handleUpdate}>
           <h2 className='text-left mb-4'>Update Driver</h2>
           {/* Input field for name */}
           <div className="mb-3">
             <label htmlFor=''>Driver</label>
-            <input type='text' placeholder='Enter name' className='form-control'
-            value={name} onChange={(e) => setName(e.target.value)}/>
+            <input   
+              type='text' 
+              placeholder='Enter name' 
+              className='form-control'
+              value={userName} 
+              onChange={(e) => setUserName(e.target.value)}
+              />
           </div>
           <div className="mb-3">
             <label htmlFor=''>License Number</label>
@@ -79,8 +91,16 @@ const UpdateDriver = () => {
               <option value='driver'>Booked</option>
             </select>
           </div>
+          <div className="mb-3">
+            <label htmlFor='image' className="form-label">Driver Image</label><br />
+            <input
+              type='file'
+              id='file'
+              onChange={(e) => setFile(e.target.files[0])}
+            />
+          </div>
           <div className='d-flex justify-content-end'>
-            <button className='btn btn-secondary me-2' onClick={() => navigate('/driver')}>Back</button>
+            <button className='btn btn-secondary me-2' onClick={() => navigate('/drivers')}>Back</button>
           <button className='btn btn-success'>Update</button>
 
           </div>

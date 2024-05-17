@@ -1,11 +1,11 @@
-import { useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import ScrollReveal from 'scrollreveal';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import backgroundVideo from '../ImagesFol/backvid.mp4';
+import { AiOutlineEnvironment } from 'react-icons/ai';
 import './Booking.css';
-
 
 const Booking = () => {
   const [input1, setInput1] = useState('');
@@ -13,9 +13,9 @@ const Booking = () => {
   const [pickUpDate, setPickUpDate] = useState(null);
   const [dropOffDate, setDropOffDate] = useState(null);
   const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
-    // Retrieve stored data from local storage upon component mount if user is logged in
     const isLoggedIn = localStorage.getItem('name');
     if (isLoggedIn) {
       const storedData = JSON.parse(localStorage.getItem('bookingData'));
@@ -24,12 +24,21 @@ const Booking = () => {
         setInput2(storedData.input2 || '');
         setPickUpDate(storedData.pickUpDate || null);
         setDropOffDate(storedData.dropOffDate || null);
-        
-        // Clear stored data from local storage once used
+
         localStorage.removeItem('bookingData');
       }
     }
-  }, []);
+
+    // Handle data from Map component
+    if (location.state) {
+      if (location.state.pickupAddress) { // Update state with pickup address
+        setInput1(location.state.pickupAddress);
+      }
+      if (location.state.dropoffAddress) { // Update state with dropoff address
+        setInput2(location.state.dropoffAddress);
+      }
+    }
+  }, [location.state]);
 
   const handleInput1Change = (event) => {
     setInput1(event.target.value);
@@ -47,13 +56,16 @@ const Booking = () => {
     setDropOffDate(date);
   };
 
+  const handleMapIconClick = (field) => {
+    navigate('/map', { state: { field } });
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
 
     const isLoggedIn = localStorage.getItem('name');
 
     if (!isLoggedIn) {
-      // Store the entered data in local storage before redirecting to login
       const bookingData = {
         input1,
         input2,
@@ -62,12 +74,10 @@ const Booking = () => {
       };
       localStorage.setItem('bookingData', JSON.stringify(bookingData));
 
-      // Redirect to login page if not logged in
       navigate('/login');
       return;
     }
 
-    // If already logged in, proceed to the vehicles page
     navigate('/vehicles', { state: { bookingData: { input1, input2, pickUpDate, dropOffDate } } });
   };
 
@@ -135,6 +145,7 @@ const Booking = () => {
             <div className="col-lg-6 " id="Input1">
               <label htmlFor="Pickup-Location" id="label1" className='improm'>
                 Pick Up Location
+                <AiOutlineEnvironment className="map-icon" onClick={() => handleMapIconClick('input1')} />
               </label>
               <input
                 type="text"
@@ -147,6 +158,7 @@ const Booking = () => {
             <div className="col-lg-6 dofl" id="Input2">
               <label htmlFor="Dropoff-Location" id="label2">
                 Drop Off Location
+                <AiOutlineEnvironment className="map-icon" onClick={() => handleMapIconClick('input2')} />
               </label>
               <input
                 type="text"
@@ -165,7 +177,7 @@ const Booking = () => {
                 selected={pickUpDate}
                 onChange={(date) => handlePickUpDateChange(date)}
                 showTimeSelect
-                minDate={new Date()} // restricts to past dates
+                minDate={new Date()}
                 dateFormat="yyyy-MM-dd HH:mm"
                 placeholderText="Select Pick Up Date and Time"
                 className="form-control"

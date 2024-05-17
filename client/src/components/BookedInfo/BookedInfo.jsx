@@ -1,14 +1,25 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements, useStripe, useElements, CardElement } from '@stripe/react-stripe-js';
+import PropTypes from 'prop-types';
 import axios from 'axios';
-import esewaLogo from '../ImagesFol/esewa.png';
 import './bookedinfo.css';
+
+const stripePromise = loadStripe('pk_test_51PH5jXBtceYPOTuZlF0OS76U2SIOYk9tFt3rXYozriWLcYOF6XLa4iJhstcdTywZllIHBDrdJXP1veAutfuth4qe00TEi1A7rv');
 
 const CarImage = ({ carData }) => (
   <div className="car-image-container">
     <img src={`http://localhost:3001/uploads/${carData.image}`} alt={carData.model} />
   </div>
 );
+
+CarImage.propTypes = {
+  carData: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    model: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 const CarDetails = ({ carData, bookingData }) => (
   <div className='bookedcar-details'>
@@ -23,117 +34,148 @@ const CarDetails = ({ carData, bookingData }) => (
   </div>
 );
 
-const PaymentMethodSelection = ({ selectedMethod, setSelectedMethod }) => {
-  const handleMethodChange = (event) => {
-    setSelectedMethod(event.target.value);
-  };
-
-  return (
-    <div className='bookedcar-price'>
-      <h3 className="payment-title">Payment Method:</h3>
-      <label>
-        <input
-          type="radio"
-          value="eSewa"
-          checked={selectedMethod === 'eSewa'}
-          onChange={handleMethodChange}
-        />
-        <img src={esewaLogo} alt="eSewa" className="payment-logo" /> eSewa
-      </label>
-      {/* Add other payment method options similarly */}
-    </div>
-  );
+CarDetails.propTypes = {
+  carData: PropTypes.shape({
+    carId: PropTypes.string.isRequired,
+    model: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+  }).isRequired,
+  bookingData: PropTypes.object.isRequired,
 };
 
-const NeedsAndDonts = ({ setClientNeeds, setClientDonts }) => {
-  const handleNeedsChange = (event) => {
-    setClientNeeds(event.target.value);
-  };
-  const handleDontsChange = (event) => {
-    setClientDonts(event.target.value);
-  };
-  return (
-    <div>
-      <div className="client-needs">
-        <h3>Requirements:</h3>
-        <input
-          type="text"
-          aria-label="Enter client needs"
-          placeholder="Dos"
-          onChange={handleNeedsChange}
-        />
-      </div>
-      <div className="client-donts">
-        <input
-          type="text"
-          aria-label="Enter client don'ts"
-          placeholder="Donts"
-          onChange={handleDontsChange}
-        />
-      </div>
+const NeedsAndDonts = ({ setClientNeeds, setClientDonts }) => (
+  <div>
+    <div className="client-needs">
+      <h3>Requirements:</h3>
+      <input
+        type="text"
+        aria-label="Enter client needs"
+        placeholder="Dos"
+        onChange={(event) => setClientNeeds(event.target.value)}
+      />
     </div>
-  );
+    <div className="client-donts">
+      <input
+        type="text"
+        aria-label="Enter client don'ts"
+        placeholder="Donts"
+        onChange={(event) => setClientDonts(event.target.value)}
+      />
+    </div>
+  </div>
+);
+
+NeedsAndDonts.propTypes = {
+  setClientNeeds: PropTypes.func.isRequired,
+  setClientDonts: PropTypes.func.isRequired,
 };
 
-const BookingForm = ({ carId, carData, bookingData }) => {
-  const [selectedPaymentMethod, setSelectedPaymentMethod] = useState('');
+const CheckoutForm = ({ carId, carData, bookingData }) => {
+  const stripe = useStripe();
+  const elements = useElements();
   const navigate = useNavigate();
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    console.log('Form submitted!');
-    console.log('Selected Payment Method:', selectedPaymentMethod);
-
+  const handleBooking = async (paymentResponse) => {
     try {
-      const response = await axios.post('http://localhost:3001/api/createBooking', {
-        carId: carId,
-        selectedPaymentMethod: selectedPaymentMethod,
-        clientNeeds: '', // Add client needs and don'ts from state here
-        clientDonts: ''
+      const bookingResponse = await axios.post('http://localhost:3001/api/createBooking', {
+        paymentResponse,
+        carData,
+        bookingData,
       });
-      
-      console.log(response.data);
-      alert('Booking submitted successfully!');
-      navigate(`/CarOrderConfirmation/${carId}`);
+      console.log(bookingResponse);
     } catch (error) {
-      console.error('Error submitting booking:', error);
+      console.error('Error creating booking:', error);
+      alert('Booking creation failed');
     }
   };
 
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+    if (!stripe || !elements) return;
+
+    const cardElement = elements.getElement(CardElement);
+    const { error, token } = await stripe.createToken(cardElement);
+
+    if (error) {
+      console.error('Error creating token:', error);
+      return;
+    }
+
+    let paymentResponse;
+    try {
+      paymentResponse = await axios.post('http://localhost:3001/api/payment', {
+        token: token.id,
+        amount: carData.price * 100, // Amount in cents
+        carId,
+      });
+      console.log(paymentResponse);
+
+      alert('Payment successful!');
+    } catch (error) {
+      console.error('Error processing payment:', error);
+      alert('Payment processing failed');
+      return; // Return early if payment processing fails
+    }
+
+    await handleBooking(paymentResponse);
+    navigate(`/paymentSuccess`);
+  };
+
   return (
-    <div className="booking-form">
-      <form onSubmit={handleSubmit}>
-        <CarImage carData={carData} />
-        <CarDetails carData={carData} bookingData={bookingData} />
-        <NeedsAndDonts />
-        <PaymentMethodSelection
-          selectedMethod={selectedPaymentMethod}
-          setSelectedMethod={setSelectedPaymentMethod}
-        />
-        <button type="submit">Next</button> {/* Use button type="submit" for form submission */}
-      </form>
-    </div>
+    <form onSubmit={handleSubmit}>
+      <CardElement />
+      <button type="submit" disabled={!stripe}>Pay</button>
+    </form>
   );
+};
+
+CheckoutForm.propTypes = {
+  carId: PropTypes.string.isRequired,
+  carData: PropTypes.shape({
+    price: PropTypes.number.isRequired,
+  }).isRequired,
+  bookingData: PropTypes.object.isRequired,
+};
+
+const BookingForm = ({ carId, carData, bookingData }) => (
+  <Elements stripe={stripePromise}>
+    <div className="booking-form">
+      <CarImage carData={carData} />
+      <CarDetails carData={carData} bookingData={bookingData} />
+      <NeedsAndDonts />
+      <CheckoutForm carId={carId} carData={carData} bookingData={bookingData} />
+    </div>
+  </Elements>
+);
+
+BookingForm.propTypes = {
+  carId: PropTypes.string.isRequired,
+  carData: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    model: PropTypes.string.isRequired,
+    company: PropTypes.string.isRequired,
+    year: PropTypes.number.isRequired,
+    price: PropTypes.number.isRequired,
+  }).isRequired,
+  bookingData: PropTypes.object.isRequired,
 };
 
 const BookedInfo = () => {
   const location = useLocation();
-  const navigate = useNavigate();
-
   const { carData, bookingData } = location.state || {};
-  
-  if (!carData || !bookingData) {
-    return <div>No booking data available</div>;
-  }
+
+  if (!carData || !bookingData) return <div>No booking data available</div>;
 
   return (
     <div className="booked-info">
       <div className="book-navbar">
         <ul className="pagination">
-        <li className= {location.pathname === "/vehicles" ? "active" : ""} >1 : Vehicles </li>
-        <li className={location.pathname === "/book" ? "active" : ""}><Link to="/book">2: Booking Process</Link></li>
-          <li className={location.pathname === "/bookingConfirm" ? "active": ""}>3 : Confirm Booking</li>
-
+          <li className={location.pathname === "/vehicles" ? "active" : ""}>1: Vehicles</li>
+          <li className={location.pathname === "/book" ? "active" : ""}><Link to="/book">2: Booking Process</Link></li>
+          <li className={location.pathname === "/bookingConfirm" ? "active" : ""}>3: Confirm Booking</li>
         </ul>
       </div>
       <div className="booking-container">

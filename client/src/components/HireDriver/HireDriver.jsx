@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './HireDriver.css'; // Import the provided CSS file
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 
 const HireDriver = () => {
   const [drivers, setDrivers] = useState([]);
@@ -7,7 +9,7 @@ const HireDriver = () => {
   useEffect(() => {
     const fetchDrivers = async () => {
       try {
-        const response = await fetch('http://localhost:3001/api/getAllDrivers');
+        const response = await fetch('http://localhost:3001/api/drivers');
         if (!response.ok) {
           throw new Error('Failed to fetch drivers');
         }
@@ -27,23 +29,16 @@ const HireDriver = () => {
       <div className="driver-cards">
         {drivers.map(driver => (
           <div key={driver.id} className="card">
-            <div className="profile">
-              <img src={driver.profileImage} alt={driver.name} />
-            </div>
-            <div className="name">{driver.name}</div>
+            <div className="name">{driver.userName}</div>
             <div className="numbers">
               <table id="stats">
                 <tbody>
                   <tr>
-                    <td>Phone:</td>
-                    <td>{driver.phoneNumber}</td>
-                  </tr>
-                  <tr>
-                    <td>License:</td>
+                    <td>License Number:</td>
                     <td>{driver.licenseNumber}</td>
                   </tr>
                   <tr>
-                    <td>Status:</td>
+                    <td>Driver Status:</td>
                     <td>{driver.status}</td>
                   </tr>
                   <tr>
@@ -53,9 +48,11 @@ const HireDriver = () => {
                 </tbody>
               </table>
             </div>
-            <div className="btn">
-              <a href="#" className="btn-follow">Book Now</a>
-            </div>
+            <Popup trigger={<button className="btn-follow">Book</button>} position="right center">
+                <h3>Call to Confirm Your Ride</h3>
+                <p><strong>Contact No:</strong> {driver.phoneNumber}</p>
+                <button className="btn-follow" >Close</button>
+            </Popup>
           </div>
         ))}
       </div>

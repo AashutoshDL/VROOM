@@ -93,18 +93,26 @@ const CreateCars = () => {
           </div>
           <div className="mb-3">
             <label htmlFor='status' className="form-label">Status</label>
-            <input
-              type='text'
+            <select
               id='status'
               placeholder='Enter status'
               className='form-control'
               onChange={(e) => setStatus(e.target.value)}
-            />       
+              >
+              <option value=''>Select Status</option>
+              <option value='in-service'>In Service</option>
+              <option value='out-of-service'>Out of Service</option>
+              <option value='pending'>Pending</option>
+              <option value='rented'>Rented</option>
+              <option value='reserved'>Reserved</option>
+              <option value='returned'>Returned</option>
+            </select>     
             </div> 
             <div className="mb-3">
             <label htmlFor='status' className="form-label">Car Image</label><br />
             <input
               type='file'
+              id='file'
               onChange={(e) => setFile(e.target.files[0])}
             />
             </div>

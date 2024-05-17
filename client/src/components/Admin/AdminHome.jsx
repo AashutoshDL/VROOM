@@ -81,17 +81,6 @@ const Home = () => {
                 <p id="admin-detailsubtitle">Manage users and cars here.</p>
                 <div className="adminbtns col mt-3">
                   <div className="col-md-5">
-                    <div id="overalluser">
-                      <p className="adminuser-caption">Manage the users?</p>
-                      <div id="manageuserbtn">
-                        <Link
-                          to="/user"
-                          className="btn btn-secondary btn-block"
-                        >
-                          Manage Users
-                        </Link>
-                      </div>
-                    </div>
                   </div>
                   <div className="col-md-5">
                     <div id="overallcar">
@@ -107,7 +96,7 @@ const Home = () => {
                     <div id="overalldriver">
                       <p className="admindriver-caption">Manage the Drivers?</p>
                       <div id="managedriverbtn">
-                        <Link to="/driver" className="btn btn-success btn-block">
+                        <Link to="/drivers" className="btn btn-success btn-block">
                           Manage Drivers
                         </Link>
                       </div>

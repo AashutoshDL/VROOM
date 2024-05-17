@@ -7,9 +7,8 @@ const CarSchema=new mongoose.Schema({
     price:Number,
     available: String,
     status:String,
-    name:String,
     image:String,
 })
 
 const CarModel=mongoose.model("cars",CarSchema)
-module.exports=CarModel
+module.exports=CarModel 
