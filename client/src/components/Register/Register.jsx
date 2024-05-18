@@ -10,7 +10,6 @@ const Register = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [age, setAge] = useState('');
   const [address, setAddress] = useState('');
-  const [accountType, setAccountType] = useState('');
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword]=useState('');
   const [showConfirmPassword, setShowConfirmPassword] = useState(false); // New state for confirm password visibility
@@ -21,7 +20,7 @@ const Register = () => {
     e.preventDefault();
 
     // Check if any field is empty
-    if (!name || !phoneNumber || !age || !address || !accountType || !password || !confirmPassword) {
+    if (!name || !phoneNumber || !age || !address || !password || !confirmPassword) {
       alert('Please fill in all fields');
       return;
     }
@@ -37,7 +36,6 @@ const Register = () => {
       phoneNumber,
       age,
       address,
-      accountType,
       password
     })
       .then(response => {
@@ -48,7 +46,6 @@ const Register = () => {
         setPhoneNumber('');
         setAge('');
         setAddress('');
-        setAccountType('');
         setPassword('');
       })
       .catch(error => {
@@ -157,20 +154,6 @@ const Register = () => {
                 {showConfirmPassword ? 'Hide' : 'Show'}
               </button>
             </div>
-          </div>
-
-          <div className="form-group1">
-            <label htmlFor='accountType'>Account Type</label>
-            <select
-              id='accountType'
-              className='form-select'
-              value={accountType}
-              onChange={(e) => setAccountType(e.target.value)}
-            >
-              <option value='' disabled>Select Account Type</option>
-              <option value='personal'>Personal Account</option>
-              <option value='driver'>Driver Account</option>
-            </select>
           </div>
           <div className="d-flex justify-content-end">
             <button type="submit" className='registersub btn btn-primary'>Submit</button>
