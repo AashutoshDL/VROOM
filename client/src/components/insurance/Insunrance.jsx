@@ -7,7 +7,7 @@ import lock from "../ImagesFol/lock.png";
 
 const Insurance = () => {
   return (
-    <div>
+    <div className="insurance-container">
       <h4 className="in-headcontent">Our Comprehensive</h4>
       <h4 className="in-headcontent">Insurance Coverage</h4>
       <p className="hello">
@@ -18,7 +18,7 @@ const Insurance = () => {
         <div className="cardiv">
           <div className="border-box">
             <div className="caricon">
-              <BiSolidCarCrash size={60} />
+              <BiSolidCarCrash size={60} className="insurance-icon"/>
             </div>
             <div className="content">
               <h4 className="damage">Damage Protection</h4>
@@ -33,7 +33,7 @@ const Insurance = () => {
         <div className="theftdiv">
           <div className="border-box2">
             <div className="thefticon">
-              <FaPeopleRobbery size={60} />
+              <FaPeopleRobbery size={60} className="insurance-icon"/>
             </div>
             <div className="content2">
               <h4 className="theft">Theft Protection</h4>

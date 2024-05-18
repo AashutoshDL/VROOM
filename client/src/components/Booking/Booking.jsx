@@ -5,7 +5,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import backgroundVideo from '../ImagesFol/backvid.mp4';
 import './Booking.css';
-import Header from '../Header/Header';
+
 
 const Booking = () => {
   const [input1, setInput1] = useState('');

@@ -1,6 +1,9 @@
 /* About Us Section */
 
 /* Main container */
+.about-maincontainer{
+    background-color: #fff;
+}
 .aboutimage {
     background-color: #ffffff;
     padding: 100px 0;
@@ -12,6 +15,7 @@
     min-width: 700px;
     margin: 0 auto;
     text-align: center;
+    background-color: #fff;
 }
 
 #para-header {
@@ -55,13 +59,6 @@
     justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
-}
-
-.icon-path-dot {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background-color: #007bff;
 }
 
 .icon-box-container {

@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
+import backgroundVideo from '../ImagesFol/backvid.mp4';
+import Footer from "../Footer/Footer";
 
 const Login = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
@@ -49,11 +51,15 @@ const Login = () => {
 
   return (
     <div className='login-container'>
+      <video autoPlay loop muted className="background-video">
+          <source src={backgroundVideo} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
       <div className='login-form'>
         <form onSubmit={handleSubmit}>
           <h2 className="login-heading">Login</h2>
           <div className="form-group">
-            <label htmlFor='phone number'>Phone Number</label>
+            <label htmlFor='phone number'className='login-labels'>Phone Number</label>
             <input
               type='text'
               id='phoneNumber'
@@ -64,7 +70,7 @@ const Login = () => {
             />
           </div>
           <div className="form-group">
-            <label htmlFor='password'>Password</label>
+            <label htmlFor='password'className='login-labels'>Password</label>
             <input
               type='password'
               id='password'
@@ -81,6 +87,7 @@ const Login = () => {
           </div>
         </form>
       </div>
+      <Footer />
     </div>
   );
 };

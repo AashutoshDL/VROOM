@@ -24,7 +24,7 @@ const UserProfile = () => {
             <ul className="user-lists">
               <li className="user-links" onClick={() => navigate("/userProfile")}>
                 <div className="profile-icon">
-                  <IoPersonSharp size={19}/>
+                  <IoPersonSharp size={19} className='user-icon'/>
                 </div>
                 My Profile
               </li>
