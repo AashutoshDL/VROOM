@@ -48,7 +48,6 @@ const Footer = () => {
 
               <div className="mailicon">
                 <MdOutlineMailOutline size={35} className="footer-icons"/>
-              </div>
               <div className="bigcontentbox">
                 <ul className="contacts">
                   <li className="footer-info1">Phone</li>
