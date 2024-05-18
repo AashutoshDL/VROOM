@@ -1,4 +1,4 @@
-.admin-container{
+.admin-container {
     width: 100%;
     height: 100%;
     min-height: 100vh;
@@ -8,71 +8,84 @@
     position: absolute;
     top: 1vh;
 }
+
 .admin-dashboard {
     width: 100%;
     height: 100%;
     display: flex;
     flex-direction: row;
 }
+
 .admin-nav {
     width: 14%;
     height: 100%;
-    background-color: #00509D;
+    background-color: #142459;
 }
+
 .admin-display {
     width: 86%;
     height: auto;
-    background-image: url('../ImagesFol/background3.jpg');
+    background-image: url('../ImagesFol/background4.png');
     background-repeat: no-repeat;
     background-size: cover;
     backdrop-filter: blur(10px);
 }
-.admin-signin{
+
+.admin-signin {
     position: absolute;
     top: 20%;
     left: 17%;
 }
-.adminsignin-background{
+
+.adminsignin-background {
     width: 55vw;
     height: 55vh;
-    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.5));
+    background: linear-gradient(to bottom, rgba(90, 80, 80, 0.1), rgba(255, 255, 255, 0.5));
     transition: background 0.5s ease;
     border-radius: 10px;
 }
-.form-label{
-    color: #fff;
+
+.form-label {
+    color: #000000;
     font-size: 22px;
     font-weight: 500;
 }
-.form-control{
+
+.form-control {
     width: 70%;
 }
-#username{
+
+#username {
     width: 70%;
 }
-.admin-log{
+
+.admin-log {
     position: relative;
     left: 14%;
     top: 4vh;
 }
-.admin-btn{
+
+.admin-btn {
     width: 70%;
     position: relative;
     left: 14%;
     top: 4vh;
     background-color: #00509D !important;
 }
-#admin-welcometitle{
+
+#admin-welcometitle {
     position: relative;
     top: 7vh;
     left: 23vw;
 }
-#admin-detailsubtitle{
+
+#admin-detailsubtitle {
     position: relative;
     top: 5vh;
     left: 33vw;
 }
-.adminbtns{
+
+.adminbtns {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -80,7 +93,8 @@
     top: 10vh;
     left: 23vw;
 }
-#logout-caption{
+
+#logout-caption {
     display: block;
     color: #fff;
     position: absolute;
@@ -89,51 +103,55 @@
     font-weight: 400;
     left: -13vw;
 }
-.adminlogoutbtn{
+
+.adminlogoutbtn {
     position: absolute;
     top: 14vh;
     left: -10vw;
 }
-.adminuser-caption{
-    font-size: 20px;
-    margin-top: 5px;
-}
+
 .admincar-caption {
     font-size: 20px;
     position: relative;
-    top: 10vh;
+    top: 0vh;
 }
-.admindriver-caption{
+
+.admindriver-caption {
     position: relative;
-    top: -13vh;
+    top: -2vh;
 }
-#managecarbtn{
+
+#managecarbtn {
     position: absolute;
-    top: 25vh;
+    top: 3.5vh;
     left: 25vw;
-    width: 155px;
 }
+
 #manageuserbtn {
     position: absolute;
     top: 3vh;
     left: 25vw;
     width: 155px;
 }
-#managedriverbtn{
+
+#managedriverbtn {
     position: absolute;
-        top: 13vh;
-        left: 25vw;
-        width: 155px;
+    top: 15vh;
+    left: 25vw;
+    width: 155px;
 }
-#overalluser{
+
+#overalluser {
     padding-top: 3vh;
     padding-left: 3vw;
 }
-#overallcar{
+
+#overallcar {
     margin-top: 5vh;
     padding-left: 3vw;
 }
-#overalldriver{
+
+#overalldriver {
     margin-top: 5vh;
     padding-left: 3vw;
 }

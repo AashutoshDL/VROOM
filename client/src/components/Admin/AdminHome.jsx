@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
-import background3 from "../ImagesFol/background3.jpg";
+import background3 from "../ImagesFol/background4.png";
 import "./AdminHome.css";
 const Home = () => {
   const [username, setUsername] = useState("");

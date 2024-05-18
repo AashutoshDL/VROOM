@@ -92,11 +92,12 @@
     color: #000000;
 }
 
-#btn:hover,
+#btn:hover,.signup:hover,
+.login:hover,
 #login-button:hover,
 #logout-button:hover {
     background-color: var(--button-background-hover);
-    color: #FFFFFF;
+    color: #fff !important;
 }
 
 /* Center text vertically and horizontally */

@@ -1,7 +1,8 @@
 import { useEffect,useState } from 'react';
 import { useParams,useNavigate} from 'react-router-dom'
 import axios from "axios";
-
+import background4 from "../../../components/ImagesFol/background4.png";
+import './UpdateDriver.css';
 const UpdateDriver = () => {
 
   const {id} =useParams();
@@ -48,11 +49,11 @@ const UpdateDriver = () => {
     .catch(err => console.log(err));
   }
   return (
-<div className='d-flex vh-100 bg-primary justify-content-center align-items-center'>
-      <div className='w-50 bg-white rounded p-3'>
+<div className='updatedriver-container d-flex vh-100 bg-primary justify-content-center align-items-center' style={{ backgroundImage: background4 }}>
+      <div className='updatedriver-form w-50 rounded p-3'>
         {/* Form for updating a user */}
         <form onSubmit={handleUpdate}>
-          <h2 className='text-left mb-4'>Update Driver</h2>
+          <h2 className='text-left mb-4 updatedriver-header'>Update Driver</h2>
           {/* Input field for name */}
           <div className="mb-3">
             <label htmlFor=''>Driver</label>
@@ -100,8 +101,8 @@ const UpdateDriver = () => {
             />
           </div>
           <div className='d-flex justify-content-end'>
-            <button className='btn btn-secondary me-2' onClick={() => navigate('/drivers')}>Back</button>
-          <button className='btn btn-success'>Update</button>
+            <button className='btn btn-secondary me-2 .driverformback' onClick={() => navigate('/drivers')}>Back</button>
+          <button className='btn btn-success updateDriverbtn '>Update</button>
 
           </div>
         </form>

@@ -1,0 +1,38 @@
+.cars-container{
+    min-width: 100vw;
+        min-height: 100vh;
+        background-image: url('../../../components/ImagesFol/background4.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        position: absolute;
+        top: 0;
+}
+.car-heading{
+    position: relative;
+    left: 35vw;
+    top: 5vh;
+}
+.addcarbtn{
+    position: relative;
+    left: 43.2vw;
+    top: -4.2vh;
+    border-radius: 0.9vw;
+    border: none;
+}
+.addcars-btn{
+    text-align: center;
+    text-decoration: none;
+    font-size: 4vh;
+    color: white;
+    background-color: gray;
+    width: 22vh;
+}
+.addcarstable{
+    width: 95%;
+    height: 18vh;
+    position: relative;
+    left: 2vw;
+}
+.carlabel-title, .car-information{
+    border: 1px solid grey;
+}

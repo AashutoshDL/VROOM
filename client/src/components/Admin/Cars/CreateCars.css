@@ -1,0 +1,11 @@
+.createcar-container{
+    min-width: 100vw;
+        min-height: 160vh;
+        background-image: url('../../../components/ImagesFol/background4.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        backdrop-filter: blur(10px);
+}
+.createcar-sub{
+    background-color: rgb(117, 115, 115, 0.3);
+}

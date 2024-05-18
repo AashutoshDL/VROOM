@@ -1,7 +1,8 @@
 import { useState } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-
+import background4 from "../../../components/ImagesFol/background4.png";
+import './CreateCars.css';
 const CreateCars = () => {
   const [company, setCompany] = useState('');
   const [model, setModel] = useState('');
@@ -34,10 +35,10 @@ const CreateCars = () => {
   };
 
   return (
-    <div className='d-flex vh-100 bg-primary justify-content-center align-items-center'>
-      <div className='w-50 bg-white rounded p-3'>
+    <div className='createcar-container d-flex vh-100 bg-primary justify-content-center align-items-center' style={{ backgroundImage: background4 }}>
+      <div className='createcar-sub w-50 rounded p-3'>
         <form onSubmit={handleSubmit}>
-          <h2 className="text-left mb-4">Add Car</h2>
+          <h2 className="text-left mb-4 createcarheader">Add Car</h2>
           <div className="mb-3">
             <label htmlFor='company' className="form-label">Company</label>
             <input
