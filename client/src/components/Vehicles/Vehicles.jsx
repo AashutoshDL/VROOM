@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useNavigate, useLocation } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import '../Vehicles/Vehicles.css';
-import backgroundVideo from '../ImagesFol/backvid.mp4';
+
 
 
 const Vehicles = () => {
@@ -29,10 +29,6 @@ const Vehicles = () => {
 
   const CarDetails = ({ car }) => (
     <div className="car-details">
-          <video autoPlay loop muted className="background-video">
-          <source src={backgroundVideo} type="video/mp4" />
-          Your browser does not support the video tag.
-          </video>
       <div className="image-section">
         <img src={`http://localhost:3001/cars/${car.image}`} alt={car.model} />
       </div>
