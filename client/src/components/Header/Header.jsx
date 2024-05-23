@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 import "./Header.css";
 import logo from "../ImagesFol/logo.png";
 import Nav from "react-bootstrap/Nav";
-import Navbar from "react-bootstrap/Navbar";
-
+import Navbar from "react-bootstrap/Navbar";  
 const Header = () => {
   const navigate = useNavigate();
   const location = useLocation(); // Get the current location

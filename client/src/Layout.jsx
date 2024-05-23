@@ -22,7 +22,6 @@ import UpdateDriver from './components/Admin/Driver/UpdateDriver'
 import HireDriver from "./components/HireDriver/HireDriver"
 import Map from './components/Booking/Map'
 
-
 function Layout() {
   return (
     <div>

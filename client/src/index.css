@@ -42,12 +42,10 @@
   }
 }
 
-@media (min-width: 1900)and (min-height: 1070px) {
+@media (min-width: 1920px) and (min-height: 1080px) {
   * {
-    max-height: 182vh;
-    /* 731px */
+    max-height: 170.7vh;
     max-width: 140.55vw;
-    /* 411px */
     margin-left: auto;
     margin-right: auto;
   }
@@ -55,17 +53,56 @@
   .navBar {
     position: relative;
     z-index: 1000;
+    top: -1vh;
+   
     /* Ensure the navbar is positioned relative */
   }
-
-  .mainnav {
-    width: 100%;
-  }
-
   .container {
     display: flex;
     flex-direction: row;
+    min-width: 150%;
+    position: relative;
+    left: -15.5vw;
+    height: 9vh;
+    background-color: #ffffff;
   }
+  #mainnav{
+    height: 9vh;
+  }
+  .logoDiv{
+    position: relative;
+    left: 0.5vw;
+    top: 0.5vh;
+  }
+  .logo{
+    width: 12vw;
+    height: 14vh;
+  }
+ .nav-links{
+  position: relative;
+  left: 5vw;
+ }
+ .navigation{
+  position: relative;
+  left: 0;
+ }
+  .nav-content{
+    font-size: 3vh;
+    margin-right: -2vw;
+  }
+  .dropdown-content{
+    position: absolute;
+    top: 3.6vh;
+    left: 13vw;
+  }
+  .dropdown-content:hover {
+       display: block;
+       
+     }
+    .Log, .Sign{
+      position: relative;
+      left: -20vw;      
+    }
 }
 
 /* for Google Pixel XL */

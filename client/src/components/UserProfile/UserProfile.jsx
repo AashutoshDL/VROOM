@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import './UserProfile.css';
 import { useNavigate } from "react-router-dom";
 import { IoPersonSharp } from "react-icons/io5";
-import { IoCarSportOutline } from "react-icons/io5";
 
 const UserProfile = () => {
   const navigate = useNavigate();
@@ -48,7 +47,7 @@ const UserProfile = () => {
                   <div className="user-status">
                     <span id='user-infostatus'>Status</span>
                   </div>
-                  <h7 className="welcome-message">Welcome to the User Dashboard</h7>
+                  <h4 className="welcome-message">Welcome to the User Dashboard</h4>
                 </div>
               </div>
               <div className="base-line"></div>

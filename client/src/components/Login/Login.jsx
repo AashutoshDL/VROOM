@@ -4,13 +4,11 @@ import { useNavigate } from 'react-router-dom';
 import './Login.css';
 import backgroundVideo from '../ImagesFol/backvid.mp4';
 import Footer from "../Footer/Footer";
-
 const Login = () => {
   const [phoneNumber, setPhoneNumber] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
