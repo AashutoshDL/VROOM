@@ -26,7 +26,7 @@ const HireDriver = () => {
 
   return (
     <div className="driver-cards-container">
-      <h2>List of Drivers:</h2>
+      <h2 className='hiredriver-header'>List of Drivers:</h2>
       <div className="driver-cards">
         {drivers.map(driver => (
           <div key={driver.id} className="card">

@@ -128,7 +128,7 @@ const Booking = () => {
   }, []);
 
   return (
-    <div>
+    <div className='Bookingpopup-container'>
       <div className="mainbody">
         <video autoPlay loop muted className="background-video">
           <source src={backgroundVideo} type="video/mp4" />

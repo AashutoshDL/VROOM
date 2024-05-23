@@ -26,8 +26,8 @@ CarImage.propTypes = {
 const CarDetails = ({ carData, bookingData }) => (
   <div className='bookedcar-details'>
     <h3>{carData.model}</h3>
-    <p>Company: {carData.company}</p>
-    <p>Year: {carData.year}</p>
+    <p className="booking-detail">Company: {carData.company}</p>
+    <p className="booking-detail">Year: {carData.year}</p>
     <p className="booking-detail">Pickup Details: {bookingData.input1}</p>
     <p className="booking-detail">Drop-off Details: {bookingData.input2}</p>
     <p className="booking-detail">Pickup Date: {bookingData.pickUpDate && bookingData.pickUpDate.toString()}</p>
@@ -48,7 +48,7 @@ CarDetails.propTypes = {
 };
 
 const NeedsAndDonts = ({ setClientNeeds, setClientDonts }) => (
-  <div>
+  <div className='bookinginfoclients'>
     <div className="client-needs">
       <h3>Requirements:</h3>
       <input
@@ -127,7 +127,7 @@ const CheckoutForm = ({ carId, carData, bookingData }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className='bookedformbtn'>
       <CardElement />
       <button type="submit" disabled={!stripe}>Pay</button>
     </form>
